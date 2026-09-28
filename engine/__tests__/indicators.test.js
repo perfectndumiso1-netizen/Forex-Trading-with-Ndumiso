@@ -2,16 +2,17 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { sma, ema, rsi, macd, atr, bollinger } from "../indicators.js";
 
-// Generate synthetic trending data for testing
-function generateTrendCandles(n, start = 1.1000, drift = 0.0001, vol = 0.0003) {
+// Generate deterministic trending data for testing (no randomness → test stability)
+function generateTrendCandles(n, start = 1.1000, drift = 0.0001) {
   const candles = [];
   let price = start;
   for (let i = 0; i < n; i++) {
     const open = price;
-    const noise = (Math.random() - 0.5) * vol;
-    const close = open + drift + noise;
-    const high = Math.max(open, close) + Math.random() * vol * 0.5;
-    const low = Math.min(open, close) - Math.random() * vol * 0.5;
+    // Deterministic wave + drift (no Math.random)
+    const wave = Math.sin(i / 7.3) * drift * 3;
+    const close = open + drift + wave * 0.1;
+    const high = Math.max(open, close) + drift * 1.5;
+    const low = Math.min(open, close) - drift * 1.5;
     candles.push({ time: i * 3600, open, high, low, close, volume: 0 });
     price = close;
   }

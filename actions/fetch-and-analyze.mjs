@@ -159,7 +159,7 @@ async function main() {
 
   const pricesDir = join(ROOT, "data/prices");
   const signalsFile = join(ROOT, "data/signals/signals.json");
-  const outputSize = Math.min(500, DATA_PARAMS.maxCandlesPerFile);
+  const outputSize = 200;
 
   const allData = {}; // { PAIR: { TF: [candles] } }
 
@@ -196,7 +196,7 @@ async function main() {
       }
       console.log(`  ✓ ${pair.symbol}/${tf.id}: ${result.candles.length} new, ${merged.length} total, provider=${result.provider}, quality=${(result.quality * 100).toFixed(0)}%`);
       // Respect Twelve Data rate limit (8 req/min free) — brief pause
-      if (result.provider === "twelvedata") await new Promise(r => setTimeout(r, 8000));
+      if (result.provider === "twelvedata") await new Promise(r => setTimeout(r, 7500 + Math.random() * 500));
     }
   }
 

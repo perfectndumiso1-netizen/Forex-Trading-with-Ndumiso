@@ -130,15 +130,18 @@ export function setIndicatorsVisible(candles, visible) {
 /**
  * Plot S/R zones as horizontal price lines.
  */
+// Track price line references so we can remove them on update
+let _priceLines = [];
 export function setZones(zones) {
-  // Remove existing price lines
   if (!candleSeries) return;
-  // lightweight-charts: createPriceLine
-  // We re-create them each time
-  candleSeries.removeAllPriceLines?.();
+  // Remove existing price lines
+  for (const pl of _priceLines) {
+    try { candleSeries.removePriceLine(pl); } catch(e) {}
+  }
+  _priceLines = [];
   for (const z of (zones || []).slice(0, 5)) {
     const color = z.type === "support" ? "#26a69a" : z.type === "resistance" ? "#ef5350" : "#d29922";
-    candleSeries.createPriceLine({
+    const pl = candleSeries.createPriceLine({
       price: z.price,
       color,
       lineWidth: 1,
@@ -146,6 +149,7 @@ export function setZones(zones) {
       axisLabelVisible: true,
       title: `${z.type} ${z.touches}×`,
     });
+    if (pl) _priceLines.push(pl);
   }
 }
 
