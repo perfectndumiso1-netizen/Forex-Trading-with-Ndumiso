@@ -223,11 +223,28 @@ function renderTicker() {
   } catch(e) { console.error("ticker", e); }
 }
 
+// Return true if a signal is verified/live (never demo/mock/absurd-distance)
+function isVerifiedLive(s) {
+  if (!s) return false;
+  if (s.status === "CLOSED") return false;
+  if (s.provider === "demo") return false;
+  if (s.id && (s.id + "").indexOf("demo-") === 0) return false;
+  if (s._note && /demo|mock/i.test(s._note)) return false;
+  // Reject absurd SL distances (defense against any corrupted signal reaching frontend)
+  if (s.entry && s.stopLoss) {
+    var isJpy = s.pair && s.pair.indexOf("JPY") >= 0;
+    var pip = isJpy ? 0.01 : 0.0001;
+    var pips = Math.abs(s.entry - s.stopLoss) / pip;
+    if (pips < 5 || pips > 500) return false;
+  }
+  return true;
+}
+
 function renderDashboard() {
   try {
     var active = [];
     for (var i = 0; i < state.signals.length; i++) {
-      if (state.signals[i].status !== "CLOSED") active.push(state.signals[i]);
+      if (isVerifiedLive(state.signals[i])) active.push(state.signals[i]);
     }
     var sc = document.getElementById("sigCount");
     var ha = document.getElementById("h-active");
@@ -301,7 +318,7 @@ function renderMarkets() {
     var grid = document.getElementById("pairGrid");
     if (!grid) return;
     var active = [];
-    for (var i = 0; i < state.signals.length; i++) if (state.signals[i].status !== "CLOSED") active.push(state.signals[i]);
+    for (var i = 0; i < state.signals.length; i++) if (isVerifiedLive(state.signals[i])) active.push(state.signals[i]);
     var html = "";
     for (var pi = 0; pi < PAIRS.length; pi++) {
       var p = PAIRS[pi];
@@ -413,7 +430,7 @@ function refreshChart() {
     var lc = last(c);
     var sig = null;
     for (var s = 0; s < state.signals.length; s++) {
-      if (state.signals[s].pair === state.currentPair && state.signals[s].status !== 'CLOSED') { sig = state.signals[s]; break; }
+      if (state.signals[s].pair === state.currentPair && isVerifiedLive(state.signals[s])) { sig = state.signals[s]; break; }
     }
     var infoHtml = '<strong>' + state.currentPair + '</strong> ' + state.currentTF +
       ' | O ' + lc.open.toFixed(digits) + ' H ' + lc.high.toFixed(digits) + ' L ' + lc.low.toFixed(digits) +

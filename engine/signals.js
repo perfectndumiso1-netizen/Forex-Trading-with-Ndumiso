@@ -19,13 +19,29 @@ import { volatilityRegime, volatilitySqueeze } from "./volatility.js";
 import { calculateStopLoss, calculateTakeProfit, riskReward } from "./risk.js";
 import { STRATEGY_VERSION, INDICATOR_PARAMS, SIGNAL_PARAMS } from "../assets/js/config.js";
 
+// Minimum per-timeframe data quality required to emit a signal.
+// Below this we return NO TRADE even if confluence appears high, because
+// indicators computed on bad/incomplete/stale data are not trustworthy.
+const MIN_TF_QUALITY = 0.6;
+// Minimum overall data quality to emit a signal.
+const MIN_OVERALL_QUALITY = 60; // as percentage (0-100)
+
+/**
+ * Get the pip size for a pair config. Falls back to 0.0001 if pair isn't found.
+ */
+function pipSizeFor(pair) {
+  return (pair && typeof pair.pipSize === "number") ? pair.pipSize : 0.0001;
+}
+
 /**
  * Analyze a single pair across multiple timeframes.
  *
- * @param {Object} priceData  { TF_ID: [candles], ... } — candles ordered chronologically, oldest first.
+ * @param {Object} priceData  { TF_ID: [candles] | validationResult, ... }
+ *   Each entry may be either a raw candle array or a {candles, quality, usable}
+ *   validation result (preferred — gives us freshness/usable flags).
  * @param {Object} pair       pair config object ({ symbol, pipSize, ... })
  * @param {Object} options    overrides for defaults
- * @returns {Object}          { signal: 'BUY'|'SELL'|'NO TRADE', strength, dataQuality, reasons, ... }
+ * @returns {Object}          { signal: 'BUY'|'SELL'|'NO TRADE', ... }
  */
 export function analyzePair(priceData, pair, options = {}) {
   const params = { ...INDICATOR_PARAMS, ...SIGNAL_PARAMS, ...options };
@@ -34,70 +50,79 @@ export function analyzePair(priceData, pair, options = {}) {
   const reasons = [];
   let totalQuality = 0;
   let qualityCount = 0;
+  let anyUnusable = false;
 
   // ── Phase 1: Per-timeframe analysis (higher → lower) ────────────────────
   for (const tf of tfIds) {
-    const candles = priceData[tf];
+    const entry = priceData[tf];
+    // Accept either raw array or validation result object
+    const candles = Array.isArray(entry) ? entry : (entry && entry.candles) || [];
+    const vQuality = (!Array.isArray(entry) && entry && typeof entry.quality === "number") ? entry.quality : null;
+    const vUsable = (!Array.isArray(entry) && entry && typeof entry.usable === "boolean") ? entry.usable : null;
+    const vFresh = (!Array.isArray(entry) && entry && typeof entry.freshness === "number") ? entry.freshness : null;
+
+    if (vUsable === false) {
+      anyUnusable = true;
+      reasons.push(`${tf}: data not usable${entry && entry.issues && entry.issues.length ? " (" + entry.issues[0] + ")" : ""}`);
+      continue;
+    }
+    if (candles.length < 50) {
+      reasons.push(`${tf}: insufficient candles (${candles.length})`);
+      continue;
+    }
     const result = analyzeTimeframe(candles, params);
+    // If we have a validation quality, prefer it over the warmup-derived one.
+    if (vQuality !== null) result.dataQuality = vQuality;
+    if (vFresh !== null && vFresh < 1) result.freshness = vFresh;
     tfAnalysis[tf] = result;
     if (result.dataQuality !== null) {
-      totalQuality += result.dataQuality;
+      totalQuality += result.dataQuality * 100; // convert 0-1 → 0-100
       qualityCount++;
     }
   }
 
-  const overallQuality = qualityCount > 0 ? Math.round((totalQuality / qualityCount) * 100) : 0;
+  // If ANY critical TF (D1, H4, H1) is missing/below quality threshold, NO TRADE.
+  const criticalTFs = ["D1", "H4", "H1"];
+  for (const tf of criticalTFs) {
+    const a = tfAnalysis[tf];
+    if (!a) {
+      return noTrade(pair, reasons.concat([`${tf}: missing or unusable — cannot confirm hierarchy`]), tfAnalysis);
+    }
+    if (a.dataQuality < MIN_TF_QUALITY) {
+      return noTrade(pair, reasons.concat([`${tf}: data quality ${Math.round(a.dataQuality*100)}% below threshold ${Math.round(MIN_TF_QUALITY*100)}%`]), tfAnalysis);
+    }
+  }
+
+  const overallQuality = qualityCount > 0 ? Math.round(totalQuality / qualityCount) : 0;
+
+  if (overallQuality < MIN_OVERALL_QUALITY) {
+    return noTrade(pair, reasons.concat([`Overall data quality ${overallQuality}% below ${MIN_OVERALL_QUALITY}%`]), tfAnalysis);
+  }
 
   // ── Phase 2: Hierarchical multi-TF alignment ────────────────────────────
-  // Rule: higher TFs must agree on direction for a signal to be valid on lower TFs.
   const alignment = multiTimeframeAlignment(tfAnalysis);
   reasons.push(...alignment.details);
 
   if (alignment.direction === "MIXED" || alignment.direction === "NONE") {
-    return {
-      signal: "NO TRADE",
-      pair: pair.symbol,
-      strength: 0,
-      dataQuality: overallQuality,
-      strategyVersion: STRATEGY_VERSION,
-      reasons: [...reasons, "No aligned setup across timeframes"],
-      tfAnalysis,
-      timestamp: new Date().toISOString(),
-    };
+    return noTrade(pair, reasons.concat(["No aligned setup across timeframes"]), tfAnalysis);
   }
 
   // ── Phase 3: Entry timing from lowest non-optional TF ────────────────────
   const entryTF = findEntryTF(tfAnalysis, alignment.direction);
   if (!entryTF) {
-    return {
-      signal: "NO TRADE",
-      pair: pair.symbol,
-      strength: alignment.confluence,
-      dataQuality: overallQuality,
-      strategyVersion: STRATEGY_VERSION,
-      reasons: [...reasons, "Direction aligned but no entry trigger on confirmation TF"],
-      tfAnalysis,
-      timestamp: new Date().toISOString(),
-    };
+    return noTrade(pair, reasons.concat(["Direction aligned but no entry trigger on confirmation TF"]), tfAnalysis);
   }
 
   const entryAnalysis = tfAnalysis[entryTF];
   const candles = priceData[entryTF];
-  const currentPrice = candles.at(-1).close;
+  // If priceData was a validation result, use the candles array inside it
+  const candlesArr = Array.isArray(candles) ? candles : (candles && candles.candles) || [];
+  const currentPrice = candlesArr[candlesArr.length - 1].close;
   const atrVal = entryAnalysis.atr;
 
   // ── Phase 4: Volatility filter ──────────────────────────────────────────
   if (entryAnalysis.volatility.regime === "extreme") {
-    return {
-      signal: "NO TRADE",
-      pair: pair.symbol,
-      strength: alignment.confluence,
-      dataQuality: overallQuality,
-      strategyVersion: STRATEGY_VERSION,
-      reasons: [...reasons, "Extreme volatility regime — avoid trading"],
-      tfAnalysis,
-      timestamp: new Date().toISOString(),
-    };
+    return noTrade(pair, reasons.concat(["Extreme volatility regime — avoid trading"]), tfAnalysis);
   }
   if (entryAnalysis.volatility.regime === "low" && !entryAnalysis.squeeze?.squeezed) {
     reasons.push("Low volatility regime — require breakout confirmation");
@@ -108,16 +133,7 @@ export function analyzePair(priceData, pair, options = {}) {
   const strength = Math.max(0, Math.min(100, Math.round(score)));
 
   if (strength < params.minConfluence) {
-    return {
-      signal: "NO TRADE",
-      pair: pair.symbol,
-      strength,
-      dataQuality: overallQuality,
-      strategyVersion: STRATEGY_VERSION,
-      reasons: [...reasons, `Confluence score ${strength} below threshold ${params.minConfluence}`],
-      tfAnalysis,
-      timestamp: new Date().toISOString(),
-    };
+    return noTrade(pair, reasons.concat([`Confluence score ${strength} below threshold ${params.minConfluence}`]), tfAnalysis);
   }
 
   // ── Phase 6: SL / TP / R:R calculation ──────────────────────────────────
@@ -129,22 +145,25 @@ export function analyzePair(priceData, pair, options = {}) {
   const rr = riskReward(direction, currentPrice, stop, primaryTP);
 
   if (rr < params.minRiskReward) {
-    return {
-      signal: "NO TRADE",
-      pair: pair.symbol,
-      strength,
-      dataQuality: overallQuality,
-      strategyVersion: STRATEGY_VERSION,
-      reasons: [...reasons, `Risk/Reward ${rr.toFixed(2)} below minimum ${params.minRiskReward}`],
-      tfAnalysis,
-      timestamp: new Date().toISOString(),
-    };
+    return noTrade(pair, reasons.concat([`Risk/Reward ${rr.toFixed(2)} below minimum ${params.minRiskReward}`]), tfAnalysis);
   }
 
-  reasons.push(`Entry on ${entryTF} at ${currentPrice.toFixed(pair.symbol.includes("JPY") ? 3 : 5)}`);
-  reasons.push(`SL: ${stop.toFixed(pair.symbol.includes("JPY") ? 3 : 5)} (${((currentPrice - stop) / pair.pipSize).toFixed(1)} pips)`);
-  reasons.push(`TP1: ${primaryTP.toFixed(pair.symbol.includes("JPY") ? 3 : 5)} (R:R ${rr.toFixed(2)})`);
-  reasons.push(`Volatility: ${entryAnalysis.volatility.regime} (ATR ${atrVal.toFixed(5)})`);
+  // Validate that SL/TP/risk are sensible (no NaN, no absurd distances > 15% of price)
+  if (!isFinite(stop) || !isFinite(primaryTP) || !isFinite(atrVal) || atrVal <= 0) {
+    return noTrade(pair, reasons.concat(["Invalid SL/TP/ATR computed — possible bad data"]), tfAnalysis);
+  }
+  const pip = pipSizeFor(pair);
+  const priceDecimals = pip < 0.001 ? 5 : 3;
+  const pipsRisk = Math.abs(currentPrice - stop) / pip;
+  // Sanity: SL must be between 5 and 500 pips for any pair (rejects corrupted data)
+  if (pipsRisk < 5 || pipsRisk > 500) {
+    return noTrade(pair, reasons.concat([`Rejected: stop distance ${pipsRisk.toFixed(1)} pips outside sane range (5-500)`]), tfAnalysis);
+  }
+
+  reasons.push(`Entry on ${entryTF} at ${currentPrice.toFixed(priceDecimals)}`);
+  reasons.push(`SL: ${stop.toFixed(priceDecimals)} (${pipsRisk.toFixed(1)} pips)`);
+  reasons.push(`TP1: ${primaryTP.toFixed(priceDecimals)} (R:R ${rr.toFixed(2)})`);
+  reasons.push(`Volatility: ${entryAnalysis.volatility.regime} (ATR ${atrVal.toFixed(priceDecimals)})`);
 
   return {
     signal: direction,
@@ -156,12 +175,27 @@ export function analyzePair(priceData, pair, options = {}) {
     takeProfitLevels: tpLevels,
     riskReward: rr,
     atr: atrVal,
+    pipSize: pip,
     strength,
     dataQuality: overallQuality,
     strategyVersion: STRATEGY_VERSION,
     reasons,
     tfAnalysis,
     zones,
+    timestamp: new Date().toISOString(),
+  };
+}
+
+// ── Helper: construct a NO TRADE result ─────────────────────────────────────
+function noTrade(pair, reasons, tfAnalysis) {
+  return {
+    signal: "NO TRADE",
+    pair: pair.symbol,
+    strength: 0,
+    dataQuality: 0,
+    strategyVersion: STRATEGY_VERSION,
+    reasons,
+    tfAnalysis: tfAnalysis || {},
     timestamp: new Date().toISOString(),
   };
 }

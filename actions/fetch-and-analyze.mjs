@@ -122,6 +122,7 @@ async function fetchCandles(symbol, tf, expectedCount) {
 
   const validated = validateCandles(rawCandles, providerUsed, {
     pair: symbol, timeframe: tf, expectedCount, fetchedAt,
+    now: Math.floor(Date.now() / 1000),
   });
   validated.issues.push(...issues);
   validated.providersAttempted = providers;
@@ -162,23 +163,40 @@ async function main() {
   const outputSize = 200;
 
   const allData = {}; // { PAIR: { TF: [candles] } }
+  const validationMeta = {}; // { PAIR: { TF: validationResult } }
 
   // ── Step 1: Fetch all pairs & timeframes ────────────────────────────────
   for (const pair of PAIRS) {
     allData[pair.symbol] = {};
+    validationMeta[pair.symbol] = {};
     for (const tf of TIMEFRAMES) {
       const file = join(pricesDir, `${pair.symbol}-${tf.id}.json`);
       const existing = readJSON(file, { candles: [] }).candles || [];
       log(`Fetching ${pair.symbol} ${tf.id}...`);
       const result = await fetchCandles(pair.symbol, tf.id, outputSize);
+      validationMeta[pair.symbol][tf.id] = result;
       if (result.candles.length === 0) {
         console.warn(`  ⚠ ${pair.symbol}/${tf.id}: no data — ${result.issues.join("; ")}`);
-        // Use existing data if available so engine can still run
+        // Use existing data if available so engine can still run, BUT mark as
+        // not usable (we construct a validation object that is usable=false
+        // so analyzePair will reject it).
         allData[pair.symbol][tf.id] = existing;
+        if (existing.length === 0) {
+          validationMeta[pair.symbol][tf.id] = { candles: [], quality: 0, usable: false, freshness: 0, issues: result.issues, meta: {pair:pair.symbol,timeframe:tf.id} };
+        } else {
+          validationMeta[pair.symbol][tf.id] = { candles: existing, quality: 0.5, usable: false, freshness: 0, issues: [...result.issues, "using stale existing data"], meta: {pair:pair.symbol,timeframe:tf.id} };
+        }
         continue;
       }
       const merged = mergeCandles(existing, result.candles, DATA_PARAMS.maxCandlesPerFile);
       allData[pair.symbol][tf.id] = merged;
+      // Build a combined validation result: usable only if freshness/quality OK
+      const combinedValidation = {
+        ...result,
+        candles: merged,
+        meta: { ...result.meta, count: merged.length },
+      };
+      validationMeta[pair.symbol][tf.id] = combinedValidation;
       if (!DRY_RUN) {
         writeJSON(file, {
           meta: {
@@ -187,6 +205,8 @@ async function main() {
             provider: result.provider,
             providersAttempted: result.providersAttempted,
             quality: result.quality,
+            freshness: result.freshness,
+            usable: result.usable,
             count: merged.length,
             issues: result.issues,
             strategyVersion: STRATEGY_VERSION,
@@ -194,18 +214,37 @@ async function main() {
           candles: merged,
         });
       }
-      console.log(`  ✓ ${pair.symbol}/${tf.id}: ${result.candles.length} new, ${merged.length} total, provider=${result.provider}, quality=${(result.quality * 100).toFixed(0)}%`);
+      const status = result.usable ? "✓" : "⚠";
+      console.log(`  ${status} ${pair.symbol}/${tf.id}: ${result.candles.length} new, ${merged.length} total, provider=${result.provider}, quality=${(result.quality*100).toFixed(0)}%, fresh=${(result.freshness*100).toFixed(0)}%, usable=${result.usable}`);
       // Respect Twelve Data rate limit (8 req/min free) — brief pause
       if (result.provider === "twelvedata") await new Promise(r => setTimeout(r, 7500 + Math.random() * 500));
     }
   }
 
+  // Build engine input using validation results (not raw merged arrays) so
+  // that analyzePair sees usable/freshness/quality metadata per TF.
+  const engineInput = {};
+  for (const pair of PAIRS) {
+    engineInput[pair.symbol] = {};
+    for (const tf of TIMEFRAMES) {
+      const v = validationMeta[pair.symbol][tf.id];
+      engineInput[pair.symbol][tf.id] = v || allData[pair.symbol][tf.id];
+    }
+  }
+
   // ── Step 2: Run signal engine on each pair ──────────────────────────────
   const signalsData = readJSON(signalsFile, { meta: {}, signals: [] });
-  const existingSignals = signalsData.signals || [];
+  // Strip any legacy demo/mock signals from the dataset. Demo signals must
+  // never be treated as live. We drop them instead of displaying them as
+  // "active" — the dashboard already handles "no active signals" correctly.
+  const existingSignals = (signalsData.signals || []).filter(s => {
+    if (s.provider === "demo" || s.id?.startsWith("demo-")) return false;
+    if (s._note && /demo|mock/i.test(s._note)) return false;
+    return true;
+  });
   let newCount = 0;
   for (const pair of PAIRS) {
-    const pairData = allData[pair.symbol];
+    const pairData = engineInput[pair.symbol];
     // Skip pairs with insufficient data
     const hasMinData = Object.values(pairData).some(arr => arr.length > 250);
     if (!hasMinData) {
@@ -214,8 +253,16 @@ async function main() {
     }
     try {
       const result = analyzePair(pairData, pair);
-      log(`  ${pair.symbol}: ${result.signal} (strength ${result.strength})`);
+      log(`  ${pair.symbol}: ${result.signal} (strength ${result.strength}, quality ${result.dataQuality}%)`);
       if (result.signal === "NO TRADE") continue;
+      // Hard data-integrity gate: never emit a signal with suspicious SL/ATR.
+      if (result.atr && result.entry && result.stopLoss) {
+        const pipsRisk = Math.abs(result.entry - result.stopLoss) / (pair.pipSize || 0.0001);
+        if (pipsRisk < 5 || pipsRisk > 500) {
+          console.log(`  ⊘ ${pair.symbol}: rejecting signal — stop distance ${pipsRisk.toFixed(1)} pips outside sane range`);
+          continue;
+        }
+      }
       // Deduplicate against existing active signals
       if (isDuplicate(result, existingSignals, 4)) {
         log(`  ${pair.symbol}: duplicate signal, skipping`);
@@ -225,10 +272,11 @@ async function main() {
       result.status = "ACTIVE";
       result.closedAt = null;
       result.pipsResult = null;
-      result.provider = "engine";
+      result.provider = "engine"; // explicit: not demo, not mock
       existingSignals.push(result);
       newCount++;
-      console.log(`  🚩 ${pair.symbol} ${result.signal} @ ${result.entry.toFixed(pair.symbol.includes("JPY") ? 3 : 5)} | SL=${result.stopLoss.toFixed(pair.symbol.includes("JPY") ? 3 : 5)} | TP=${result.takeProfit.toFixed(pair.symbol.includes("JPY") ? 3 : 5)} | R:R=${result.riskReward.toFixed(2)} | strength=${result.strength}`);
+      const d = pair.symbol.includes("JPY") ? 3 : 5;
+      console.log(`  🚩 ${pair.symbol} ${result.signal} @ ${result.entry.toFixed(d)} | SL=${result.stopLoss.toFixed(d)} | TP=${result.takeProfit.toFixed(d)} | R:R=${result.riskReward.toFixed(2)} | strength=${result.strength} | quality=${result.dataQuality}%`);
     } catch (e) {
       console.error(`  ✗ ${pair.symbol}: analysis error: ${e.message}`);
       if (VERBOSE) console.error(e.stack);
@@ -239,11 +287,14 @@ async function main() {
   signalsData.signals = existingSignals;
   signalsData.meta = {
     ...signalsData.meta,
+    description: "Live signal output from engine v" + STRATEGY_VERSION + ". Generated from validated market data. Demo/mock signals are excluded.",
     lastUpdated: new Date().toISOString(),
     strategyVersion: STRATEGY_VERSION,
     totalSignals: existingSignals.length,
     newSignalsThisRun: newCount,
+    activeSignals: existingSignals.filter(s => s.status === "ACTIVE").length,
     isMockData: false,
+    containsDemoSignals: false,
   };
   if (!DRY_RUN) {
     writeJSON(signalsFile, signalsData);
