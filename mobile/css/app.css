@@ -389,3 +389,63 @@ main { padding: 16px 14px 10px; }
   padding: 10px 20px; font-size: 12px; color: var(--gold); z-index: 200;
   box-shadow: 0 10px 40px rgba(0,0,0,0.5); transition: transform 0.3s; font-weight: 600; }
 .toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ═══════ MOBILE SCROLL / PERFORMANCE FIXES ═════════════════════════════ */
+/* Remove backdrop-filter (kills scroll on Android WebView) */
+.app-header,
+.bottom-nav {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.app-header {
+  background: rgba(8,10,15,0.98) !important;
+}
+.bottom-nav {
+  background: rgba(10,14,22,0.98) !important;
+}
+/* Fix scrolling on Android */
+html, body {
+  overscroll-behavior-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  height: auto !important;
+  position: relative !important;
+}
+/* Ensure body is scrollable - disable any sticky/transform glitches */
+#app {
+  position: relative !important;
+  min-height: 100vh;
+  overflow: visible !important;
+  -webkit-overflow-scrolling: touch !important;
+  z-index: 1;
+}
+main {
+  -webkit-overflow-scrolling: touch !important;
+  overflow: visible !important;
+  padding-bottom: calc(var(--nav-h) + var(--safe-bottom) + 30px);
+}
+/* Tame GPU-heavy animations on mobile to prevent main-thread jank */
+@media (max-width: 600px) {
+  .ticker-inner { animation-duration: 120s !important; will-change: auto; }
+  .skeleton-card { animation-duration: 3s !important; }
+  .splash-pulse { animation-duration: 3s !important; }
+}
+/* Reduce paint cost */
+.signal-card { animation: none !important; }
+.page { animation: none !important; }
+/* Disable tap highlight globally and prevent touch-callout */
+* { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+input, select, textarea { -webkit-user-select: text; user-select: text; }
+
+/* Sticky header is problematic on Android WebView - make it static-scrolling */
+.app-header {
+  position: relative !important;
+  top: auto !important;
+}
+/* Critical: ensure touch events propagate */
+.page, main, #app, body {
+  touch-action: pan-y !important;
+}
+/* Stop splash animations when hidden */
+#splash.hidden * { animation: none !important; }
