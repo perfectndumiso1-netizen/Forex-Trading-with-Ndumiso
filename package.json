@@ -1,0 +1,17 @@
+{
+  "name": "forex-signals",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal Forex analysis and signal-generation application",
+  "type": "module",
+  "scripts": {
+    "test": "node --test engine/__tests__/",
+    "test:verbose": "node --test --test-reporter=spec engine/__tests__/",
+    "fetch": "node actions/fetch-and-analyze.mjs",
+    "serve": "npx --yes http-server . -p 8080 -c-1 -o"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "UNLICENSED"
+}

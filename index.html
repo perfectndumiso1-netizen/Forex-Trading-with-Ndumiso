@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forex Signal Dashboard</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <h1>FX Signal Engine</h1>
+        <span class="badge" id="strategy-version">v1.0.0</span>
+      </div>
+      <div class="header-right">
+        <span class="data-status" id="data-status">Loading…</span>
+        <span class="last-update" id="last-update"></span>
+      </div>
+    </header>
+
+    <!-- Demo data warning banner (hidden when real data loads) -->
+    <div class="demo-banner" id="demo-banner">
+      ⚠️ DEMO DATA — Showing synthetic candles for UI preview. Real signals appear after your GitHub Actions workflow runs with a Twelve Data API key.
+    </div>
+
+    <!-- Navigation tabs -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="signals">Signals</button>
+      <button class="tab" data-tab="chart">Chart</button>
+      <button class="tab" data-tab="pairs">Pairs Overview</button>
+      <button class="tab" data-tab="performance">Performance</button>
+      <button class="tab" data-tab="backtest">Backtest</button>
+      <button class="tab" data-tab="about">About</button>
+    </nav>
+
+    <!-- TAB: Signals -->
+    <section class="tab-panel active" id="tab-signals">
+      <div class="signals-header">
+        <h2>Active Signals</h2>
+        <div class="filter-bar">
+          <select id="filter-pair">
+            <option value="">All pairs</option>
+          </select>
+          <select id="filter-direction">
+            <option value="">All directions</option>
+            <option value="BUY">BUY</option>
+            <option value="SELL">SELL</option>
+          </select>
+        </div>
+      </div>
+      <div class="signals-grid" id="signals-grid">
+        <div class="loading">Loading signals…</div>
+      </div>
+    </section>
+
+    <!-- TAB: Chart -->
+    <section class="tab-panel" id="tab-chart">
+      <div class="chart-controls">
+        <select id="chart-pair"></select>
+        <div class="tf-pills" id="tf-pills">
+          <button class="tf-pill active" data-tf="H1">H1</button>
+          <button class="tf-pill" data-tf="M15">M15</button>
+          <button class="tf-pill" data-tf="H4">H4</button>
+          <button class="tf-pill" data-tf="D1">D1</button>
+          <button class="tf-pill" data-tf="M5">M5</button>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="show-indicators" checked />
+          Indicators (EMA 9/21/50/200)
+        </label>
+      </div>
+      <div class="chart-wrapper">
+        <div id="main-chart"></div>
+      </div>
+      <div class="chart-info" id="chart-info"></div>
+    </section>
+
+    <!-- TAB: Pairs Overview -->
+    <section class="tab-panel" id="tab-pairs">
+      <h2>Multi-Timeframe Snapshot</h2>
+      <p class="panel-hint">Higher timeframes establish context; lower timeframes confirm entries.</p>
+      <div class="pairs-table-wrap">
+        <table class="pairs-table" id="pairs-table">
+          <thead>
+            <tr>
+              <th>Pair</th>
+              <th>D1</th>
+              <th>H4</th>
+              <th>H1</th>
+              <th>M15</th>
+              <th>Price</th>
+              <th>Signal</th>
+              <th>Strength</th>
+            </tr>
+          </thead>
+          <tbody id="pairs-tbody">
+            <tr><td colspan="8" class="loading">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB: Performance -->
+    <section class="tab-panel" id="tab-performance">
+      <h2>Forward-Test Performance</h2>
+      <p class="panel-hint">Statistics are based only on closed trades you have verified. No fabricated numbers.</p>
+      <div class="stats-grid" id="stats-grid">
+        <div class="stat-card"><div class="stat-label">Total Trades</div><div class="stat-value" id="stat-total">—</div></div>
+        <div class="stat-card"><div class="stat-label">Win Rate</div><div class="stat-value" id="stat-winrate">—</div></div>
+        <div class="stat-card"><div class="stat-label">Profit Factor</div><div class="stat-value" id="stat-pf">—</div></div>
+        <div class="stat-card"><div class="stat-label">Total Pips</div><div class="stat-value" id="stat-pips">—</div></div>
+        <div class="stat-card"><div class="stat-label">Expectancy (R)</div><div class="stat-value" id="stat-expectancy">—</div></div>
+        <div class="stat-card"><div class="stat-label">Max Drawdown (R)</div><div class="stat-value" id="stat-dd">—</div></div>
+        <div class="stat-card"><div class="stat-label">Avg Win (R)</div><div class="stat-value" id="stat-avgwin">—</div></div>
+        <div class="stat-card"><div class="stat-label">Avg Loss (R)</div><div class="stat-value" id="stat-avgloss">—</div></div>
+      </div>
+      <div class="equity-wrapper">
+        <h3>Equity Curve (R multiples)</h3>
+        <div id="equity-chart"></div>
+      </div>
+      <h3>Trade Journal</h3>
+      <div class="trades-log" id="trades-log">
+        <div class="loading">No closed trades yet.</div>
+      </div>
+    </section>
+
+    <!-- TAB: Backtest -->
+    <section class="tab-panel" id="tab-backtest">
+      <h2>Backtesting</h2>
+      <p class="panel-hint">Phase 2 — Run walk-forward backtests on available historical data. Results reflect strategy <code id="bt-strategy"></code> only.</p>
+      <div class="bt-controls">
+        <select id="bt-pair"></select>
+        <button id="bt-run" class="btn-primary">Run Backtest</button>
+      </div>
+      <div class="bt-results" id="bt-results">
+        <p class="panel-hint">Select a pair and click "Run Backtest". (Engine is ready; UI will be expanded in Phase 3.)</p>
+      </div>
+    </section>
+
+    <!-- TAB: About -->
+    <section class="tab-panel" id="tab-about">
+      <h2>About This App</h2>
+      <div class="about-content">
+        <p><strong>Personal Forex Signal Engine</strong> — a private, free-tier tool for multi-timeframe confluence-based analysis.</p>
+        <h3>Architecture</h3>
+        <ul>
+          <li><strong>Backend:</strong> GitHub repository (JSON files as database)</li>
+          <li><strong>Automation:</strong> GitHub Actions runs every 15 minutes — fetches data, validates, runs engine, commits signals</li>
+          <li><strong>Signal engine:</strong> Pure JavaScript in <code>engine/</code> — identical code runs in browser, Actions, backtester, and tests</li>
+          <li><strong>Frontend:</strong> Vanilla JS + Lightweight Charts (TradingView) hosted on GitHub Pages</li>
+          <li><strong>Market data:</strong> Twelve Data (primary) with Yahoo fallback; provider provenance is always recorded</li>
+        </ul>
+        <h3>Signal Hierarchy (D1 → H4 → H1 → M15 → M5)</h3>
+        <p>Higher timeframes establish context (trend, key levels). Lower timeframes confirm entries and refine timing. Signals are only emitted when multiple factors align across the hierarchy.</p>
+        <h3>Signal Strength vs. Reality</h3>
+        <p>"Strength" is a confluence score (0–100) measuring rule alignment — it is <em>not</em> a probability of winning. Win-rate statistics must come from forward testing and backtesting, never from the strength score alone.</p>
+        <h3>Immutability</h3>
+        <p>Once a signal is generated, it is never overwritten. Every signal records strategy version, timestamp, provider, data quality, and reasoning so that historical performance can be audited honestly.</p>
+        <p class="strategy-version-display">Strategy version: <code id="about-version"></code></p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Load modules -->
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
