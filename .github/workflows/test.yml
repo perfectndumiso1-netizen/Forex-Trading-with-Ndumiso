@@ -1,0 +1,27 @@
+# Run engine unit tests on every push/PR
+name: Engine Tests
+
+on:
+  push:
+    paths:
+      - "engine/**"
+      - "assets/js/config.js"
+      - ".github/workflows/test.yml"
+  pull_request:
+    paths:
+      - "engine/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run tests
+        run: node --test engine/__tests__/
