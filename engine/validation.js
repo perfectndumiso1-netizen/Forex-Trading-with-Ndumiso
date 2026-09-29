@@ -199,6 +199,26 @@ function timeframeToMinutes(tf) {
 }
 
 /**
+ * Return the candle array from either a raw array or a validation result
+ * object shaped { candles, quality, usable, freshness, ... }.
+ *
+ * Used by the fetch pipeline and downstream consumers so they never have to
+ * branch on shape — a single bug caused by treating validation objects as
+ * arrays (e.g. arr.length on an object returning undefined) is the regression
+ * this guards against.
+ */
+export function getCandles(entry) {
+  if (Array.isArray(entry)) return entry;
+  if (entry && Array.isArray(entry.candles)) return entry.candles;
+  return null;
+}
+
+export function candleCount(entry) {
+  const c = getCandles(entry);
+  return c ? c.length : 0;
+}
+
+/**
  * Remove isolated single-candle spikes (>5× ATR move that immediately reverses).
  * These are almost always data feed corruptions (e.g. misaligned timeframe
  * bucket leaking a different-TF candle into the series). We don't want them

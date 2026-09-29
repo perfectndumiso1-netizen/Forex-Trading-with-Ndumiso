@@ -30,7 +30,7 @@ const enginePath = join(ROOT, "engine/signals.js");
 const validationPath = join(ROOT, "engine/validation.js");
 const { PAIRS, TIMEFRAMES, DATA_PARAMS, STRATEGY_VERSION } = await import(configPath);
 const { analyzePair, isDuplicate } = await import(enginePath);
-const { validateCandles } = await import(validationPath);
+const { validateCandles, candleCount } = await import(validationPath);
 
 // ── CLI flags ───────────────────────────────────────────────────────────────
 const DRY_RUN = process.argv.includes("--dry-run");
@@ -245,10 +245,13 @@ async function main() {
   let newCount = 0;
   for (const pair of PAIRS) {
     const pairData = engineInput[pair.symbol];
-    // Skip pairs with insufficient data
-    const hasMinData = Object.values(pairData).some(arr => arr.length > 250);
+    // Skip pairs with insufficient data. Each entry in pairData is either a
+    // raw candle array or a validation result object { candles, quality, ... }.
+    // Use candleCount() to read the correct length regardless of shape.
+    const maxCandles = Object.values(pairData).reduce((m, v) => Math.max(m, candleCount(v)), 0);
+    const hasMinData = maxCandles > 250;
     if (!hasMinData) {
-      console.log(`  ⊘ ${pair.symbol}: insufficient data, skipping signal analysis`);
+      console.log(`  ⊘ ${pair.symbol}: insufficient data (max ${maxCandles} candles), skipping signal analysis`);
       continue;
     }
     try {

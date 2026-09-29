@@ -17,7 +17,7 @@ import {
 import { compositeMomentum } from "./momentum.js";
 import { volatilityRegime, volatilitySqueeze } from "./volatility.js";
 import { calculateStopLoss, calculateTakeProfit, riskReward } from "./risk.js";
-import { STRATEGY_VERSION, INDICATOR_PARAMS, SIGNAL_PARAMS } from "../assets/js/config.js";
+import { STRATEGY_VERSION, INDICATOR_PARAMS, SIGNAL_PARAMS, TIMEFRAMES } from "../assets/js/config.js";
 
 // Minimum per-timeframe data quality required to emit a signal.
 // Below this we return NO TRADE even if confluence appears high, because
@@ -25,6 +25,9 @@ import { STRATEGY_VERSION, INDICATOR_PARAMS, SIGNAL_PARAMS } from "../assets/js/
 const MIN_TF_QUALITY = 0.6;
 // Minimum overall data quality to emit a signal.
 const MIN_OVERALL_QUALITY = 60; // as percentage (0-100)
+// Critical (non-optional) TFs — if any of these is unusable we cannot trade.
+// Optional TFs (M5) can be missing/unusable without blocking signals.
+const CRITICAL_TFS = TIMEFRAMES.filter(t => !t.optional).map(t => t.id);
 
 /**
  * Get the pip size for a pair config. Falls back to 0.0001 if pair isn't found.
@@ -50,7 +53,6 @@ export function analyzePair(priceData, pair, options = {}) {
   const reasons = [];
   let totalQuality = 0;
   let qualityCount = 0;
-  let anyUnusable = false;
 
   // ── Phase 1: Per-timeframe analysis (higher → lower) ────────────────────
   for (const tf of tfIds) {
@@ -60,18 +62,25 @@ export function analyzePair(priceData, pair, options = {}) {
     const vQuality = (!Array.isArray(entry) && entry && typeof entry.quality === "number") ? entry.quality : null;
     const vUsable = (!Array.isArray(entry) && entry && typeof entry.usable === "boolean") ? entry.usable : null;
     const vFresh = (!Array.isArray(entry) && entry && typeof entry.freshness === "number") ? entry.freshness : null;
+    const isOptional = TIMEFRAMES.find(t => t.id === tf)?.optional;
 
+    // For non-optional TFs: unusable data blocks the pair entirely.
+    // For optional TFs (M5): skip if unusable but don't fail the pair.
     if (vUsable === false) {
-      anyUnusable = true;
       reasons.push(`${tf}: data not usable${entry && entry.issues && entry.issues.length ? " (" + entry.issues[0] + ")" : ""}`);
+      if (!isOptional) {
+        return noTrade(pair, reasons, {});
+      }
       continue;
     }
     if (candles.length < 50) {
       reasons.push(`${tf}: insufficient candles (${candles.length})`);
+      if (!isOptional) {
+        return noTrade(pair, reasons, {});
+      }
       continue;
     }
     const result = analyzeTimeframe(candles, params);
-    // If we have a validation quality, prefer it over the warmup-derived one.
     if (vQuality !== null) result.dataQuality = vQuality;
     if (vFresh !== null && vFresh < 1) result.freshness = vFresh;
     tfAnalysis[tf] = result;
@@ -81,9 +90,8 @@ export function analyzePair(priceData, pair, options = {}) {
     }
   }
 
-  // If ANY critical TF (D1, H4, H1) is missing/below quality threshold, NO TRADE.
-  const criticalTFs = ["D1", "H4", "H1"];
-  for (const tf of criticalTFs) {
+  // All critical (non-optional) TFs must be present with acceptable quality
+  for (const tf of CRITICAL_TFS) {
     const a = tfAnalysis[tf];
     if (!a) {
       return noTrade(pair, reasons.concat([`${tf}: missing or unusable — cannot confirm hierarchy`]), tfAnalysis);
@@ -221,10 +229,10 @@ function analyzeTimeframe(candles, params) {
   });
   const br = breakoutRetest(candles, zones, a[i] || 0);
 
-  // Data quality: ratio of candles that have valid indicator values
-  const expected = Math.min(c.length, 200);
+  // Data quality: ratio of candles that have valid indicator values.
+  // Once we have enough bars to warm up all indicators, quality is 1.
   const validFrom = Math.max(params.smaLong, params.atrPeriod + params.swingLookback);
-  const dataQuality = c.length > validFrom ? Math.min(1, validFrom / c.length) : 0;
+  const dataQuality = c.length >= validFrom ? 1 : c.length / validFrom;
 
   return {
     ma, trend, zones, volatility: vol, squeeze: sqz, momentum: mom, breakout: br,
