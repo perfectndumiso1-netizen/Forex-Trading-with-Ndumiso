@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURJPY",
     "timeframe": "M5",
-    "lastUpdated": "2026-09-29T23:44:08.490Z",
+    "lastUpdated": "2026-09-29T23:56:43.214Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
@@ -11,11 +11,11 @@
     "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 2219,
+    "count": 2221,
     "issues": [
       "2 gap(s) detected in candle sequence",
       "Removed spike outlier at t=1790283600 (move 0.34300 > 5× ATR 0.05507)",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 3146 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 3196 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -17759,17 +17759,33 @@
     {
       "time": 1790725200,
       "open": 178.49200439453125,
-      "high": 178.49899291992188,
+      "high": 178.51499938964844,
       "low": 178.48500061035156,
-      "close": 178.48800659179688,
+      "close": 178.5070037841797,
       "volume": 0
     },
     {
       "time": 1790725500,
-      "open": 178.49000549316406,
-      "high": 178.49000549316406,
-      "low": 178.49000549316406,
-      "close": 178.49000549316406,
+      "open": 178.5030059814453,
+      "high": 178.55499267578125,
+      "low": 178.5030059814453,
+      "close": 178.5290069580078,
+      "volume": 0
+    },
+    {
+      "time": 1790725800,
+      "open": 178.53399658203125,
+      "high": 178.54400634765625,
+      "low": 178.5070037841797,
+      "close": 178.5260009765625,
+      "volume": 0
+    },
+    {
+      "time": 1790726100,
+      "open": 178.50100708007812,
+      "high": 178.50100708007812,
+      "low": 178.50100708007812,
+      "close": 178.50100708007812,
       "volume": 0
     }
   ]
