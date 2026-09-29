@@ -2,17 +2,16 @@
   "meta": {
     "pair": "USDCHF",
     "timeframe": "H4",
-    "lastUpdated": "2026-09-29T03:58:15.776Z",
+    "lastUpdated": "2026-09-29T04:17:59.730Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 0.99,
+    "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 1023,
+    "count": 1024,
     "issues": [
-      "Rejected future-dated candle at 1790668800 (2026-09-29T08:00:00.000Z)",
       "Rejected future-dated candle at 1790683200 (2026-09-29T12:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
@@ -8200,6 +8199,14 @@
       "high": 0.83238,
       "low": 0.83071,
       "close": 0.83209,
+      "volume": 0
+    },
+    {
+      "time": 1790668800,
+      "open": 0.83208,
+      "high": 0.8327,
+      "low": 0.83116,
+      "close": 0.83237,
       "volume": 0
     }
   ]
