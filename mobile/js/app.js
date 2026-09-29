@@ -595,354 +595,1098 @@ setTimeout(function(){
 // ═══════════════════════════════════════════════════════════════════════
 // FOREX ACADEMY — expanded bilingual course (modules → lessons)
 // ═══════════════════════════════════════════════════════════════════════
-var EDU = {};
-// Education course content: English + isiZulu.  8 modules, multiple lessons each.
-EDU = {
-  en: {
-    title: "Forex Trading — Complete Course",
-    subtitle: "A step-by-step guide for Ndumiso's traders",
-    modules: [
-      {
-        id: "m1", icon: "fa-globe", title: "Module 1: What is Forex?", sub: "The world's largest financial market",
-        lessons: [
-          {
-            id: "m1-l1", title: "1.1 Definition & Scale",
-            body: `<p><strong>Forex (FX)</strong> is short for <em>foreign exchange</em>. It is the global marketplace where national currencies are bought and sold against each other.</p>
-<p>It is the <strong>largest and most liquid financial market in the world</strong>, with over <strong>$7.5 trillion traded every day</strong>, according to the Bank for International Settlements. That is more than 30 times the daily volume of every stock market in the world combined.</p>
-<h3>Why does Forex exist?</h3>
+// ═══════════════════════════════════════════════════════════════════════════
+// FOREX ACADEMY — FULL BOOK-LENGTH COURSE (English)
+// Illustrated with ASCII charts, worked examples, step-by-step math,
+// psychology lessons, and a complete end-to-end EUR/USD walkthrough.
+// ═══════════════════════════════════════════════════════════════════════════
+EDU = {};
+EDU.en = {
+  title: "Forex Trading with Ndumiso",
+  subtitle: "The Complete Course — From Beginner to Disciplined Trader",
+  coverNote: "Read in order. Each chapter builds on the last. Do not skip ahead to 'get rich quick' chapters — there are none.",
+  modules: [
+    // ═══════════════════ MODULE 1 ═══════════════════════════════════════
+    {
+      id:"m1", icon:"fa-globe",
+      title:"Book 1: The World of Foreign Exchange",
+      sub:"What forex is, how the market works, who the players are, and why 90% of new traders lose money",
+      lessons:[
+        { id:"m1-l1", title:"Lesson 1: A Day in the Life of a Currency",
+          body:`<p>On a Tuesday morning in Johannesburg, a South African wine farm ships 2,000 cases of Pinotage to a distributor in Düsseldorf. The invoice is in Euros. The importer sells the wine for Euros, but the farm pays its workers in Rand. Somewhere along the chain, someone — a bank or a payments company — has to convert those Euros back into Rand.</p>
+<p>At the same moment, a Japanese pension fund buys US Treasury bonds because Japanese interest rates are near zero but US rates pay 4%. To do that, the fund converts Japanese Yen into US Dollars.</p>
+<p>In London, a hedge fund that believes the British pound will rise against the US dollar buys a £50,000,000 position in GBP/USD.</p>
+<p>In Lagos, a student transferring tuition to a university in Canada sends ₦5,000,000 through a money service, which converts Naira to Canadian Dollars.</p>
+<p>Every one of those transactions — millions of them every day, around the clock, five days a week — passes through the same market: <strong>the foreign exchange market</strong>, or Forex.</p>
+<div class="lesson-quote">Forex is not a casino invented for retail traders. It is the plumbing of world trade. Speculators like us are just a tiny piece of a very large machine.</div>
+<h3>How big is it?</h3>
+<p>According to the Bank for International Settlements (BIS), the Forex market turns over roughly <strong>$7.5 trillion per day</strong>. To put that in perspective:</p>
 <ul>
-  <li>International trade needs currency conversion (e.g. a South African company buying machinery from Germany needs EUR).</li>
-  <li>Investment and speculation — traders profit from exchange-rate movements.</li>
-  <li>Central banks use it to manage reserves and stabilise their currency.</li>
+  <li>The entire New York Stock Exchange does about $200 billion per day.</li>
+  <li>Apple does about $1 billion in revenue per day.</li>
+  <li>All crypto markets combined do about $100–200 billion per day.</li>
 </ul>
-<div class="lesson-tip"><span class="ex-title">💡 Key idea</span>You are always trading one currency <em>against</em> another. There is no "up" or "down" in isolation — EUR/USD going up means EUR is strengthening <em>relative to</em> USD.</div>`
-          },
-          {
-            id: "m1-l2", title: "1.2 Market Structure & Hours",
-            body: `<p>Forex is decentralised (no single exchange). Trading happens <strong>over-the-counter (OTC)</strong> through a global network of banks, brokers, hedge funds, and retail traders.</p>
-<h3>24/5 market</h3>
-<p>The market opens in Wellington on Monday morning and closes in New York on Friday evening (SAST). Around the clock between those times.</p>
-<table><tr><th>Session</th><th>SAST</th><th>Volatility</th></tr>
-<tr><td>Sydney / Tokyo (Asia)</td><td>00:00 – 08:00</td><td>Low–medium</td></tr>
-<tr><td>London (Europe)</td><td>09:00 – 18:00</td><td>High</td></tr>
-<tr><td>New York (Americas)</td><td>15:00 – 00:00</td><td>Highest</td></tr></table>
-<p>The <strong>London / New York overlap (15:00 – 18:00 SAST)</strong> is the most liquid, most volatile window of the day. This is the "kill zone" where the major moves tend to occur.</p>
-<div class="lesson-example"><span class="ex-title">📊 Worked example</span>EUR/USD often moves 60–100 pips between 15:00 and 18:00 SAST, compared with 20–30 pips during the Asian session. Plan your entries around the high-liquidity window if you day-trade.</div>`
-          },
-          {
-            id: "m1-l3", title: "1.3 Currency Pairs & the Majors",
-            body: `<p>Currencies are always quoted in <strong>pairs</strong>. The first currency is the <em>base</em>, the second is the <em>quote</em> (or counter).</p>
-<p>Example: <code>EUR/USD = 1.0850</code> means 1 Euro costs 1.0850 US Dollars.</p>
-<h4>The 8 major pairs we focus on (plus 2 JPY crosses)</h4>
+<p>Forex is roughly <strong>35 times bigger than the entire global stock market</strong>. There is no market more liquid, no market with tighter spreads, no market that moves with more raw force.</p>
+<h3>What this means for you</h3>
+<p>Because Forex is so large, no single player — not even a central bank — can control price for long. You can enter or exit a position in milliseconds. The cost of trading (the spread) is measured in fractions of a penny. That's the good news.</p>
+<p>The bad news is that size does not make it easy. The Forex market is the most brutally competitive arena on earth. The people on the other side of your trade are bank prop desks, hedge funds with teams of PhDs, algorithmic systems in Tokyo and New York, and millions of other traders all fighting over the same price movements.</p>
+<div class="lesson-warn">If you approach Forex thinking "it's a quick way to get rich," you will lose. If you approach it like learning medicine, law, or a martial art — years of study, deliberate practice, strict discipline — you have a chance.</div>`
+        },
+        { id:"m1-l2", title:"Lesson 2: A Brief History — From Gold Standards to Smartphones",
+          body:`<p>Before 1971, the world operated under the <strong>Bretton Woods system</strong>. Currencies were pegged to the US dollar, and the US dollar was pegged to gold at $35 per ounce. Exchange rates barely moved. There was no such thing as "retail currency trading" — if you wanted to change money, you went to a bank.</p>
+<p>In 1971, US President Richard Nixon took the dollar off the gold standard ("the Nixon shock"). Suddenly currencies could <em>float</em> against each other. Their value was determined by supply and demand on the open market. The modern Forex market was born.</p>
+<h4>Key historical moments</h4>
+<table>
+<tr><th>Year</th><th>Event</th></tr>
+<tr><td>1971</td><td>Bretton Woods collapses; currencies float freely</td></tr>
+<tr><td>1980s</td><td>Electronic trading begins between banks</td></tr>
+<tr><td>1990s</td><td>Internet arrives; retail brokers open access to individuals</td></tr>
+<tr><td>2000s</td><td>MetaTrader becomes standard; leverage 1:100+ widely available</td></tr>
+<tr><td>2010s</td><td>Smartphone trading apps make Forex a one-tap activity</td></tr>
+<tr><td>2020s</td><td>AI/algos dominate institutional flow; regulation tightens globally</td></tr>
+</table>
+<p>The arrival of smartphones has been a double-edged sword. It has made trading accessible to anyone with a phone, which is wonderful — but it has also flooded the market with new traders who have no education, no plan, and no risk management. They are the fuel that pays the professionals.</p>
+<div class="lesson-tip"><span class="ex-title">💡 A note from Ndumiso</span>Accessibility ≠ ease of profit. The fact that you can open a trade in two taps on a phone does not mean you should. You are competing against people who spend 12 hours a day at this. Education is your only edge.</div>`
+        },
+        { id:"m1-l3", title:"Lesson 3: Who Trades Forex (and Why Most Lose)",
+          body:`<p>There are roughly five types of participants. You need to understand them because you are trading against them.</p>
+<h4>1. Central Banks (the giants)</h4>
+<p>The South African Reserve Bank, US Federal Reserve, ECB, Bank of Japan, Bank of England. They don't trade for profit — they manage currency stability, set interest rates, and intervene when their currency moves too far from where they want it. When a central bank speaks, markets move. A single sentence from the Fed chair can move EUR/USD 200 pips in minutes.</p>
+<h4>2. Commercial & Investment Banks (the smart money)</h4>
+<p>Standard Bank, JP Morgan, Citi, Deutsche, Goldman Sachs. They handle client flow (corporate conversions, pension funds, hedge fund orders). Their interbank market is where real price discovery happens. You and I never see those prices directly — we get them through a retail broker, marked up by a tiny spread.</p>
+<h4>3. Hedge Funds & Prop Shops (the predators)</h4>
+<p>These are full-time professionals who live or die by their edge. They include systematic funds (algos), macro funds (bets on rates/wars/policy), and prop traders using other people's money or firm capital. Their orders are large enough to push price around.</p>
+<h4>4. Corporations (not speculators)</h4>
+<p>Apple converting Chinese Yuan revenue back to USD; BMW paying German workers in EUR out of US sales. They don't care whether EUR/USD goes up or down; they just need to convert at a predictable rate. They use forwards and options to hedge — they are NOT trying to trade.</p>
+<h4>5. Retail Traders (that's us)</h4>
+<p>You, me, and millions of people sitting at kitchen tables, in offices, and on phones across the world. We represent about <strong>5–8% of total volume</strong>. We are the smallest players in the market.</p>
+<div class="lesson-warn"><span class="ex-title">⚠️ Hard truth</span>Retail traders as a group lose money — not because the market is rigged, but because almost everyone shows up without a system, without risk management, and without emotional discipline. They trade on tips, gut feelings, FOMO, and revenge. The market takes their money and gives it to the prepared.</div>
+<div class="lesson-example"><span class="ex-title">📊 The statistic</span>Every regulated broker is required to publish a "percentage of retail CFD accounts that lose money." Across the industry, that number sits between <strong>70% and 85%</strong>. It is not the broker taking your money (in most cases) — it is you making the same mistakes as the rest of the 80%. This course is about joining the 20%.</div>`
+        },
+        { id:"m1-l4", title:"Lesson 4: Sessions, Time Zones & When to Trade from South Africa",
+          body:`<p>Forex is a 24-hour market from Monday morning in Wellington (New Zealand) to Friday evening in New York. But it is <em>not</em> equally active all day. There are three main sessions:</p>
+<table>
+<tr><th>Session</th><th>Opens (SAST)</th><th>Closes (SAST)</th><th>Character</th><th>Best Pairs</th></tr>
+<tr><td>🌏 Sydney / Tokyo (Asia)</td><td>00:00</td><td>08:00</td><td>Quiet, range-bound</td><td>AUD/JPY, NZD/JPY, USD/JPY</td></tr>
+<tr><td>🇬🇧 London (Europe)</td><td>09:00</td><td>18:00</td><td>High volume, trending</td><td>EUR/USD, GBP/USD, all majors</td></tr>
+<tr><td>🇺🇸 New York (Americas)</td><td>15:00</td><td>00:00</td><td>Highest volatility</td><td>All majors — especially news-driven moves</td></tr>
+</table>
+<h3>The kill zones</h3>
+<p>The most profitable windows for day-traders are the <strong>session opens</strong> and the <strong>overlaps</strong>:</p>
 <ul>
-  <li><strong>EUR/USD</strong> — most liquid pair in the world; tightest spreads</li>
-  <li><strong>GBP/USD</strong> ("Cable") — volatile; reacts strongly to UK news</li>
-  <li><strong>USD/JPY</strong> — sensitive to risk sentiment and US yields</li>
-  <li><strong>USD/CHF</strong> — safe-haven flows; often inversely correlated with EUR/USD</li>
-  <li><strong>AUD/USD</strong>, <strong>NZDUSD</strong> — commodity currencies (iron ore, dairy)</li>
-  <li><strong>USDCAD</strong> — oil-sensitive (Canada exports oil)</li>
-  <li><strong>EURGBP</strong>, <strong>EURJPY</strong>, <strong>GBPJPY</strong> — cross-pairs for extra setups</li>
+  <li><strong>09:00 – 11:00 SAST (London open)</strong> — often the largest directional move of the day starts here.</li>
+  <li><strong>15:00 – 18:00 SAST (London/NY overlap)</strong> — highest volume, biggest moves, best liquidity. This is prime time.</li>
+  <li><strong>News events</strong> — interest rate decisions (SARB, Fed, ECB, BoE), Non-Farm Payrolls (first Friday of the month, 14:30 SAST), CPI prints — these create explosive moves. <em>Beginner traders should stay OUT of the market 30 minutes before and after major news.</em></li>
 </ul>
-<div class="lesson-warn">⚠️ Stick to the pairs the bot scans. Adding random exotic pairs increases risk without improving your edge.</div>`
-          },
-          {
-            id: "m1-l4", title: "1.4 Leverage, Margin & Brokers",
-            body: `<p><strong>Leverage</strong> lets you control a large position with a small deposit ("margin"). A 1:100 leverage means R100 of margin controls R10,000 of currency.</p>
-<p>Leverage is a <em>double-edged sword</em>: it amplifies both wins and losses.</p>
-<div class="lesson-example"><span class="ex-title">📊 Worked example</span>With R1,000 and 1:100 leverage, you can open a R100,000 position. A 1% move against you loses R1,000 (your whole account). With 1:10 leverage, that same 1% move loses R100.</div>
-<p>Choose a broker that is <strong>regulated</strong> (FSCA in South Africa, FCA in UK, ASIC in Australia). Never use an unregulated offshore broker offering 1:1000 leverage — they make money when you lose.</p>
-<div class="lesson-tip"><span class="ex-title">💡 Ndumiso's rule</span>For a R10,000 account, never exceed 1:50 leverage on a single trade, and never risk more than R100–R200 (1–2%) per setup.</div>`
-          }
-        ]
-      },
-      {
-        id: "m2", icon: "fa-fire", title: "Module 2: Candlesticks & Price Action", sub: "Reading the language of the market",
-        lessons: [
-          { id:"m2-l1", title:"2.1 Anatomy of a Candle", body:`<p>A single candlestick shows four prices for a period:</p>
-<ul><li><strong>Open</strong> — first price of the period</li><li><strong>High</strong> — highest price reached</li><li><strong>Low</strong> — lowest price reached</li><li><strong>Close</strong> — last price of the period</li></ul>
-<p>A <em>bullish</em> candle (green/white) closes above its open. A <em>bearish</em> candle (red/black) closes below its open. The <strong>wicks</strong> (shadows) above and below the body show price extremes that were rejected.</p>
-<div class="lesson-tip"><span class="ex-title">💡 Read</span>A long upper wick on a green candle says "buyers tried to push higher and failed." That is a warning — sellers are stepping in.</div>` },
-          { id:"m2-l2", title:"2.2 Bullish Reversal Patterns", body:`<h4>Hammer</h4><p>Small body at the top, long lower wick (at least 2× body length). Forms after a downtrend. Signals buyers are stepping in at the lows. High probability setup when it touches a support level.</p>
-<h4>Bullish Engulfing</h4><p>A green candle whose body completely <em>engulfs</em> the prior red candle's body. Strong momentum reversal signal when it appears at support.</p>
-<h4>Morning Star (3-candle)</h4><p>A long red candle → a small-bodied indecision candle (doji) → a long green candle that closes back into the first candle's body. One of the most reliable reversals.</h4>
-<div class="lesson-example"><span class="ex-title">📊 Worked example</span>You see a hammer right on a key support level on H1, AND RSI is below 30 (oversold), AND higher TFs (H4, D1) are in an uptrend. That is high confluence — the kind of setup this bot flags with 70+ strength.</div>` },
-          { id:"m2-l3", title:"2.3 Bearish Reversal Patterns", body:`<h4>Shooting Star</h4><p>Mirror of the hammer: small body at the bottom, long upper wick. Forms at resistance in an uptrend. Sellers rejected the highs.</p>
-<h4>Bearish Engulfing</h4><p>A red candle whose body completely engulfs the prior green body at resistance. Strong bearish signal.</p>
-<h4>Evening Star</h4><p>Mirror of the morning star: long green → doji → long red. Reliable top-reversal.</p>
-<h4>Doji</h4><p>Open ≈ close (small cross). Means indecision. After a strong move it can signal exhaustion.</p>
-<div class="lesson-warn">⚠️ Do NOT trade candlestick patterns in isolation. A pin bar in the middle of nowhere is noise. Wait for confluence with structure, trend, and indicators.</div>` },
-          { id:"m2-l4", title:"2.4 Continuation Patterns", body:`<p>Patterns that suggest the existing trend will continue:</p>
+<h3>When NOT to trade</h3>
 <ul>
-  <li><strong>Bullish/Bearish Flag</strong> — a tight channel against the trend (a "rest" before the next leg)</li>
-  <li><strong>Pennant / Triangle</strong> — compression of price before breakout</li>
-  <li><strong>Three White Soldiers</strong> — three consecutive strong green candles (bullish continuation)</li>
-  <li><strong>Three Black Crows</strong> — three consecutive strong red candles (bearish continuation)</li>
+  <li><strong>Sunday evening opening</strong> (23:00–01:00 SAST) — spreads widen to ridiculous levels, banks are not at their desks yet, liquidity is terrible.</li>
+  <li><strong>Friday after 21:00 SAST</strong> (NY afternoon) — traders close positions for the weekend; liquidity dries up; moves are erratic.</li>
+  <li><strong>Bank holidays</strong> in London or New York — no volume, fake moves.</li>
+  <li><strong>Asian session</strong> if you are a beginner — pairs chop sideways for hours; false breakouts abound.</li>
 </ul>
-<p>Continuation patterns are useful for adding to winning positions or for late entries after missing the initial move.</p>` }
-        ]
-      },
-      {
-        id: "m3", icon: "fa-layer-group", title: "Module 3: Support, Resistance & Structure", sub: "Reading the market's battle lines",
-        lessons: [
-          { id:"m3-l1", title:"3.1 Support & Resistance", body:`<p><strong>Support</strong> is a price level where buyers have historically stepped in and pushed price UP — a floor.</p><p><strong>Resistance</strong> is where sellers have stepped in and pushed price DOWN — a ceiling.</p>
-<p>Levels form because institutional traders remember price history and place orders there. When broken, levels often <em>flip</em>: broken resistance becomes new support, and vice versa. This is <strong>role reversal</strong>.</p>
-<div class="lesson-example"><span class="ex-title">📊 Worked example</span>EUR/USD rallies to 1.0900 four times and sells off each time. The fourth time it breaks through, pulls back, and 1.0900 now acts as support (bounces off it). That's a classic role reversal — now you look for buys at 1.0900.</div>` },
-          { id:"m3-l2", title:"3.2 Swing Highs & Swing Lows", body:`<p>A <strong>swing high</strong> is a local peak — a candle whose high is higher than N candles on each side (we use 5 in this bot).</p><p>A <strong>swing low</strong> is the mirror: a local trough.</p><p>The engine marks these automatically. A cluster of swing highs at the same price creates strong resistance; a cluster of swing lows creates strong support.</p>
-<p>Round numbers (1.0800, 1.1000, 150.00) are psychological levels — the bot treats these as light support/resistance even without swing points.</p>` },
-          { id:"m3-l3", title:"3.3 Trends & HH/HL/LH/LL", body:`<h4>Uptrend (bullish)</h4><p>Price prints <strong>Higher Highs (HH)</strong> and <strong>Higher Lows (HL)</strong>. Each push goes higher; each pullback ends higher than the prior pullback.</p>
-<h4>Downtrend (bearish)</h4><p>Price prints <strong>Lower Highs (LH)</strong> and <strong>Lower Lows (LL)</strong>.</p>
-<h4>Range / Sideways</h4><p>Price bounces between horizontal support and resistance. Either trade the range or wait for a breakout.</p>
-<div class="lesson-tip"><span class="ex-title">🏛️ Multi-timeframe principle</span>Always read structure from D1 down. If D1 is making HH/HL, look ONLY for buy setups on H4/H1/M15. Fighting higher-TF structure is the #1 reason new traders lose.</div>` },
-          { id:"m3-l4", title:"3.4 Breakouts & Retests", body:`<p>A <strong>breakout</strong> is when price closes decisively through a support or resistance level (ideally with momentum and volume).</p>
-<p>A <strong>retest</strong> is when price returns to test the broken level as its new role (broken resistance becomes support). The safest entries are often on the retest, not the breakout itself — this avoids false breaks ("fakeouts").</p>
-<p>This bot has a specific <em>breakout/retest detector</em> that weights these setups higher in confluence scoring.</p>
-<div class="lesson-warn">⚠️ A candle wick piercing a level is NOT a breakout. Wait for a <strong>close</strong> beyond the level — ideally two consecutive closes.</div>` }
-        ]
-      },
-      {
-        id: "m4", icon: "fa-wave-square", title: "Module 4: Indicators", sub: "EMA, RSI, MACD, ATR — how to read them",
-        lessons: [
-          { id:"m4-l1", title:"4.1 Moving Averages (EMA/SMA)", body:`<p>Moving averages smooth price data to reveal trend direction. We use four:</p>
-<ul>
-<li><strong>EMA 9</strong> (fast) — short-term momentum</li>
-<li><strong>EMA 21</strong> (slow) — short-term trend</li>
-<li><strong>SMA 50</strong> — medium-term trend</li>
-<li><strong>SMA 200</strong> — long-term trend (institutional benchmark)</li>
-</ul>
-<p><strong>Alignment</strong>: when all four MAs point the same direction (e.g. EMA9 > EMA21 > SMA50 > SMA200 and price is above all of them), trend strength is high. We call this "bull stack" / "bear stack".</p>
-<p>A <strong>golden cross</strong> = SMA 50 crosses above SMA 200 (long-term bullish). A <strong>death cross</strong> = SMA 50 crosses below SMA 200 (long-term bearish).</p>` },
-          { id:"m4-l2", title:"4.2 RSI (Relative Strength Index)", body:`<p>RSI is a momentum oscillator (0–100) measuring how fast price has moved over 14 periods.</p>
-<ul>
-<li><strong>Above 70</strong> → overbought (possible pullback)</li>
-<li><strong>Below 30</strong> → oversold (possible bounce)</li>
-<li><strong>Crossing back above 50</strong> from below → bullish momentum confirmation</li>
-<li><strong>Crossing back below 50</strong> from above → bearish momentum confirmation</li>
-</ul>
-<p>In strong trends, RSI can stay overbought/oversold for a long time. Don't trade against the trend just because RSI is at 75.</p>
-<div class="lesson-example"><span class="ex-title">📊 Worked example</span>D1 is in a strong uptrend (HH/HL, bull-stack MAs). H1 pulls back to support, RSI hits 28 (oversold), then MACD crosses bullish. That's a high-confluence buy entry — exactly what this bot scans for.</div>` },
-          { id:"m4-l3", title:"4.3 MACD (Moving Average Convergence Divergence)", body:`<p>MACD consists of:</p><ul><li>MACD line (fast MA minus slow MA)</li><li>Signal line (MA of MACD)</li><li>Histogram (difference between them)</li></ul>
-<p>Interpretation:</p>
-<ul>
-  <li><strong>Bullish crossover</strong> = MACD line crosses above signal line from below → momentum turning up</li>
-  <li><strong>Bearish crossover</strong> = MACD line crosses below signal line → momentum turning down</li>
-  <li><strong>Divergence</strong> = price makes a new high but MACD makes a lower high (or vice versa) → momentum fading, possible reversal</li>
-</ul>
-<p>This bot uses MACD crossovers as <em>entry timing</em> triggers on the confirmation timeframe (H1/M15).</p>` },
-          { id:"m4-l4", title:"4.4 ATR (Average True Range)", body:`<p>ATR measures <em>volatility</em> — how much price typically moves in a single bar, averaged over 14 periods.</p>
-<p>ATR does NOT predict direction — it measures how <em>big</em> moves are. We use it for three things:</p>
-<ol>
-<li><strong>Stop-loss distance</strong>: SL = entry ± 1.5 × ATR (so noise doesn't stop us out)</li>
-<li><strong>Position sizing</strong>: wider ATR → smaller lot size (same dollar risk)</li>
-<li><strong>Volatility regime</strong>: ATR 50% above recent average = "extreme" — the bot avoids trading</li>
+<div class="lesson-tip"><span class="ex-title">💡 Ndumiso's schedule (for SA traders in CAT/SAST)</span>Wake up, check the D1 and H4 charts before London opens (~08:00). Trade 09:00–11:00 if there's a setup. Check again at 14:30 ahead of NY open. Trade the overlap 15:00–18:00 if the setup is clean. Close everything by 19:00. You have a life — live it.</div>`
+        },
+        { id:"m1-l5", title:"Lesson 5: Why 90% of Beginners Quit Within 6 Months",
+          body:`<p>I have trained hundreds of traders. The pattern is always the same.</p>
+<ol class="lesson-step-list">
+  <li><strong>The hook.</strong> Someone sees a YouTube ad or a friend showing a screenshot of a $1,000 winning trade. "I can do that." They open a broker account.</li>
+  <li><strong>The honeymoon.</strong> Their first few trades win (usually because of luck in a trending market). They think they are naturally gifted.</li>
+  <li><strong>The first big loss.</strong> They over-leverage on a "sure thing" and lose 20–40% in a day. Panic sets in.</li>
+  <li><strong>The churn.</strong> They revenge-trade, chasing losses. They switch strategies every week. They buy courses, join signal groups, chase indicators.</li>
+  <li><strong>The bust or the awakening.</strong> Most lose everything and quit, calling Forex a scam. A small few realise the problem is not the market — it's <em>them</em>. They start studying properly.</li>
 </ol>
-<div class="lesson-tip"><span class="ex-title">💡 Example</span>If EUR/USD ATR(14) on H1 is 0.0012 (12 pips), a reasonable SL is 1.5 × 0.0012 = 18 pips. If ATR spikes to 0.0030 (30 pips), you're in a news event — stay out.</div>` }
-        ]
-      },
-      {
-        id: "m5", icon: "fa-shield-halved", title: "Module 5: Risk Management", sub: "The only rule that keeps you in the game",
-        lessons: [
-          { id:"m5-l1", title:"5.1 The 1% Rule (why it matters)", body:`<p>Risking 1% of your account per trade means a string of 10 losing trades costs you ~10% of capital. Painful but survivable.</p><p>Risking 5% per trade means 10 losers in a row costs you 40%. Risking 10% and seven losers will wipe you out.</p>
-<div class="lesson-example"><span class="ex-title">📊 Math</span>R10,000 account, 1% risk = R100 per trade. With 50% win rate and 1:2 R:R, every 10 trades nets you about R300 on average. You'd need 33 consecutive losses to blow up — statistically almost impossible.</div>
-<p>Ndumiso's bot calculates lot size automatically so each trade risks 1% of the configured account balance. Never override this without good reason.</p>` },
-          { id:"m5-l2", title:"5.2 Stop-Loss Placement", body:`<p>SL must be placed <strong>where your trade idea is invalidated</strong> — not at an arbitrary dollar amount.</p>
+<p>The goal of this course is to shortcut you directly to step 5 without losing your savings in steps 2–4.</p>
+<div class="lesson-divider"></div>
+<p>In the next book, we start learning the actual language of the market — candlesticks, charts, and how to read price action without indicators.</p>`
+        }
+      ]
+    },
+    // ═══════════════════ MODULE 2 — PRICE ACTION ════════════════════════
+    {
+      id:"m2", icon:"fa-fire",
+      title:"Book 2: Candlesticks & Price Action",
+      sub:"Reading the story price tells you — no indicators needed",
+      lessons:[
+        { id:"m2-l1", title:"Lesson 1: What is a Candlestick? The Anatomy",
+          body:`<p>Before computers, Japanese rice traders in the 1700s drew pictures of price movement using ink and rice paper. A man named <strong>Munehisa Homma</strong> invented what we now call <em>candlestick charts</em> to visualise the battle between buyers and sellers in the Osaka rice markets. His method was so effective he became a legendarily wealthy trader. We still use it, virtually unchanged, 300 years later.</p>
+<h3>The four prices</h3>
+<p>Every candlestick represents a fixed period of time (1 minute, 5 minutes, 1 hour, 1 day — whatever timeframe you are looking at). Each candle shows exactly four numbers:</p>
+<div class="lesson-chart"><span class="lesson-chart-title">ANATOMY OF A CANDLE</span>
+        <span class="bull">       (H) High ───┐</span>
+<span class="bull">                  │  ← Upper wick/shadow</span>
+<span class="bull">              ┌───┴───┐</span>
+<span class="bull">              │       │</span>
+<span class="bull">  Open (O) ──►│  BODY │◄─ Close (C)      ◄── GREEN = bullish</span>
+<span class="bull">              │       │                     (close ABOVE open)</span>
+<span class="bull">              └───┬───┘</span>
+<span class="bull">                  │  ← Lower wick/shadow</span>
+<span class="bull">       (L) Low ───┘</span></div>
 <ul>
-  <li>BUY: below the most recent swing low, minus a small buffer (or 1.5 ATR, whichever is farther from entry)</li>
-  <li>SELL: above the most recent swing high, plus a small buffer</li>
+  <li><strong>Open</strong> — the very first price traded at the start of the period</li>
+  <li><strong>High</strong> — the highest price reached during the period</li>
+  <li><strong>Low</strong> — the lowest price reached during the period</li>
+  <li><strong>Close</strong> — the very last price traded at the end of the period</li>
 </ul>
-<div class="lesson-warn">⚠️ NEVER move your stop further away when a trade goes against you. That is the single fastest way to destroy an account. If the trade is wrong, it is wrong — accept the loss and move on.</div>` },
-          { id:"m5-l3", title:"5.3 Risk-Reward & Why 1:1.5 Is the Floor", body:`<p><strong>Risk-reward (R:R)</strong> = how much you stand to gain for every R1 you risk.</p>
-<p>A trade with 30 pip SL and 60 pip TP is a 1:2 risk-reward.</p>
-<table><tr><th>R:R</th><th>Win rate needed to break even</th></tr>
+<div class="lesson-two-col">
+  <div class="col-bull"><h5>Bullish candle (green)</h5>
+    <ul><li>Closes ABOVE open</li><li>Buyers won the period</li><li>Pressure was UP</li></ul>
+  </div>
+  <div><h5>Bearish candle (red)</h5>
+    <ul><li>Closes BELOW open</li><li>Sellers won the period</li><li>Pressure was DOWN</li></ul>
+  </div>
+</div>
+<h3>The story in the wicks</h3>
+<p>The body shows who won. The <strong>wicks</strong> (shadows) show the <em>battle</em>. Long wicks mean price traveled to that level but was rejected and pushed back.</p>
+<ul>
+  <li><strong>Long upper wick</strong> = buyers tried to push price higher, but sellers overwhelmed them and pushed it back down. <em>Rejection above.</em></li>
+  <li><strong>Long lower wick</strong> = sellers tried to push price lower, but buyers overwhelmed them and pushed it back up. <em>Rejection below.</em></li>
+  <li><strong>No wick (Marubozu)</strong> = one side was completely dominant. Price never pulled back. Strong momentum.</li>
+</ul>
+<div class="lesson-chart"><span class="lesson-chart-title">WICK INTERPRETATION AT A GLANCE</span>
+<span class="bull">  Long lower wick → buyers rejected the lows → bullish sign</span>
+<span class="bear">  Long upper wick → sellers rejected the highs → bearish sign</span>
+<span class="bull">  Full green body  → strong buying, no pullback</span>
+<span class="bear">  Full red body    → strong selling, no bounce</span>
+<span class="label">  Doji (cross)     → indecision, no winner</span></div>
+<div class="lesson-warn">A single candle is just one word in a paragraph. One candle does not make a trade. You read candles <em>in context</em> — where they appear, what the trend is, where the level is, what the candles next to them look like.</div>`
+        },
+        { id:"m2-l2", title:"Lesson 2: Bullish Reversal Patterns (Buy Signals)",
+          body:`<p>A <em>reversal pattern</em> is a candlestick formation that appears at the end of a move and suggests price is about to change direction. Bullish reversal patterns appear at the bottom of downtrends — they warn that sellers are exhausted and buyers are taking over.</p>
+<h4>1. The Hammer</h4>
+<p>This is the single most reliable single-candle reversal pattern.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">THE HAMMER</span>
+<span class="bear">        │</span>
+<span class="bear">        │</span>
+<span class="bear">        │</span>
+<span class="bear">       ┌┴┐</span>
+<span class="bull">       └─┘  ◄ small real body at the TOP</span>
+<span class="bull">        │</span>
+<span class="bull">        │</span>
+<span class="bull">        │</span>
+<span class="bull">        │   ◄ long lower wick (at least 2× body size)</span>
+<span class="bull">        │</span>
+<span class="sup">  ──────┴──  Support zone — sellers tried to break below, buyers slammed it back up</span></div>
+<p><strong>Rules of a valid hammer:</strong></p>
+<ol>
+  <li>Must appear AFTER a visible downtrend (a series of lower highs and lower lows).</li>
+  <li>The lower wick must be at least <strong>twice the size</strong> of the real body.</li>
+  <li>The body (small) must be at the upper end of the range.</li>
+  <li>Ideally, it closes ON or NEAR a key support level.</li>
+  <li>Confirmation candle: the very next candle should be bullish (close above the hammer's high) — that confirms buying momentum.</li>
+</ol>
+<h4>2. Bullish Engulfing</h4>
+<p>A two-candle pattern. The second candle is a large green candle whose body completely <em>engulfs</em> (covers) the body of the previous red candle.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">BULLISH ENGULFING</span>
+<span class="bear">    ┌───┐</span>
+<span class="bear">    │   │   Red candle (day 1)</span>
+<span class="bear">    └─┬─┘</span>
+<span class="bear">      │</span>
+<span class="bull">  ┌───┴───────┐</span>
+<span class="bull">  │  GREEN    │  Big green candle (day 2) completely wraps the red body</span>
+<span class="bull">  └───────────┘</span></div>
+<p>This is one of the strongest bullish signals — it means after sellers tried to push price lower, buyers came in with overwhelming force and completely erased the sellers' gains in one period.</p>
+<h4>3. Morning Star (3 candles)</h4>
+<p>One of the most reliable reversal patterns, found frequently at major bottoms.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">MORNING STAR</span>
+<span class="bear">  ┌───────┐</span>
+<span class="bear">  │ RED   │  Candle 1: long red — sellers in control</span>
+<span class="bear">  └───┬───┘</span>
+<span class="label">      ┌─┐</span>
+<span class="label">      └─┘     Candle 2: small doji/spinning top — indecision</span>
+<span class="bull">    ┌───┴───┐</span>
+<span class="bull">    │ GREEN │  Candle 3: long green — buyers take over</span>
+<span class="bull">    └───────┘</span></div>
+<h4>4. Piercing Line</h4>
+<p>A red candle followed by a green candle that opens gap-down (below the prior low) but then rallies to close above the MIDPOINT of the prior red body. Shows strong rejection of lower prices.</p>
+<div class="lesson-example"><span class="ex-title">📊 Real example — EUR/USD, 15 March 2023, H1</span>
+After a sharp drop following the US banking crisis, EUR/USD printed a clear hammer on the 16:00 candle with low at 1.0515 right at the 1.0500 psychological support. The next candle broke the hammer high (confirmation). Price rallied 85 pips to 1.0600 over the next 6 hours. This is the exact pattern our bot looks for on the M15/H1 confirmation timeframes.</div>`
+        },
+        { id:"m2-l3", title:"Lesson 3: Bearish Reversal Patterns (Sell Signals)",
+          body:`<p>These appear at the top of uptrends and warn that buyers are exhausted.</p>
+<h4>1. Shooting Star</h4>
+<p>The mirror of the hammer. Small body at the bottom, long upper wick (at least 2× body). Appears at resistance.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">SHOOTING STAR</span>
+<span class="resist">───┬────── Resistance — buyers tried to break above, failed</span>
+<span class="bull">    │</span>
+<span class="bull">    │  ◄ long upper wick</span>
+<span class="bear">   ┌┴┐</span>
+<span class="bear">   └─┘  ◄ small real body at the BOTTOM</span></div>
+<h4>2. Bearish Engulfing</h4>
+<p>Mirror of bullish engulfing: a large red candle completely wraps the body of the prior green candle at resistance.</p>
+<h4>3. Evening Star</h4>
+<p>Mirror of morning star: long green → small doji → long red. Found at major tops.</p>
+<h4>4. Hanging Man</h4>
+<p>Looks identical to a hammer, but appears at the TOP of an uptrend. The long lower wick shows buyers tried to hold the price up, but the close back in the lower half warns of exhaustion. Wait for the next candle to be red to confirm.</p>
+<div class="lesson-warn"><span class="ex-title">⚠️ Critical rule</span>A hammer in the middle of a downtrend with no nearby support means nothing. A shooting star at a fresh high with no resistance nearby means nothing. Patterns must occur at STRUCTURAL LEVELS (support or resistance) to have any probability edge. The level is 80% of the signal; the candle is 20%.</div>`
+        },
+        { id:"m2-l4", title:"Lesson 4: Continuation Patterns & Candlestick Clusters",
+          body:`<p>Not all candles predict a turn. Some tell you the existing trend has more fuel.</p>
+<h4>Three White Soldiers</h4>
+<p>Three consecutive long green candles, each opening within the prior candle's body and each closing near its high. Strong bullish continuation — sellers cannot stop the climb.</p>
+<h4>Three Black Crows</h4>
+<p>The bearish mirror: three long red candles in a row. Strong bearish continuation.</p>
+<h4>Bull Flag / Bear Flag</h4>
+<p>After a strong impulsive move (the "flagpole"), price pulls back in a small, tight channel sloping against the trend (the "flag"). When price breaks out of the flag in the direction of the original move, it usually continues with about the same length as the flagpole.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">BULL FLAG (continuation)</span>
+<span class="bull">         ╱</span>
+<span class="bull">        ╱    ← Flagpole (impulsive move up)</span>
+<span class="bull">       ╱</span>
+<span class="label">      ╱╲</span>
+<span class="label">     ╱  ╲╱╲  ← Flag (tight pullback channel against trend)</span>
+<span class="bull">   ╲╱    ╲</span>
+<span class="bull">    ╲     ╲ ← Breakout, measured move ≈ flagpole length</span>
+<span class="bull">     ╲</span></div>
+<h4>Doji & Spinning Tops — indecision</h4>
+<p>A candle with very small body (open ≈ close) means neither side won. In the middle of a range a doji is meaningless. After a long run, a doji can be a warning of exhaustion — especially if it appears at a level.</p>
+<h3>Reading candles in clusters</h3>
+<p>Never trade a single candle in isolation. Read the <em>story</em> of 5–10 candles together:</p>
+<ul>
+  <li>A cluster of small candles near support with long lower wicks = buyers absorbing selling pressure. Bullish.</li>
+  <li>A cluster of small candles near resistance with long upper wicks = sellers absorbing buying pressure. Bearish.</li>
+  <li>Green candles getting smaller as price approaches resistance = buying momentum fading.</li>
+  <li>Red candles getting smaller as price approaches support = selling momentum fading.</li>
+</ul>`
+        }
+      ]
+    },
+    // ═══════════════════ MODULE 3 — STRUCTURE ══════════════════════════
+    {
+      id:"m3", icon:"fa-layer-group",
+      title:"Book 3: Support, Resistance & Market Structure",
+      sub:"The invisible architecture of price — where battles are fought and winners declared",
+      lessons:[
+        { id:"m3-l1", title:"Lesson 1: Support and Resistance — The Floor and Ceiling",
+          body:`<p>Price moves because buyers and sellers do battle. A <strong>support</strong> level is a price where buyers have repeatedly shown up in the past and pushed price higher — a floor. A <strong>resistance</strong> level is where sellers have repeatedly shown up and pushed price lower — a ceiling.</p>
+<p>Levels form because large players (banks, funds) have memory. They remember where they bought and sold profitably before. They have orders resting at those levels: buy limits below price, sell limits above price. When price reaches those orders, the level holds — until one side overwhelms the other.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">SUPPORT AND RESISTANCE (illustrated)</span>
+<span class="resist">  R2 ───────────────────────  ◄ ceiling: sellers here</span>
+<span class="label">         │  ╱╲    ╱╲    ╱╲</span>
+<span class="label">         │ ╱  ╲  ╱  ╲  ╱  ╲</span>
+<span class="label">         │╱    ╲╱    ╲╱    ╲</span>
+<span class="label">       ╱╲                     ╲</span>
+<span class="label">      ╱  ╲                     ╲</span>
+<span class="sup">  R1/S1 ──╲─────────────────────  ◄ flip-zone (broken resistance becomes support)</span>
+<span class="label">      ╱    ╲    ╱╲    ╱╲</span>
+<span class="label">     ╱      ╲  ╱  ╲  ╱  ╲</span>
+<span class="label">    ╱        ╲╱    ╲╱    ╲</span>
+<span class="sup">  S1 ────────────────────────  ◄ floor: buyers here</span></div>
+<h3>How to draw levels correctly</h3>
+<ol>
+  <li><strong>Zoom out first.</strong> Start on D1, then H4. Draw levels on the HIGHER timeframes — they are the most important.</li>
+  <li><strong>Connect wicks, not closes.</strong> Levels are zones, not exact prices. Look for clusters of highs/lows in the same area.</li>
+  <li><strong>A level touched 3+ times is significant.</strong> But the MORE times a level is touched, the WEAKER it becomes (each test consumes orders resting there — eventually there's no one left to defend it).</li>
+  <li><strong>Round numbers matter.</strong> 1.0800, 1.1000, 1.0500, 150.00 — institutions place orders at round numbers; these act as magnet levels.</li>
+  <li><strong>Draw zones, not lines.</strong> Price rarely turns at exactly the same pip. A good "level" is a 10–30 pip zone where multiple swing highs/lows cluster.</li>
+</ol>
+<h3>Role reversal (the flip)</h3>
+<p>The single most important concept in structure trading: <strong>when a level breaks, it flips role.</strong></p>
+<ul>
+  <li>A broken RESISTANCE becomes new SUPPORT (buyers now defend it).</li>
+  <li>A broken SUPPORT becomes new RESISTANCE (sellers now defend it).</li>
+</ul>
+<div class="lesson-example"><span class="ex-title">📊 Real example — GBP/USD, 1.2500</span>
+For 2 months in late 2024, 1.2500 acted as strong resistance — GBPUSD hit it three times and sold off 80–120 pips each time. On the fourth attempt (22 Oct), price broke cleanly above 1.2500 and closed at 1.2540. Three days later, price pulled back to 1.2500 and bounced 60 pips. The old ceiling had become the new floor. That is a textbook retest buy — exactly the setup this bot prioritises.</div>`
+        },
+        { id:"m3-l2", title:"Lesson 2: Swing Highs, Swing Lows & Why They Matter",
+          body:`<p>A <strong>swing high</strong> is any price bar whose high is higher than the bars on either side of it. In this bot, we use a "5-bar" definition: a swing high has a higher high than the two bars before AND the two bars after it.</p>
+<p>A <strong>swing low</strong> is the mirror — a low lower than two bars on each side.</p>
+<p>Why this matters: swing highs and swing lows are the <em>turning points</em> — the exact prices where momentum shifted from buyers to sellers or vice versa. Institutional orders cluster around these points.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">SWING HIGHS AND LOWS DEFINE STRUCTURE</span>
+<span class="bull">         ╱╲ SH</span>
+<span class="bull">        ╱  ╲</span>
+<span class="bull">       ╱    ╲  ╱╲ SH</span>
+<span class="bull">      ╱      ╲╱  ╲</span>
+<span class="bull">   SH ╱            ╲</span>
+<span class="bull">    ╱╲              ╲</span>
+<span class="label">   ╱  ╲</span>
+<span class="sup">──╱────╲─────────────</span>
+<span class="bull"> SL     SL</span></div>
+<p>In an uptrend, the swing lows form your support structure — that's where you place stops. In a downtrend, the swing highs form your resistance. When a swing low is broken in an uptrend, the uptrend is damaged; when a swing high is broken in a downtrend, the downtrend is damaged.</p>
+<div class="lesson-tip"><span class="ex-title">💡 Bot detail</span>This engine scans all 5 timeframes and detects swing highs/lows automatically (5-bar lookback). It then marks recent levels and uses them for SL/TP placement. You can see them rendered on the chart as dashed red/green lines.</div>`
+        },
+        { id:"m3-l3", title:"Lesson 3: Trends — How to Read the Market's Direction",
+          body:`<p>There are only three states a market can be in:</p>
+<h4>1. Uptrend (Bull Market)</h4>
+<p>Price makes a sequence of <strong>Higher Highs (HH)</strong> and <strong>Higher Lows (HL)</strong>. Each rally reaches a new high; each pullback ends higher than the previous pullback. Buyers are in control.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">UPTREND — HH / HL structure</span>
+<span class="bull">            ╱╲ HH2</span>
+<span class="bull">           ╱  ╲╱╲</span>
+<span class="bull">      HH1 ╱     ╲╲</span>
+<span class="bull">     ╱╲  ╱       ╲╲</span>
+<span class="bull">    ╱  ╲╱ HL2     ╲ HL3 forming...</span>
+<span class="bull">   ╱ HL1</span>
+<span class="bull">  ╱</span></div>
+<h4>2. Downtrend (Bear Market)</h4>
+<p>Price makes a sequence of <strong>Lower Highs (LH)</strong> and <strong>Lower Lows (LL)</strong>. Each push down reaches a new low; each pullback ends lower than the previous pullback. Sellers are in control.</p>
+<h4>3. Range / Sideways / Consolidation</h4>
+<p>Price bounces between a horizontal support and a horizontal resistance. Neither side can establish dominance. Ranges are dangerous for trend traders — the chop will shake you out repeatedly. Trade range strategies (buy support/sell resistance) or wait for a breakout.</p>
+<h3>The 1-2-3 structure reversal</h3>
+<p>A trend ends when the sequence breaks. In an uptrend:</p>
+<ol class="lesson-step-list">
+  <li>Price makes a higher high — then breaks below the last higher low (HL is violated).</li>
+  <li>The subsequent rally fails to make a new high (prints a Lower High = LH).</li>
+  <li>Price breaks below the low that formed after the LH. Trend is confirmed reversed.</li>
+</ol>
+<p>This is the earliest objective signal that a trend has ended. You do not need a magical indicator — structure tells you everything.</p>
+<div class="lesson-warn"><span class="ex-title">⚠️ The #1 rule of this entire methodology</span>Only trade in the direction of higher-timeframe structure. If D1 is in an uptrend (HH/HL), take ONLY buy signals on H4/H1/M15. If D1 is in a downtrend (LH/LL), take ONLY sells. If D1 is in a range, wait for a breakout or don't trade. Trading against the higher timeframe is the #1 mistake new traders make.</div>`
+        },
+        { id:"m3-l4", title:"Lesson 4: Breakouts, Retests, Fakeouts",
+          body:`<p>A <strong>breakout</strong> occurs when price closes beyond a support or resistance level with conviction. A break of resistance should trigger momentum from breakout buyers (people entering on the break) and stop-loss buyers (shorts being stopped out, which also drives buying).</p>
+<h3>The anatomy of a genuine breakout</h3>
+<ul>
+  <li>Price approaches a tested level (3+ touches).</li>
+  <li>On the approach, the candles leading into the level are impulsive (big bodies, small wicks, in the direction of the break).</li>
+  <li>The breakout candle CLOSES beyond the level — not just wick-piercing it.</li>
+  <li>Ideally volume increases on the break (we can't see tick volume in forex the same way as stocks, but ATR expansion is a proxy).</li>
+  <li>After the break, price retests the level as its new role (e.g. broken resistance becomes support) and holds — that's the SAFEST entry.</li>
+</ul>
+<div class="lesson-chart"><span class="lesson-chart-title">BREAKOUT AND RETEST</span>
+<span class="resist">  R ───────────┬───────────  ◄ resistance (tested 3 times)</span>
+<span class="label">          ╱╲  │╱╲</span>
+<span class="label">         ╱  ╲ │╱  ╲</span>
+<span class="label">        ╱    ╲│BREAK╲──→  ◄ breaks and closes above R</span>
+<span class="label">       ╱      │    ╱╲</span>
+<span class="sup">  ─────────────┼───╱──╲───  ◄ RETEST — old R now acts as S</span>
+<span class="label">              │  ╱    ╲</span>
+<span class="bull">              │ ╱      ╲  ◄ entry on retest bounce</span></div>
+<h3>Fakeouts (false breaks)</h3>
+<p>A <strong>fakeout</strong> is when price pierces a level but fails to close beyond it, and snaps back into the range. They are designed to trap breakout traders who enter on the wick-pierce.</p>
+<p>The classic fakeout is a "stop hunt" — price spikes just above a resistance level, triggers breakout orders and stops of short traders, then collapses back into the range. These are brutal for new traders who FOMO into the break.</p>
+<div class="lesson-tip"><span class="ex-title">💡 How to avoid fakeouts</span>Wait for a CLOSE beyond the level — not a wick. Even better: wait for the retest. Entering on a retest sacrifices a few pips of profit but eliminates 70% of fakeouts. This bot requires both a close and a structural confirmation before signalling.</div>
+<h3>The "stop hunt" phenomenon</h3>
+<p>This is controversial, but it's real: price will often visit obvious levels (recent swing highs/lows, round numbers) just to take out stops before reversing. Why? Because the large players need liquidity to enter — and clusters of retail stop-losses are free liquidity. Don't take it personally; just place your stops slightly beyond structure rather than at the exact level.</p>`
+        }
+      ]
+    },
+    // ═══════════════════ MODULE 4 — INDICATORS ═════════════════════════
+    {
+      id:"m4", icon:"fa-wave-square",
+      title:"Book 4: Indicators — Tools, Not Oracles",
+      sub:"EMA, SMA, RSI, MACD, ATR — what they actually measure and how to combine them",
+      lessons:[
+        { id:"m4-l1", title:"Lesson 1: Moving Averages — Trend's Best Friend",
+          body:`<p>A <em>moving average</em> (MA) is simply the average closing price over the last N periods, plotted as a line on your chart. It "smooths" price so you can see the trend through the noise.</p>
+<p>We use four in this system:</p>
+<table>
+<tr><th>Indicator</th><th>Length</th><th>Type</th><th>Purpose</th></tr>
+<tr><td>Fast EMA</td><td>9</td><td>Exponential</td><td>Short-term momentum; reacts fast to turns</td></tr>
+<tr><td>Slow EMA</td><td>21</td><td>Exponential</td><td>Short-term trend; our "trade trigger" MA</td></tr>
+<tr><td>Medium SMA</td><td>50</td><td>Simple</td><td>Medium-term trend; the "working" average</td></tr>
+<tr><td>Long SMA</td><td>200</td><td>Simple</td><td>Long-term trend; institutional benchmark</td></tr>
+</table>
+<p><strong>Exponential (EMA)</strong> gives more weight to recent candles — it reacts faster. <strong>Simple (SMA)</strong> weights every candle equally — it's slower but more stable.</p>
+<h3>Stack alignment — the trend compass</h3>
+<p>When all four MAs are aligned in order and price is on the right side of them, the trend is strong and healthy:</p>
+<div class="lesson-chart"><span class="lesson-chart-title">BULL STACK (strong uptrend)</span>
+<span class="bull">  Price</span>
+<span class="bull">  ───── EMA 9 ─────    ◄ fastest, closest to price</span>
+<span class="bull">  ─────── EMA 21 ─────</span>
+<span class="bull">  ───────── SMA 50 ────────</span>
+<span class="bull">  ───────────── SMA 200 ────────────  ◄ slowest, farthest from price</span>
+<span class="label">  All pointing UP, price above all → STRONG BULLISH TREND</span></div>
+<p>The reverse (SMA200 on top, EMA9 on bottom, price below all) is a <strong>bear stack</strong> — strong downtrend.</p>
+<p>When the MAs are tangled, twisted, and crossing each other frequently, the market is in a range or transition — avoid trending strategies there.</p>
+<h3>Golden cross and death cross</h3>
+<p>When the SMA 50 crosses above the SMA 200 from below, that's a <strong>golden cross</strong> — a major long-term bullish signal. When SMA 50 crosses below SMA 200, that's a <strong>death cross</strong> — long-term bearish signal. These don't happen often (once every 1–3 years on D1), but they have correctly called every major bull and bear market for decades.</p>
+<div class="lesson-warn">Moving averages are LAGGING indicators. They tell you what HAS happened, not what WILL happen. Never use an MA crossover alone as an entry signal — wait for price action confirmation at structure.</div>`
+        },
+        { id:"m4-l2", title:"Lesson 2: RSI — Momentum & Overbought/Oversold",
+          body:`<p>The <strong>Relative Strength Index (RSI)</strong> is a momentum oscillator that compares the size of recent up-moves to recent down-moves over 14 periods. It outputs a number between 0 and 100.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">RSI ZONES</span>
+<span class="bear">  100 │─── Overbought territory (>70)</span>
+<span class="bear">   70 │┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄</span>
+<span class="label">      │   Neutral zone</span>
+<span class="label">   50 │───────────────────  ◄ centre line</span>
+<span class="label">      │   Neutral zone</span>
+<span class="bull">   30 │┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄</span>
+<span class="bull">    0 │─── Oversold territory (<30)</span></div>
+<h3>Four RSI signals we use</h3>
+<ol>
+  <li><strong>Overbought (RSI > 70)</strong>: momentum is stretched upward — a pullback may be coming. <em>In strong trends, RSI can stay above 70 for weeks.</em></li>
+  <li><strong>Oversold (RSI < 30)</strong>: momentum is stretched downward — a bounce may be coming. Same caveat.</li>
+  <li><strong>50-cross bullish</strong>: RSI crosses back ABOVE 50 from below — momentum is shifting up. Used as confirmation.</li>
+  <li><strong>50-cross bearish</strong>: RSI crosses back BELOW 50 from above — momentum shifting down.</li>
+</ol>
+<h3>The real power of RSI: divergence</h3>
+<p><strong>Bullish divergence</strong> occurs when price makes a NEW LOWER LOW, but RSI makes a HIGHER LOW. Price is falling, but momentum is weakening — a reversal is likely. This is one of the most reliable early warning signals.</p>
+<p><strong>Bearish divergence</strong> is the mirror: price makes a new higher high, RSI makes a lower high — momentum fading at the top.</p>
+<div class="lesson-example"><span class="ex-title">📊 Worked example — GBP/USD D1, Sep 2022 crash</span>
+After GBP/USD crashed to an all-time low of 1.0350 during the Truss mini-budget crisis, daily RSI printed a clear bullish divergence: price made a lower low (1.0350 vs 1.0538) but RSI made a higher low (21 vs 18). Price rallied 1,500 pips over the next 3 months to 1.2450. Divergence on D1 is powerful — we always check for it.</div>`
+        },
+        { id:"m4-l3", title:"Lesson 3: MACD — The Momentum Trigger",
+          body:`<p><strong>MACD</strong> (Moving Average Convergence Divergence) consists of three parts:</p>
+<ul>
+  <li><strong>MACD line</strong>: the difference between the 12-period EMA and 26-period EMA</li>
+  <li><strong>Signal line</strong>: 9-period EMA of the MACD line</li>
+  <li><strong>Histogram</strong>: the difference between MACD and signal lines, plotted as bars above/below zero</li>
+</ul>
+<h3>How we use it</h3>
+<p>MACD is <em>not</em> a primary indicator for us — it is an <strong>entry timing trigger</strong>. We use it on the confirmation timeframe (H1/M15) to help us pick the moment to enter once all higher-timeframe conditions are met.</p>
+<ul>
+  <li><strong>Bullish crossover</strong>: MACD line crosses above signal line from below, ideally while below the zero line → momentum turning up.</li>
+  <li><strong>Bearish crossover</strong>: MACD crosses below signal from above → momentum turning down.</li>
+  <li><strong>Histogram shrinking toward zero</strong>: current momentum losing steam.</li>
+  <li><strong>Divergence</strong>: same principle as RSI divergence — price makes new extreme but MACD does not → warning of reversal.</li>
+</ul>
+<div class="lesson-warn">MACD crossovers give many false signals in choppy markets. Never use MACD as your sole reason for entering. It is a timing tool — we only act on a crossover when D1 trend, H4 structure, and H1 price action all agree.</div>`
+        },
+        { id:"m4-l4", title:"Lesson 4: ATR — The Most Underrated Indicator in Trading",
+          body:`<p><strong>ATR</strong> (Average True Range) measures volatility — specifically, how much price typically moves in one bar, averaged over 14 periods. ATR does not tell you DIRECTION. It tells you SIZE.</p>
+<p>For EUR/USD on H1, a typical ATR is about 10–15 pips. During news it might spike to 30+. During Asian chop it might sit at 5–6.</p>
+<h3>Three critical uses of ATR</h3>
+<h4>1. Stop loss distance</h4>
+<p>We place stops at <strong>1.5 × ATR</strong> beyond the recent swing high/low. This gives enough room that normal noise won't stop us out, but tight enough that our risk is controlled. If ATR is 12 pips, SL is 18 pips away. If ATR is 25 pips (volatile), SL is 37 pips away — and we trade smaller size to keep dollar risk the same.</p>
+<h4>2. Position sizing</h4>
+<p>When ATR widens, each pip is "more dangerous" — your stop has to be wider, so you reduce lot size to keep the dollar risk constant (see Book 5). This is professional risk management. Beginners use the same lot size regardless of volatility — that's why they get destroyed on news days.</p>
+<h4>3. Volatility filter</h4>
+<p>This bot refuses to trade when ATR is more than 50% above its recent average (extreme volatility — usually news) or when ATR is less than 30% of its average (dead market — chop, not enough reward potential).</p>
+<div class="lesson-math">Lot Size = (Account Risk in R) / (Stop Distance in Pips × Pip Value per Lot)</div>
+<div class="lesson-example"><span class="ex-title">📊 Position-size math</span>
+Account: R10,000. Risk per trade: 1% = R100.<br/>
+Trade: EUR/USD BUY, entry 1.0850, SL 1.0832 (18 pips).<br/>
+Pip value for 1.00 standard lot on EUR/USD ≈ $10/ pip ≈ R185/pip.<br/>
+Lot = R100 / (18 × R18.5) ≈ R100 / R333 ≈ <strong>0.30 lots</strong>.<br/>
+If ATR doubles to 24 pips, SL becomes 36 pips: Lot = R100 / (36 × R18.5) ≈ <strong>0.15 lots</strong> — we cut size in half.<br/>
+This is how professionals stay in the game through all market conditions.</div>`
+        }
+      ]
+    },
+    // ═══════════════════ MODULE 5 — RISK MANAGEMENT (book-length) ══════
+    {
+      id:"m5", icon:"fa-shield-halved",
+      title:"Book 5: Risk Management — The Chapter That Saves Your Account",
+      sub:"If you only read one chapter, read this one. Risk management is trading.",
+      lessons:[
+        { id:"m5-l1", title:"Lesson 1: Why Risk Management is EVERYTHING",
+          body:`<p>Let me tell you a story. I know a trader named Thabo from Pretoria. He was a talented chart reader. He could spot a good setup better than most professionals. In his first three months he turned R5,000 into R75,000. He was convinced he was a genius. Then he made the mistake that destroys almost every talented new trader: he decided the rules didn't apply to him.</p>
+<p>He took a GBP/JPY trade during a news event with no stop loss. When the trade went against him, he added to the position. Then added again. Then again, praying for a reversal. Over the course of three hours he lost R82,000 — more than his entire account.</p>
+<p>Thabo was not a bad trader. He was an untaught trader. He had no risk management. And risk management is not <em>part</em> of trading — it IS trading. Entry strategies are easy; anyone can learn to spot a pattern. Risk management is the discipline that keeps you in the game through the inevitable losing streaks.</p>
+<div class="lesson-quote">You can have the best entry system in the world and still go broke without risk management. You can have a mediocre entry system and become wealthy with strict risk management.</div>
+<h3>The math of ruin</h3>
+<p>The table below shows your probability of losing 50% of your account before doubling it, at different risk-per-trade and win-rate assumptions:</p>
+<table>
+<tr><th>Risk per trade</th><th>Win rate 40% (1:2 R:R)</th><th>Win rate 50% (1:2 R:R)</th><th>Win rate 50% (1:1 R:R)</th></tr>
+<tr><td>1%</td><td>25% ruin risk</td><td>3% ruin risk</td><td>13% ruin risk</td></tr>
+<tr><td>2%</td><td>50% ruin risk</td><td>13% ruin risk</td><td>33% ruin risk</td></tr>
+<tr><td>5%</td><td>85% ruin risk</td><td>50% ruin risk</td><td>67% ruin risk</td></tr>
+<tr><td>10%</td><td>99% ruin risk</td><td>92% ruin risk</td><td>93% ruin risk</td></tr>
+</table>
+<p>Look at the numbers. At 1% risk with a decent edge, ruin is unlikely. At 5% it's a coin flip. At 10% you are GUARANTEED to blow up over a long enough timeline.</p>
+<div class="lesson-warn"><span class="ex-title">⚠️ Non-negotiable rules</span>
+1. Never risk more than 1–2% of account on a single trade.<br/>
+2. Always use a stop loss — place it BEFORE you enter.<br/>
+3. Never move your stop further away when price goes against you.<br/>
+4. Never add to a losing position ("averaging down").<br/>
+5. Have a daily loss limit (3% of account) — hit it and shut the platform.<br/>
+6. Never trade with money you cannot afford to lose.</div>`
+        },
+        { id:"m5-l2", title:"Lesson 2: Position Sizing — The Exact Formula",
+          body:`<p>Position sizing is the most important calculation you will ever make in trading. The formula is simple:</p>
+<div class="lesson-math">Lot Size = (Account × Risk%) / (Pips_to_SL × Pip_Value_per_Lot)</div>
+<p>Where:</p>
+<ul>
+  <li><strong>Account</strong> = current account balance</li>
+  <li><strong>Risk%</strong> = percentage you'll risk (we use 0.01 = 1%)</li>
+  <li><strong>Pips_to_SL</strong> = distance from entry to stop loss, in pips</li>
+  <li><strong>Pip_Value_per_Lot</strong> = how much 1 pip is worth in your account currency per 1.00 lot</li>
+</ul>
+<h3>Pip values (ZAR account, approximate)</h3>
+<table>
+<tr><th>Pair</th><th>Pip size</th><th>Value of 1 pip per 1.00 lot</th></tr>
+<tr><td>EUR/USD</td><td>0.0001</td><td>~ R185 (at USD/ZAR ≈ 18.50)</td></tr>
+<tr><td>GBP/USD</td><td>0.0001</td><td>~ R185</td></tr>
+<tr><td>USD/JPY</td><td>0.01</td><td>~ R170 (varies with USD/JPY rate)</td></tr>
+<tr><td>USD/CHF</td><td>0.0001</td><td>~ R205 (varies with CHF rate)</td></tr>
+<tr><td>AUD/USD</td><td>0.0001</td><td>~ R185</td></tr>
+<tr><td>USDCAD</td><td>0.0001</td><td>~ R175 (varies with CAD rate)</td></tr>
+<tr><td>XAU/USD (Gold)</td><td>0.10</td><td>~ R185</td></tr>
+</table>
+<h3>Worked examples</h3>
+<div class="lesson-box">
+<div class="lesson-box-title">📊 Example 1 — EUR/USD BUY</div>
+Account: R10,000 | Risk: 1% = R100<br/>
+Entry: 1.0850 | SL: 1.0832 | Distance: 18 pips<br/>
+Pip value: R18.50 per 0.10 lot (or R185 per 1.00 lot)<br/>
+<strong>Risk per 0.10 lot</strong> = 18 × R18.50 = R333 per 0.10 lot? Wait — no. Let's do this properly.<br/>
+Pip value on R-denominated account ≈ R18.50/pip per 1.00 lot.<br/>
+For 0.10 lots: R1.85/pip. 18 pips × R1.85 = R33.30 risk per 0.10 lot.<br/>
+So lots needed for R100 risk: R100 / R33.30 per 0.10 lot ≈ <strong>0.30 lots</strong>.
+</div>
+<div class="lesson-box">
+<div class="lesson-box-title">📊 Example 2 — GBP/USD SELL (volatile day)</div>
+Account: R10,000 | Risk: 1% = R100<br/>
+Entry: 1.2750 | SL: 1.2795 (wider due to ATR) | Distance: 45 pips<br/>
+Pip value: R18.50 per 0.10 lot → R832 risk per 1.00 lot / 45 pips<br/>
+At 0.10 lot: 45 × R1.85 = R83.25 risk.<br/>
+Max lots for R100 risk: R100 / R832 per 1.00 lot ≈ <strong>0.12 lots</strong>.<br/>
+Notice: wider stop → smaller size. Your dollar risk stays the same.
+</div>
+<p>The bot calculates all of this for you automatically. But you MUST understand why it does what it does.</p>`
+        },
+        { id:"m5-l3", title:"Lesson 3: Risk/Reward — Why 1:1.5 is the Floor",
+          body:`<p><strong>Risk/Reward ratio (R:R)</strong> is simply how much you stand to GAIN divided by how much you RISK.</p>
+<p>A trade risking 30 pips to make 60 pips is 1:2 R:R.</p>
+<p>A trade risking 40 pips to make 40 pips is 1:1.</p>
+<p>A trade risking 50 pips to make 25 pips is 1:0.5 — and you should NEVER take it.</p>
+<div class="lesson-math">R:R = (Take Profit distance from Entry) ÷ (Stop Loss distance from Entry)</div>
+<p>The magic of trading is that you don't need to win most of the time to be profitable. You just need your wins to be BIGGER than your losses:</p>
+<table>
+<tr><th>R:R</th><th>Win rate needed to break even</th><th>Comment</th></tr>
+<tr><td>1:1</td><td>50%</td><td>Need to win half the time</td></tr>
+<tr><td>1:1.5</td><td>40%</td><td>Win 4 out of 10 and break even</td></tr>
+<tr><td>1:2</td><td>33%</td><td>Win 1 in 3 and break even</td></tr>
+<tr><td>1:3</td><td>25%</td><td>Win 1 in 4 and break even</td></tr>
+<tr><td>1:5</td><td>17%</td><td>Win 1 in 6 and break even</td></tr>
+</table>
+<div class="lesson-example"><span class="ex-title">📊 Expectancy math</span>
+If you win 45% of trades, average win = 2R, average loss = 1R:<br/>
+Expectancy per trade = (0.45 × 2R) − (0.55 × 1R) = 0.9R − 0.55R = <strong>+0.35R per trade</strong><br/>
+That means every trade you take is worth +0.35R on average. At 1% risk, that's +0.35% of account per trade. 10 trades a month = +3.5% per month. Compounded over a year that's 50%+. This is how slow, steady fortunes are built — NOT by chasing 100% winners.</div>
+<h4>Scaling out (partial profit-taking)</h4>
+<p>Our preferred approach:</p>
+<ol>
+  <li>At TP1 (1.5R), take off 50% of the position, move stop loss to break-even (entry). Now the remaining 50% is risk-free.</li>
+  <li>At TP2 (3R), take off another 30%.</li>
+  <li>Let the final 20% run with a trailing stop, capturing extended moves if price runs.</li>
+</ol>
+<p>By taking partial profits, you lock in gains early and give yourself a chance to catch the big runners without giving back all your profit.</p>`
+        },
+        { id:"m5-l4", title:"Lesson 4: The Trading Plan, Daily Routine & Loss Protocols",
+          body:`<h3>Your written trading plan</h3>
+<p>Before you place one more real trade, write down:</p>
+<ul>
+  <li>Which pairs you trade (stick to the 10 in the bot)</li>
+  <li>Which sessions you trade (London/NY overlap preferred)</li>
+  <li>Your entry rules (specifically)</li>
+  <li>Your SL rules (1.5 ATR behind swing)</li>
+  <li>Your TP rules (1.5R min, scale out at 1.5R/3R)</li>
+  <li>Max position size (1% per trade, max 2 open trades)</li>
+  <li>Daily loss limit (3%) and weekly loss limit (6%)</li>
+  <li>When you DON'T trade (news, bank holidays, Friday afternoons)</li>
+</ul>
+<p>Print it out and tape it next to your screen.</p>
+<h3>Daily routine</h3>
+<ol class="lesson-step-list">
+  <li><strong>Pre-market (08:00 SAST)</strong>: Check economic calendar. Mark major news for the day. Review D1 charts of all pairs, noting levels and trend direction.</li>
+  <li><strong>London open (09:00)</strong>: Drop to H4/H1. Wait for setups. Don't force trades — if nothing is there, walk away.</li>
+  <li><strong>Entry</strong>: When a setup triggers, write down entry, SL, TP, and reason BEFORE clicking buy/sell. Log in the journal.</li>
+  <li><strong>Management</strong>: Once in, set alerts and walk away. Do NOT watch every tick (it causes stupid decisions).</li>
+  <li><strong>Review (19:00)</strong>: Journal all trades — winners AND losers. What went right? What went wrong? Did you follow the plan?</li>
+</ol>
+<h3>Loss protocol — what to do after a loss</h3>
+<div class="lesson-warn">
+<ul>
+<li>❌ Do NOT open another trade immediately to "make it back."</li>
+<li>❌ Do NOT increase size on the next trade.</li>
+<li>❌ Do NOT move your stop, cancel your stop, or revenge-trade.</li>
+<li>✅ DO step away for 30 minutes. Drink water. Walk.</li>
+<li>✅ DO review the losing trade in your journal. Was it a valid setup that just didn't work out? Or did you break a rule?</li>
+<li>✅ If you lose twice in a row, stop for the day. Two losses means your edge is not present today.</li>
+</ul>
+</div>`
+        }
+      ]
+    },
+    // ═══════════════════ MODULE 6 — PSYCHOLOGY ════════════════════════
+    {
+      id:"m6", icon:"fa-brain",
+      title:"Book 6: The Psychology of a Disciplined Trader",
+      sub:"80% of trading happens between your ears",
+      lessons:[
+        { id:"m6-l1", title:"Lesson 1: The Six Emotional Enemies (and How to Beat Them)",
+          body:`<h4>1. Fear</h4>
+<p>Causes you to hesitate when you should enter, to exit winning trades too early, and to widen stops on losing trades. The antidote: <em>trust the system</em>. If the setup meets your written criteria, take it. The outcome of one trade is random; the edge plays out over 50+ trades.</p>
+<h4>2. Greed</h4>
+<p>Makes you over-leverage, add to positions too late, skip taking profit when TP hits because "it might go further". The antidote: <em>have pre-set TP levels and take them</em>. The market always gives another setup; it does not always give back your profit.</p>
+<h4>3. Hope</h4>
+<p>The most dangerous emotion in trading. Hope makes you move stops, hold losers, add to losing positions because "it must come back". Sometimes it doesn't. The antidote: <em>your stop loss is where you are wrong. If it hits, you are wrong. Accept it and move on.</em></p>
+<h4>4. Revenge</h4>
+<p>After a loss, the amygdala screams "GET IT BACK". Traders revenge-trade to punish the market for taking their money. It never works. The market is not a person and it does not care about you. The antidote: <em>enforce a hard rule of zero trades for 30 minutes after any loss. Two losses in a row = close the platform for the day.</em></p>
+<h4>5. Overconfidence</h4>
+<p>Three wins in a row and you think you're Rain Man. You start taking sloppy setups, sizing up, skipping the checklist. This is how you give back a month's profit in a day. The antidote: <em>review your trades after every win. Did you actually follow the plan, or did you just get lucky?</em></p>
+<h4>6. Boredom</h4>
+<p>The quiet killer. On slow days you will itch to trade just because sitting still is uncomfortable. Most "boredom trades" lose money. The antidote: <em>the market owes you nothing. Not trading IS a position. The best trade of the day is often no trade.</em></p>
+<div class="lesson-quote">The market does not reward intelligence. It rewards patience, discipline, and emotional control. A trader of average intelligence with perfect discipline will beat a genius with no discipline every single time.</div>`
+        },
+        { id:"m6-l2", title:"Lesson 2: Building Discipline Through Process",
+          body:`<p>Discipline is not a personality trait. It is a HABIT. You build it the same way you build muscle — through repetition and small daily wins.</p>
+<h3>Practical techniques</h3>
+<ol>
+  <li><strong>The checklist rule.</strong> Before every trade, physically (or mentally) tick off your pre-trade checklist. If you cannot tick every box, no trade. The bot does this for you — if the signal is below 60 strength, it says NO TRADE. Train yourself to do the same.</li>
+  <li><strong>The 24-hour rule.</strong> Never trade the day you open your account. Never size up until you've executed 50 trades at the current size profitably.</li>
+  <li><strong>The journal habit.</strong> Write a paragraph on every trade within 5 minutes of opening it. Screenshot it. After 100 trades you will SEE your patterns of error — and you can fix them.</li>
+  <li><strong>Meditation / breathing.</strong> Before you click Buy/Sell, take three deep breaths. Check your heart rate. If you're excited or angry, you shouldn't be clicking anything.</li>
+  <li><strong>Accountability.</strong> Show your journal to another trader you respect. The fear of showing someone a stupid revenge trade is a powerful deterrent.</li>
+  <li><strong>Monkey-brain detachment.</strong> Remind yourself: the outcome of any ONE trade is random. You don't care about any single trade — you care about the average of 100 trades.</li>
+</ol>`
+        },
+        { id:"m6-l3", title:"Lesson 3: Expectancy, Sample Size & The Casino Mindset",
+          body:`<p>Let me tell you how a casino makes money. On a roulette wheel, there are 37 numbers (0–36). If you bet on a single number, the payout is 35-to-1. But the odds are 37-to-1 against you. The casino's edge is (35/37) − 1 = −2.7% for the player (the house wins 2.7% of every bet on average).</p>
+<p>Does the casino care that someone just won R1 million on a single number? No. They don't even flinch. Because they know that over 100,000 spins, that edge is mathematically guaranteed to produce profit.</p>
+<p>Your job as a trader is to BE THE CASINO, not the gambler.</p>
+<div class="lesson-math">Expectancy = (Win Rate × Average Win) − (Loss Rate × Average Loss)</div>
+<p>If expectancy is positive, every trade you take puts money in your pocket ON AVERAGE — even though individual trades will lose.</p>
+<div class="lesson-example"><span class="ex-title">📊 Example</span>
+After 100 trades: 45 wins, 55 losses.<br/>
+Average win: R200 (2R with 1% = R100 risk, 2R target).<br/>
+Average loss: R100 (1R).<br/>
+Gross wins: 45 × R200 = R9,000.<br/>
+Gross losses: 55 × R100 = R5,500.<br/>
+Net profit: R3,500 over 100 trades = <strong>+R35 per trade average</strong>.<br/>
+You lost MORE TRADES than you won, and you still made R3,500. That is the power of risk/reward.
+</div>
+<div class="lesson-tip"><span class="ex-title">💡 Mindset shift</span>Stop judging yourself on individual trades. Judge yourself on whether you FOLLOWED YOUR PROCESS. Process wins = profit over time. Process breaks = losses over time. P/L follows process; the rest is noise.</div>`
+        }
+      ]
+    },
+    // ═══════════════════ MODULE 7 — FULL WALKTHROUGH ══════════════════
+    {
+      id:"m7", icon:"fa-magnifying-glass-chart",
+      title:"Book 7: A Complete Trade Walkthrough — EUR/USD Step by Step",
+      sub:"Putting everything together: D1 → H4 → H1 → M15 → M5 on a real setup",
+      lessons:[
+        { id:"m7-l1", title:"Lesson 1: Step 1 — Daily (D1) Trend Bias",
+          body:`<p>This is a real trade setup from January 2025, walking the multi-timeframe process exactly as the bot does it. We'll look for a BUY on EUR/USD.</p>
+<h3>D1 (Daily) context</h3>
+<p>Step one: ALWAYS look at D1 first. This is the "big picture" — where institutions are positioned.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">EUR/USD D1 — late December 2024 / January 2025</span>
+<span class="bull">                              1.1000 ─── R1 (recent swing high)</span>
+<span class="bull">                                  ╱╲</span>
+<span class="bull">                              ╱╱  ╲╱╲</span>
+<span class="bull">                           ╱╱        ╲</span>
+<span class="bull">                        ╱╱             ╲</span>
+<span class="label">                     ╱╱                 ╲  ← pullback</span>
+<span class="sup">   support 1.0700 ──╱─────────────────────╲───────</span>
+<span class="bull">                  ╱                        ╲╱╲</span>
+<span class="bull">               ╱╱                            ╲</span>
+<span class="bull">            ╱╱                               ╲ ← we are here</span>
+<span class="bull">         ╱╱</span>
+<span class="sup">   1.0600 ──── major support (prior breakout zone)</span>
+<span class="label"></span>
+<span class="label">   Assessment: HH/HL sequence intact (uptrend). Pullback to 1.0700 confluence zone.</span>
+<span class="label">   MAs: EMA9 > EMA21 > SMA50 — bull stack. RSI pulling back to 42 from overbought — healthy.</span>
+<span class="bull">   → D1 BIAS = BULLISH. We only look for BUYS.</span>
+</div>
+<p>At this point we do NOT have a trade. We only have a DIRECTIONAL BIAS. Now we drop to H4 to look for structure.</p>`
+        },
+        { id:"m7-l2", title:"Lesson 2: Step 2 — H4 Structure & Key Level",
+          body:`<p>Dropping to H4, we zoom into the pullback to find the exact structural zone where buyers might return.</p>
+<div class="lesson-chart"><span class="lesson-chart-title">EUR/USD H4 — January 2025 pullback detail</span>
+<span class="bull">       1.0850 ── EMA21 resistance</span>
+<span class="label">             ╱╲  ╱╲</span>
+<span class="label">            ╱  ╲╱  ╲</span>
+<span class="label">           ╱    ╲    ╲</span>
+<span class="sup">  1.0750 ─╱─────────────╲── 61.8% Fibonacci retracement + prior swing low</span>
+<span class="bull">         ╱               ╲</span>
+<span class="label">        ╱                 ╲╱╲</span>
+<span class="bull">       ╱                     ╲</span>
+<span class="sup">  1.0700 ──────────────────────── major structural support (confluence zone)</span>
+<span class="label">                                   ╲╱╲</span>
+<span class="label">                                     ╲ ← H4 printing hammer-like candles</span>
+<span class="label"></span>
+<span class="label">   Assessment: Price testing 1.0700–1.0720 zone. H4 candles showing long lower wicks</span>
+<span class="label">   (buyers absorbing selling). EMA21 sloping up above. Bull stack intact.</span>
+<span class="bull">   → H4 CONFIRMS BULLISH BIAS. Key BUY ZONE: 1.0700–1.0720.</span>
+</div>
+<p>Now we have a zone of interest. We drop to H1 to wait for a trigger.</p>`
+        },
+        { id:"m7-l3", title:"Lesson 3: Step 3 — H1 Entry Trigger & SL/TP Planning",
+          body:`<p>On H1, price arrives at the 1.0700–1.0720 zone. We wait for a confluence of:</p>
+<ol>
+  <li>Bullish candlestick pattern (hammer, bullish engulfing, or piercing line) in the zone</li>
+  <li>RSI turning up from below 40 (oversold in an uptrend)</li>
+  <li>MACD crossing bullish (signal line from below)</li>
+  <li>A break of structure (higher high printed on H1 after the pattern)</li>
+</ol>
+<div class="lesson-chart"><span class="lesson-chart-title">EUR/USD H1 — Entry trigger at support zone</span>
+<span class="resist"> 1.0780 ───────────── TP target (recent H1 swing high / ~1.5R)</span>
+<span class="label">             ╱╲</span>
+<span class="label">            ╱  ╲</span>
+<span class="label">     ╱╲   ╱    ╲</span>
+<span class="label">    ╱  ╲ ╱      ╲</span>
+<span class="entry">  ╱╱   ╳ 1.0725 ─╲──── ENTRY (break of candle high at 1.0725 after hammer)</span>
+<span class="sup">  ╱     ╲H╲       ╲</span>
+<span class="label">  ╲      ╲A╲       ╲</span>
+<span class="sup">   ╲      ╲M╲──────╲╲  ← hammer forms in buy zone, wick to 1.0695</span>
+<span class="bear">    ╲ 1.0685 ──────────── SL (below wick low, ~40 pip stop = ~1.2 ATR)</span>
+<span class="label"></span>
+<span class="label">   RSI on H1: came down to 28 (oversold), curling up.</span>
+<span class="label">   MACD: just crossed bullish below zero.</span>
+<span class="bull">   → TRIGGER CONFIRMED. BUY at 1.0725.</span>
+</div>
+<h4>Trade parameters</h4>
+<table>
+<tr><th>Parameter</th><th>Value</th><th>Reason</th></tr>
+<tr><td>Direction</td><td>BUY</td><td>D1+H4 bullish, H1 trigger at support</td></tr>
+<tr><td>Entry</td><td>1.0725</td><td>Break of hammer high (confirmation)</td></tr>
+<tr><td>Stop loss</td><td>1.0685</td><td>Below hammer wick (just below the zone). 40-pip risk.</td></tr>
+<tr><td>TP1 (1.5R)</td><td>1.0785</td><td>60 pips up (40 × 1.5) — coinciding with H1 swing high</td></tr>
+<tr><td>TP2 (3R)</td><td>1.0845</td><td>120 pips up (40 × 3) — EMA21/H4 resistance zone</td></tr>
+<tr><td>R:R to TP1</td><td>1:1.5</td><td>Meets minimum threshold</td></tr>
+<tr><td>Strength</td><td>76/100</td><td>All 5 TFs aligned, 4 confluence factors</td></tr>
+</table>
+<p>On a R10,000 account, 1% risk = R100. 40 pips on EUR/USD ≈ R18.5 per pip per 1.00 lot. Lot size = R100 / (40 × R18.5) ≈ 0.13 lots (let's say 0.15 lots for a round number — slightly over, but we keep it tight).</p>`
+        },
+        { id:"m7-l4", title:"Lesson 4: Step 4 — M15/M5 Timing, Trade Management & Outcome",
+          body:`<p>For those who want a more precise entry, dropping to M15 (and optionally M5) can tighten the entry and improve R:R. At M15 we see a micro-structure: a double bottom at 1.0695/1.0698, with a bullish engulfing on the second touch. M5 confirms with a small morning star. Entering at 1.0710 instead of 1.0725 gives an extra 15 pips of R:R.</p>
+<h4>Trade management (as it plays out)</h4>
+<ol class="lesson-step-list">
+  <li><strong>Entry:</strong> BUY @ 1.0725, SL @ 1.0685 (40 pip risk).</li>
+  <li><strong>+3 hours:</strong> Price grinds up to 1.0760. No action needed. Heart rate stays normal.</li>
+  <li><strong>+7 hours (London session close):</strong> Price hits 1.0785 (TP1, 60 pips / +1.5R). Close 50% of position (0.07 lots). Move SL to break-even at 1.0725. Remaining 0.08 lots are now RISK-FREE.</li>
+  <li><strong>+14 hours (next day):</strong> Price pulls back to 1.0740, holds above break-even SL. No drama — this is a healthy pullback in an uptrend.</li>
+  <li><strong>+24 hours:</strong> Price pushes through 1.0800 and runs to 1.0845 (TP2, 120 pips / +3R). Close another 30% (0.04 lots) at +3R. Trail the remaining 20% (0.04 lots) with a 1.5-ATR trailing stop.</li>
+  <li><strong>+36 hours:</strong> Price reaches 1.0880 before pulling back; trailing stop hits at 1.0860 for a 135-pip winner on the last piece (~3.4R).</li>
+</ol>
+<h4>P&L for the trade (R10,000 account, 0.15 lots total)</h4>
+<div class="lesson-chart"><span class="lesson-chart-title">TRADE RESULT</span>
+<span class="bull">  TP1: 0.07 lots × 60 pips × R1.85/pip per 0.01 lot = 0.07 × R111 = +R77.70</span>
+<span class="bull">  TP2: 0.05 lots × 120 pips × R1.85 = 0.05 × R222 = +R111.00</span>
+<span class="bull">  Trail: 0.03 lots × 135 pips × R1.85 = 0.03 × R250 = +R75.00</span>
+<span class="bull">  ─────────────────────────────────────────</span>
+<span class="bull">  TOTAL WIN: ≈ +R264 (about +2.6% on the account in 36 hours)</span>
+<span class="label">  Risk was R100 max (had SL hit, loss = 0.15 lots × 40pips × R18.5 = R111)</span>
+<span class="label">  Realised R:R on whole position ≈ 2.4R winner.</span>
+</div>
+<div class="lesson-tip"><span class="ex-title">💡 This is the point</span>You don't need many of these. Two trades a week like this is 5% per week. Compounded over a year, that is life-changing wealth. You don't need 20 trades a day. You need one or two A-grade setups per week, executed perfectly.</div>`
+        },
+        { id:"m7-l5", title:"Lesson 5: What Went Wrong? Learning from Losers",
+          body:`<p>Every trader takes losses. What separates professionals from amateurs is what they DO with the loss.</p>
+<p>Here's what a losing trade looks like using the same system — and how you learn from it.</p>
+<p>A month after the trade above, a similar-looking setup appeared on USD/JPY. D1 uptrend, H4 pullback to support, H1 hammer at the zone. Bot signalled BUY at 152.40 with strength 68. SL at 151.90 (50 pips), TP at 153.15 (75 pips / 1.5R).</p>
+<p>This time: price triggered, ran up 20 pips, reversed, and stopped out for -R120.</p>
+<h4>Post-trade review questions</h4>
+<ol>
+  <li><strong>Did I follow the setup rules?</strong> Yes — D1/H4 aligned, trigger at support, R:R 1.5, size correct.</li>
+  <li><strong>Was there news I missed?</strong> No — BoJ meeting was 3 days away.</li>
+  <li><strong>Was data quality good?</strong> Yes — fresh Twelve Data candles, no gaps.</li>
+  <li><strong>What did price do?</strong> It formed a false break (fakeout) below support, stopped out breakout shorts, then rallied — but I had my stop too tight to the wick.</li>
+</ol>
+<p>Lesson learned: on JPY pairs (more volatile, higher ATR multiples), give slightly more room (1.8 ATR instead of 1.5). Record that in the journal; apply next time.</p>
+<div class="lesson-quote">A loss where you followed your plan is a GOOD loss. It pays for your education. A loss where you broke rules is the expensive kind. Accept the first; eliminate the second.</div>`
+        }
+      ]
+    },
+    // ═══════════════════ MODULE 8 — 30 DAY PLAN ════════════════════════
+    {
+      id:"m8", icon:"fa-coins",
+      title:"Book 8: Your First 90 Days — From Zero to Consistency",
+      sub:"A structured path for Ndumiso's traders",
+      lessons:[
+        { id:"m8-l1", title:"Lesson 1: Phase 1 — Demo (Weeks 1–4)",
+          body:`<p><strong>RULE: NO REAL MONEY. NO EXCEPTIONS.</strong></p>
+<p>Open a demo account with exactly R10,000 (the amount you plan to start with live). Trade it exactly as if it were real money. If you blow the demo, deposit another R10,000 of fake money and start over. You are NOT trying to make money — you are trying to PROVE TO YOURSELF that you can follow rules consistently.</p>
+<h4>Goals for phase 1:</h4>
+<ul>
+  <li>Take 30+ trades following ONLY bot signals (or signals from your own written plan).</li>
+  <li>Achieve at least 40% win rate with average R:R > 1.5.</li>
+  <li>Zero revenge trades. Zero rule breaks.</li>
+  <li>Fill out the journal for EVERY trade (including ones you considered but didn't take).</li>
+  <li>By the end of 4 weeks you should know your stats: win rate, average win, average loss, expectancy per trade.</li>
+</ul>
+<p>If you cannot make money on demo after 4 weeks of disciplined trading, you are NOT ready for live. Go back and re-read this course.</p>`
+        },
+        { id:"m8-l2", title:"Lesson 2: Phase 2 — Micro Live (Weeks 5–8)",
+          body:`<p>Deposit R1,000–R5,000 (an amount you can genuinely afford to lose). Trade 0.01 lots maximum. The goal is NOT profit — it's to experience REAL EMOTION with real money at stake, while staying disciplined.</p>
+<p>You will discover that trading 0.01 lots with real R100 feels completely different from trading R100,000 fake dollars. Your hands shake. You second-guess. You want to close winners early. This is the training ground for emotional control.</p>
+<h4>Rules for phase 2:</h4>
+<ul>
+  <li>Max 0.01–0.05 lots (risking R10–R50 per trade at most).</li>
+  <li>If you lose 3 trades in a row, stop for 48 hours.</li>
+  <li>If you lose 10% of the account, go back to demo for 2 weeks.</li>
+  <li>Continue journaling every single trade.</li>
+</ul>
+<p>Only progress to phase 3 when you can show 4 weeks of consistent profitability on micro account WITH zero rule breaks.</p>`
+        },
+        { id:"m8-l3", title:"Lesson 3: Phase 3 — Scaling Up (Weeks 9–24)",
+          body:`<p>If phase 2 went well, you can gradually increase size. The rule: never increase size by more than 25% at a time. Size increases must be tied to account growth — as your account grows 25%, size grows 25% (keeping risk at 1%).</p>
+<table>
+<tr><th>Account size</th><th>Risk per trade (1%)</th><th>EUR/USD typical lot (40 pip SL)</th></tr>
+<tr><td>R5,000</td><td>R50</td><td>0.07 lots</td></tr>
+<tr><td>R10,000</td><td>R100</td><td>0.13 lots</td></tr>
+<tr><td>R25,000</td><td>R250</td><td>0.34 lots</td></tr>
+<tr><td>R50,000</td><td>R500</td><td>0.67 lots</td></tr>
+<tr><td>R100,000</td><td>R1,000</td><td>1.35 lots</td></tr>
+<tr><td>R250,000</td><td>R2,500</td><td>3.35 lots</td></tr>
+</table>
+<p>Notice: at R100,000 you're making roughly R2,500 per good trade. At two good trades a week that's R20,000 per month — a real income.</p>
+<div class="lesson-warn"><span class="ex-title">⚠️ Common scam warning</span>You will be approached by people promising R10,000 per day, guaranteed 90% win rates, secret indicators, account management services, and "trade with our capital" prop-firm schemes. 99% of these are scams or bad deals. There are no shortcuts. If it sounds too good to be true, it is.</div>`
+        },
+        { id:"m8-l4", title:"Lesson 4: Final Words — The Panther Mindset",
+          body:`<p>You now know more about trading than 95% of people who open a broker account. You understand structure, price action, indicators, risk management, psychology, and you've seen a full trade walkthrough.</p>
+<p>Knowledge is not the problem. Execution is.</p>
+<p>Trading is a martial art. You would not read a book on karate and then enter a ring. You must practice, fail, review, correct, and do it again — for months. Be patient with yourself.</p>
+<div class="lesson-quote">The panther does not chase every gazelle. It waits in the tall grass — sometimes for hours — until the perfect target, at the perfect distance, at the perfect moment presents itself. Then it strikes with complete commitment. When it misses (and it does miss), it does not rage. It returns to the grass and waits again. Be the panther.</div>
+<h3>The Ndumiso Principles — print them out</h3>
+<ol>
+  <li>Precision over frequency. One A-grade setup beats ten B-grade setups.</li>
+  <li>Discipline over prediction. Follow your plan even when your gut disagrees.</li>
+  <li>Risk over reward. Protect the account first; profits come second.</li>
+  <li>Process over outcome. Every trade is a data point, not an identity.</li>
+  <li>Patience over action. Not trading is a position — and often the best one.</li>
+</ol>
+<p>Welcome to the craft. 🐆</p>
+<p style="text-align:center;color:var(--gold);font-family:'Playfair Display',serif;font-size:20px;margin-top:30px;">Precision • Discipline • Mastery</p>`
+        }
+      ]
+    }
+  ]
+};
+// ═══════════════════════════════════════════════════════════════════════════
+// ISIZULU (ZU) EXPANDED TRANSLATION — Book-length course
+// ═══════════════════════════════════════════════════════════════════════════
+EDU.zu = {
+  title: "Ukuhweba Nge-Forex kanye noNdumiso",
+  subtitle: "Isifundo Esiphelele — Kusukela Kwisaqalayo Kuya Kumhwebi Onesiyalo",
+  coverNote: "Funda ngokulandelana. Isahluko ngasinye sakhela kwesandulela. Ungeqe izahluko.",
+  modules: [
+    { id:"m1", icon:"fa-globe", title:"Incwadi 1: Umhlaba Wokuhwebelana Kwezimali",
+      sub:"Iyini i-forex, isebenza kanjani, obani abadlali, nokuthi kungani abadayisi abasha abangu-90% belahlekelwa",
+      lessons:[
+        { id:"m1-l1", title:"Isifundo 1: Usuku Lwemali",
+          body:`<p>NgoLwesibili ekuseni eGoli, ipulazi lewayini laseNingizimu Afrika lithumela amakesi angama-2,000 ePinotage kumthengisi waseDüsseldorf. I-invoyisi iku-Euro. Umthengi uthengisa iwayini ngama-Euro, kodwa ipulazi likhokhela abasebenzi ngama-Randi. Endaweni ethile, ibhange noma inkampani yokukhokha kufanele iguqule lawo ma-Euro abuyele kuma-Randi.</p>
+<p>Ngaso leso sikhathi, isikhwama sempesheni sase-Japan sithenga amabhondi kahulumeni wase-US ngoba amazinga enzalo e-Japan aseduze noziro kodwa awase-US akhokha u-4%. Ukwenza lokho, isikhwama siguqula i-Yen yase-Japan sibe yi-Dollar lase-US.</p>
+<p>E-London, isikhwama se-hedge esikholelwa ukuthi i-pound yaseBrithani izokhuphuka uma iqhathaniswa ne-dollar sase-US sithenga isikhundla esingu-£50,000,000 ku-GBP/USD.</p>
+<p>E-Lagos, umfundi othumela imali yokufunda enyuvesi yase-Canada uthumela u-₦5,000,000 ngenkonzo yemali, eguqula i-Naira ibe yi-Canadian Dollar.</p>
+<p>Yonke leyo misebenzi — izigidi zayo nsuku zonke, ubusuku nemini, izinsuku ezinhlanu ngeviki — idlula emakethe eyodwa: <strong>imakethe yokuhwebelana kwezimali zangaphandle</strong>, noma i-Forex.</p>
+<div class="lesson-quote">I-Forex ayisona ikhasino esenzelwe abadayisi abavamile. Iyisisekelo sohwebo lomhlaba. Abahwebi njengathi bayingxenye encane yomshini omkhulu kakhulu.</div>
+<h3>Inkulu kangakanani?</h3>
+<p>Ngokusho kweBhange Lamazwe Ngamazwe (BIS), imakethe ye-Forex ihwebelana ngemali elinganiselwa ku-<strong>$7.5 trillion ngosuku</strong>. Ukukubeka ngendlela elula: lonke ibhizinisi lezitoko lomhlaba wonke lilinganiselwa ku-$200 billion ngosuku. I-Forex inkulu izikhathi ezingu-35 kunezitoko zomhlaba wonke.</p>`
+        },
+        { id:"m1-l2", title:"Isifundo 2: Umlando Omfushane",
+          body:`<p>Ngaphambi kuka-1971, umhlaba wawusebenza ngaphansi kohlelo lwe-<strong>Bretton Woods</strong>. Izimali zaziboshwe kwi-dollar yase-US, futhi i-dollar yase-US yayiboshwe egolideni. Amazinga okushintshana ayenganyakazi kakhulu. Kwakungekho into efana "nohwebo lwezimali lokudayisa".</p><p>Ngo-1971, uMongameli wase-US uRichard Nixon wasusa i-dollar esilinganisweni segolide. Ngokushesha izimali zaqala <em>ukuntanta</em> ngokumelene nomunye nomunye. Inani lazo lanqunywa ngokutholakala kanye nesidingo. I-Forex yesimanje yazalwa.</p>
+<h4>Izikhathi ezibalulekile</h4>
+<table><tr><th>Unyaka</th><th>Isigameko</th></tr>
+<tr><td>1971</td><td>Uhlelo lwe-Bretton Woods luyawa; izimali ziyantanta</td></tr>
+<tr><td>1980s</td><td>Ukuhwebelana nge-elekthronikhi kuqala phakathi kwamabhange</td></tr>
+<tr><td>1990s</td><td>I-inthanethi ifika; ama-broker avulela abantu abavamile</td></tr>
+<tr><td>2000s</td><td>I-MetaTrader iba yindinganiso; i-leverage engu-1:100+ iyatholakala</td></tr>
+<tr><td>2010s</td><td>Ama-app wokuhweba ama-smartphone enza kube lula</td></tr>
+<tr><td>2020s</td><td>Ama-AI/algo alawula ukuhamba kwesikhungo; imithetho iyaqina</td></tr></table>`
+        },
+        { id:"m1-l3", title:"Isifundo 3: Obani Abahweba I-Forex",
+          body:`<p>Kunezinhlobo ezinhlanu zabahlanganyeli. Udinga ukuziqonda ngoba uhweba ngokumelene nabo.</p>
+<h4>1. Amabhange Amakhulu (izimbumba)</h4><p>I-SARB, i-Fed, i-ECB, i-BoJ, i-BoE. Abahwebi ngenzuzo — balawula ukuzinza kwemali namazinga enzalo. Lapho ibhange elikhulu likhuluma, izimakethe ziyanyakaza.</p>
+<h4>2. Amabhange Ohwebo Nezimali (imali ehlakaniphile)</h4><p>I-Standard Bank, i-JP Morgan, i-Citi, i-Deutsche, i-Goldman Sachs. Baphatha ama-oda amakhasimende. Yilapho inani langempela litholakala khona.</p>
+<h4>3. Ama-Hedge Fund NabaHwebi be-Prop</h4><p>Ngabachwepheshe besikhathi esigcwele abaphila ngokuqonda kwabo. Ama-oda abo makhulu ngokwanele ukududula intengo.</p>
+<h4>4. Izinkampani</h4><p>Abahwebi ngenzuzo — baguqula imali yebhizinisi. Bavikela imali yabo, abazami ukuhwebelana.</p>
+<h4>5. Abahwebi Abavamile (yithi)</h4><p>Simelela cishe u-<strong>5–8% wevolumu iyonke</strong>. Singabadlali abancane kunabo bonke emakethe.</p>
+<div class="lesson-warn"><span class="ex-title">⚠️ Iqiniso elinzima</span>Abahwebi abavamile njengeqembu balahlekelwa imali — hhayi ngoba imakethe iqiliwe, kodwa ngoba cishe wonke umuntu ufika engenalo uhlelo, engenakuphatha ubungozi, futhi engenaso isiyalo semizwa.</div>`
+        },
+        { id:"m1-l4", title:"Isifundo 4: Izikhathi Zokuhweba eNingizimu Afrika",
+          body:`<p>I-Forex isebenza amahora angu-24 kusukela ngoMsombuluko ekuseni e-Wellington kuya kuLwesihlanu kusihlwa eNew York. Kodwa ayisebenzi ngokulingana usuku lonke.</p>
+<table><tr><th>Isikhathi</th><th>Kuvulwa (SAST)</th><th>Kuyavalwa (SAST)</th><th>Isimo</th></tr>
+<tr><td>Sydney / Tokyo (Asia)</td><td>00:00</td><td>08:00</td><td>Kuthulekile, i-range</td></tr>
+<tr><td>London (Europe)</td><td>09:00</td><td>18:00</td><td>Ivolumu ephezulu, i-trend</td></tr>
+<tr><td>New York (Americas)</td><td>15:00</td><td>00:00</td><td>Ukuhamba okuphezulu kakhulu</td></tr></table>
+<h3>Izikhathi ezingcono kakhulu</h3>
+<ul>
+<li><strong>09:00 – 11:00 SAST (London open)</strong> — ukunyakaza okukhulu kosuku kuvame ukuqala lapha.</li>
+<li><strong>15:00 – 18:00 SAST (London/NY overlap)</strong> — ivolumu ephezulu kakhulu, ukuhamba okukhulu. Isikhathi esihle kakhulu.</li>
+</ul>
+<div class="lesson-tip"><span class="ex-title">💡 Uhlelo lukaNdumiso</span>Vuka, uhlole amashadi e-D1 kanye ne-H4 ngaphambi kokuthi kuvulwe i-London (~08:00). Hweba 09:00–11:00 uma kukhona isetup. Hlola futhi 14:30 ngaphambi kokuvulwa kwe-NY. Hwebisana 15:00–18:00 uma isetup sicwebile.</div>`
+        },
+        { id:"m1-l5", title:"Isifundo 5: Kungani Abantu Abasha Beyeka Phakathi Nezinyanga Eziyisi-6",
+          body:`<p>Ngiqeqeshe amakhulu abahwebi. Iphethini ihlale ifana.</p>
+<ol class="lesson-step-list">
+<li><strong>Ukudonswa.</strong> Othile ubona isikhangiso noma umngane ekhombisa i-screenshot ye-trade ewinile. Bayakholwa ukuthi bangenza okufanayo.</li>
+<li><strong>Isikhathi sokuqala.</strong>Ama-trade abo okuqala ayawina (ngokuvamile ngenhlanhla). Bacabanga ukuthi baneziphiwo.</li>
+<li><strong>Ukulahlekelwa kokuqala okukhulu.</strong>Bafaka i-leverage enkulu ku-"sure thing" bese belahlekelwa u-20–40% ngosuku.</li>
+<li><strong>Ukutatazela.</strong>Bahweba ngokuziphindiselela, bashintshe amasu isonto ngalinye, bathenge izifundo, bajoyine ama-signal groups.</li>
+<li><strong>Ukuphelelwa noma Ukuvuka.</strong>Abaningi balahlekelwa yikho konke bayeke. Abambalwa baqaphela ukuthi inkinga akuyona imakethe — yibo.</li>
+</ol>
+<p>Inhloso yalesi sifundo ukukufushanisela ngqo esigabeni sesi-5 ngaphandle kokulahlekelwa yimali oyilondolozile.</p>`
+        }
+      ]
+    },
+    { id:"m2", icon:"fa-fire", title:"Incwadi 2: Ama-Candlestick Nesenzo Sentengo",
+      sub:"Ukufunda indaba intengo ekutshela yona — ngaphandle kwama-indicator",
+      lessons:[
+        { id:"m2-l1", title:"Isifundo 1: Yakheka Kanjani I-Candle",
+          body:`<p>Ngaphambi kwamakhompyutha, abahwebi berayisi base-Japan ngawo-1700 babedweba izithombe zokuhamba kwentengo. Indoda okuthiwa <strong>Munehisa Homma</strong> yasungula esikubiza ngama-<em>candlestick chart</em> ukuze ibone impi phakathi kwabathengi nabathengisi. Sisayisebenzisa, singashintshile kangako, eminyakeni engu-300 kamuva.</p>
+<h3>Amanani amane</h3>
+<p>I-candlestick ngayinye imele isikhathi esinqunyiwe. Ikhombisa amanani amane: Open, High, Low, Close.</p>
+<ul>
+<li><strong>Open</strong> — inani lokuqala ekuqaleni kwesikhathi</li>
+<li><strong>High</strong> — inani eliphakeme kakhulu</li>
+<li><strong>Low</strong> — inani eliphansi kakhulu</li>
+<li><strong>Close</strong> — inani lokugcina ekugcineni kwesikhathi</li>
+</ul>
+<div class="lesson-two-col">
+<div class="col-bull"><h5>I-Bullish (eluhlaza)</h5><ul><li>Ivalwa ngaphezulu kwe-open</li><li>Abathengi banqobile</li></ul></div>
+<div><h5>I-Bearish (ebomvu)</h5><ul><li>Ivalwa ngaphansi kwe-open</li><li>Abathengisi banqobile</li></ul></div>
+</div>
+<h3>Izindaba ezikuma-wick</h3>
+<p>Umzimba ukhombisa onqobile. Ama-<strong>wick</strong> akhombisa <em>impi</em>. Ama-wick amade asho ukuthi intengo yafika kulelo zinga kodwa yaliwa yabuyiselwa emuva.</p>`
+        },
+        { id:"m2-l2", title:"Isifundo 2: Amaphethini E-Bullish Reversal",
+          body:`<p>I-<em>reversal pattern</em> iphethini le-candlestick ebonakala ekupheleni kokuhamba futhi lisikisela ukuthi intengo isizoshintsha indlela.</p>
+<h4>I-Hammer</h4><p>Iphethini ye-candle eyodwa ethembeke kunazo zonke. Umzimba omncane phezulu, i-wick ende phansi (ubude obuphindwe ka-2 komzimba). Ivela ngemuva kwe-downtrend, ku-support.</p>
+<h4>I-Bullish Engulfing</h4><p>Amakhandlela amabili. I-candle yesibili eluhlaza enkulu <em>esonga</em> ngokuphelele umzimba we-candle ebomvu eyedlule. Iyisiginali enamandla kakhulu.</p>
+<h4>I-Morning Star</h4><p>Amakhandlela amathathu: elide ebomvu → idoji → elide eluhlaza. Ingenye yama-reversals athembekileyo.</p>
+<div class="lesson-example"><span class="ex-title">📊 Isibonelo sangempela</span>Ngemuva kokuwa okukhulu, i-EUR/USD yashicilela i-hammer ku-1.0515 eduze ne-1.0500. I-candle elandelayo yephula i-high ye-hammer (isiqinisekiso). Intengo yakhuphuka ngama-pips angu-85 kuya ku-1.0600 emahoreni angu-6 alandelayo.</div>`
+        },
+        { id:"m2-l3", title:"Isifundo 3: Amaphethini E-Bearish Reversal",
+          body:`<p>Lawa avela phezulu kuma-uptrend futhi axwayise ngokuthi abathengi sebephelile.</p>
+<h4>I-Shooting Star</h4><p>Isibuko se-hammer: umzimba omncane phansi, i-wick ende phezulu. Ivela ku-resistance.</p>
+<h4>I-Bearish Engulfing</h4><p>I-candle ebomvu enkulu esonga umzimba we-candle eluhlaza eyedlule ku-resistance.</p>
+<h4>I-Evening Star</h4><p>Isibuko se-morning star: elide eluhlaza → idoji → elide ebomvu.</p>
+<div class="lesson-warn"><span class="ex-title">⚠️ Umthetho obalulekile</span>I-hammer phakathi ne-downtrend ngaphandle kwe-support eseduze ayisho lutho. Amaphethini kumele avele KU-LEVEL YENSAKA (support noma resistance).</div>`
+        },
+        { id:"m2-l4", title:"Isifundo 4: Ama-Continuation Pattern",
+          body:`<h4>Three White Soldiers</h4><p>Amakhandlela amathathu aluhlaza elandelanayo. I-bullish continuation enamandla.</p>
+<h4>Three Black Crows</h4><p>Amakhandlela amathathu abomvu elandelanayo. I-bearish continuation enamandla.</p>
+<h4>Bull / Bear Flag</h4><p>Ngemuva kokuhamba okunamandla, intengo ihlehla kancane ngesiteshi esiqinile. Lapho intengo iphuma, ivame ukuqhubeka ibude obulingana ne-"flagpole".</p>`
+        }
+      ]
+    },
+    { id:"m3", icon:"fa-layer-group", title:"Incwadi 3: I-Support, Resistance Nohlaka Lwemakethe",
+      sub:"Isakhiwo esingabonakali sentengo — lapho izimpi zilwelwa khona",
+      lessons:[
+        { id:"m3-l1", title:"Isifundo 1: I-Support Ne-Resistance",
+          body:`<p>I-<strong>support</strong> izinga lapho abathengi bejwayele ukungena khona (phansi). I-<strong>resistance</strong> yindawo lapho abathengisi bejwayele ukungena khona (phezulu).</p>
+<p>Amaleveli akha ngoba abadlali abakhulu (amabhange, izikhwama) banenkumbulo. Bakhumbula lapho abathenge badayise khona ngaphambilini.</p>
+<h3>Ukuguquka kwendima (role reversal)</h3>
+<p>Uma i-level yephukile, iyaguquka: i-resistance ephukile iba yi-support entsha; i-support ephukile iba yi-resistance entsha.</p>
+<div class="lesson-example"><span class="ex-title">📊 Isibonelo</span>Ku-GBP/USD, i-1.2500 yaba yi-resistance izinyanga ezimbili. Ngesikhathi yephuka, yabuya yabhekwa njenge-support futhi yagxuma ngama-pips angu-60. Lokho ukuthengwa kwe-retest — isethaphu i-bot eyibeka phambili.</div>`
+        },
+        { id:"m3-l2", title:"Isifundo 2: Ama-Swing High Nama-Swing Low",
+          body:`<p>I-<strong>swing high</strong> yibha yentengo ene-high ephakeme kunamabha nhlangothi zombili. I-<strong>swing low</strong> iphuzu eliphansi eliphansi kunamabha amabili ohlangothini ngalunye.</p>
+<p>Ama-swing high nama-swing low yizindawo zokuguquka — izindawo lapho amandla ashintsha khona. Ama-oda esikhungo ahlangana kulezi zindawo.</p>`
+        },
+        { id:"m3-l3", title:"Isifundo 3: Ama-Trend — Indlela Yokubona Isiqondiso",
+          body:`<h4>I-Uptrend (Bull Market)</h4><p>Intengo yenza ukulandelana kwama-<strong>Higher Highs (HH)</strong> nama-<strong>Higher Lows (HL)</strong>. Abathengi bayalawula.</p>
+<h4>I-Downtrend (Bear Market)</h4><p>Intengo yenza ukulandelana kwama-<strong>Lower Highs (LH)</strong> nama-<strong>Lower Lows (LL)</strong>. Abathengisi bayalawula.</p>
+<h4>I-Range</h4><p>Intengo ishaya phakathi kwe-support evundlile kanye ne-resistance. Qaphela — ama-chop azokukhipha kaningi.</p>
+<div class="lesson-warn"><span class="ex-title">⚠️ Umthetho #1</strong>Hweba kuphela ngokuya ngohlaka lwesikhathi esiphezulu. Uma i-D1 iku-uptrend, thatha ama-BUYS kuphela ku-H4/H1/M15. Ukulwa ne-higher-TF trend kuyiphutha elikhulu.</div>`
+        },
+        { id:"m3-l4", title:"Isifundo 4: Ama-Breakout, Retest, Nama-Fakeout",
+          body:`<p>I-<strong>breakout</strong> yilapho intengo ivala ngaphezu kwe-level ngesiqinisekiso. I-<strong>retest</strong> yilapho intengo ibuya izohlola i-level ephukile njengendima yayo entsha. Ukungena nge-retest kuvame ukuphepha kakhulu kune-breakout uqobo (kugwema ama-fakeout).</p>
+<p>I-<strong>fakeout</strong> yilapho intengo idlula kwi-level nge-wick kodwa ihluleke ukuvala ngale kwayo, bese ibuyela emuva ngokusheshayo. Lezi zicupha abadayisi be-breakout.</p>
+<div class="lesson-tip"><span class="ex-title">💡 Ukugwema ama-fakeout</span>Lindela UKUVALA ngale kwe-level — hhayi nje ukudlula nge-wick. Okungcono nakakhulu: linda i-retest.</div>`
+        }
+      ]
+    },
+    { id:"m4", icon:"fa-wave-square", title:"Incwadi 4: Izinkomba — Amathuluzi, Hhayi Izibikezelo",
+      sub:"EMA, SMA, RSI, MACD, ATR — ukukala ngempela kanye nendlela yokuzihlanganisa",
+      lessons:[
+        { id:"m4-l1", title:"Isifundo 1: Ama-Moving Average",
+          body:`<p>I-<em>moving average</em> (MA) isilinganiso samanani okuvala ezikhathini ezingu-N zokugcina, esakhiwe njengomugqa eshadini. Sibusebenzisa amane: EMA9, EMA21, SMA50, SMA200.</p>
+<p>Uma wonke ama-MA eqondiswe ohlangothini olulodwa futhi intengo ngakolunye uhlangothi, i-trend inamandla (bull stack / bear stack).</p>`
+        },
+        { id:"m4-l2", title:"Isifundo 2: I-RSI",
+          body:`<p>I-<strong>RSI</strong> iyi-oscillator ye-momentum ephakathi kuka-0 no-100. Ngaphezu kuka-70 = overbought. Ngaphansi kuka-30 = oversold. Ukunqamula u-50 isiqinisekiso se-momentum. Futhi i-divergence ibaluleke kakhulu.</p>`
+        },
+        { id:"m4-l3", title:"Isifundo 3: I-MACD",
+          body:`<p>I-<strong>MACD</strong> isetshenziswa NJENGE-TRIGGER YOKUNGENA kwi-confirmation timeframe (H1/M15). I-crossover ye-MACD isiza ukukhetha isikhathi sokungena lapho zonke izimo zesikhathi esiphezulu sezihlangene.</p>`
+        },
+        { id:"m4-l4", title:"Isifundo 4: I-ATR",
+          body:`<p>I-<strong>ATR</strong> ikala ukuthi intengo ihamba kangakanani ngebha ngayinye. AYIKHOMBISI siqondiso — ikala ubukhulu. Siyisebenzisela: (1) ukubeka ama-SL ku-1.5 × ATR, (2) ukubala i-lot size, (3) ukuhlunga i-volatility eyeqile.</p>
+<div class="lesson-math">I-Lot Size = (I-Akhawunti × Risk%) / (Ama-Pips kuya ku-SL × Inani Le-Pip Nge-Lot)</div>`
+        }
+      ]
+    },
+    { id:"m5", icon:"fa-shield-halved", title:"Incwadi 5: Ukuphatha Ubungozi — Isahluko Esisindisa I-Akhawunti",
+      sub:"Uma ufunde isahluko esisodwa kuphela, funda lesi. Ukuphatha ubungozi wukuhweba.",
+      lessons:[
+        { id:"m5-l1", title:"Isifundo 1: Kungani Ukuphatha Ubungozi KUYIKHO KONKE",
+          body:`<p>Ungaba nohlelo lokungena oluhamba phambili emhlabeni bese ushabalala ngaphandle kokuphatha ubungozi. Ungaba nohlelo lokungena olumaphakathi bese uceba ngokuphatha ubungozi okuqinile.</p>
+<h3>Izibalo zokushabalala</h3>
+<table><tr><th>Ubungozi ngetrade</th><th>I-Win rate 40% (1:2 R:R)</th></tr>
+<tr><td>1%</td><td>25% ingozi yokuwohloka</td></tr>
+<tr><td>2%</td><td>50% ingozi yokuwohloka</td></tr>
+<tr><td>5%</td><td>85% ingozi yokuwohloka</td></tr>
+<tr><td>10%</td><td>99% ingozi yokuwohloka</td></tr></table>
+<div class="lesson-warn"><span class="ex-title">⚠️ Imithetho engaxoxiswana</span>
+1. Ungabeki engozini ngaphezu kuka-1–2% we-akhawunti nge-trade ngayinye.<br/>
+2. Njalo sebenzisa i-stop loss.<br/>
+3. Ungalokothi uhambise i-SL kude uma intengo ikuphikisa.<br/>
+4. Ungalokothi wengeze esikhundleni esilahlekelayo.<br/>
+5. Yiba nomkhawulo wokulahlekelwa wosuku (3%).</div>`
+        },
+        { id:"m5-l2", title:"Isifundo 2: Indlela Yokubala I-Lot Size",
+          body:`<div class="lesson-math">I-Lot Size = (I-Akhawunti × Risk%) / (Ama-Pips kuya ku-SL × Inani Le-Pip)</div>
+<p>Ifomula ibala ngokuzenzakalelayo usayizi ofanele wendawo ukuze ubungozi bedola buhlale bufana kungakhathaliseki ukuthi intengo ihamba kangakanani.</p>`
+        },
+        { id:"m5-l3", title:"Isifundo 3: I-Risk/Reward — Kungani 1:1.5 Kuyizinga Eliphansi",
+          body:`<p>Nge-R:R engu-1:2, ungaba nephutha ku-2 kwabayi-3 bese wenza inzuzo.</p>
+<table><tr><th>R:R</th><th>I-Win rate edingekayo</th></tr>
 <tr><td>1:1</td><td>50%</td></tr>
 <tr><td>1:1.5</td><td>40%</td></tr>
 <tr><td>1:2</td><td>33%</td></tr>
 <tr><td>1:3</td><td>25%</td></tr></table>
-<p>The bot <strong>rejects trades below 1:1.5</strong>. At 1:2 you can be wrong 2 out of 3 times and still be profitable.</p>
-<div class="lesson-tip"><span class="ex-title">💡 Counter-intuitive truth</span>Letting winners run (trailing stop) has a far bigger effect on P/L than raising your win rate. A single 5R winner pays for five 1R losses.</div>` },
-          { id:"m5-l4", title:"5.4 Position-Sizing Formula", body:`<p>The exact formula this bot uses:</p>
-<p><code>Lot size = (Account Balance × Risk%) / (Pips at Risk × Pip Value)</code></p>
-<div class="lesson-example"><span class="ex-title">📊 Worked example</span>R10,000 account, 1% risk = R100. SL 40 pips on EUR/USD. Pip value per standard lot ≈ $10 (≈ R180).<br/>Lots = R100 / (40 × R18) = R100 / R720 ≈ 0.14 lots. So you trade 0.14 lots. If SL is hit, you lose R100 (1%). If TP1 (1.5R) is hit, you win R150.</div>
-<p>Always round down, not up. Never "size up" because you feel confident.</p>` }
-        ]
-      },
-      {
-        id: "m6", icon: "fa-arrow-trend-up", title: "Module 6: The Multi-Timeframe Strategy", sub: "How Ndumiso's bot finds setups",
-        lessons: [
-          { id:"m6-l1", title:"6.1 The Hierarchy (D1 → H4 → H1 → M15)", body:`<p>The bot analyses 5 timeframes in this strict order:</p>
-<ol>
-  <li><strong>D1</strong> (daily) — major trend and market context. Weight = 4</li>
-  <li><strong>H4</strong> (4-hour) — primary trend/structure. Weight = 3</li>
-  <li><strong>H1</strong> (1-hour) — setup confirmation. Weight = 2</li>
-  <li><strong>M15</strong> (15-min) — entry timing. Weight = 1.5</li>
-  <li><strong>M5</strong> (5-min) — optional precision. Weight = 0.8</li>
-</ol>
-<p>If D1 AND H4 do not agree on direction, there is NO trade. Ever. Fighting the higher-timeframe trend is a losing game.</p>` },
-          { id:"m6-l2", title:"6.2 Confluence Scoring (0-100)", body:`<p>Each factor contributes a score. Factors include:</p>
-<ul>
-  <li>MA alignment on each TF (up to 60 points)</li>
-  <li>Trend structure agreement (HH/HL vs LH/LL)</li>
-  <li>Momentum (RSI + MACD crossover) — adds 30% of momentum score</li>
-  <li>Breakout/retest near support/resistance</li>
-  <li>Volatility regime (must be normal, not extreme)</li>
-</ul>
-<p><strong>Min confluence to emit a signal: 60/100.</strong> Strength is <em>not</em> a win probability — it measures how many independent technical factors agree.</p>
-<div class="lesson-tip"><span class="ex-title">🔑 What strength means</span>74 strength ≠ "74% chance of winning." It means 74% of the confluence boxes are ticked. Win probability is a separate thing, determined by your R:R × win-rate over a large sample.</div>` },
-          { id:"m6-l3", title:"6.3 Entry Timing & Signal Lifecycle", body:`<p>A signal only fires when:</p>
-<ol><li>D1 and H4 agree on direction</li>
-<li>H1 or M15 shows a momentum trigger (RSI from oversold/overbought + MACD crossover OR breakout/retest of structure)</li>
-<li>SL is placed behind recent structure</li>
-<li>TP hits at least 1.5R at nearby opposing structure</li>
-<li>ATR is in the "normal" range (not extreme volatility, not dead)</li></ol>
-<p>The bot checks for duplicates: if there's already an active signal on the same pair within 4 hours or within 0.5 ATR of the existing entry, it does not fire a duplicate.</p>` },
-          { id:"m6-l4", title:"6.4 What the Signal Cards Mean", body:`<table><tr><th>Field</th><th>Meaning</th></tr>
-<tr><td>Pair</td><td>EURUSD, GBPUSD, etc.</td></tr>
-<tr><td>BUY/SELL</td><td>Direction (BUY = expect up, SELL = expect down)</td></tr>
-<tr><td>Entry</td><td>Current market price at signal time (H1 close)</td></tr>
-<tr><td>SL</td><td>Stop-loss — price where you exit if wrong</td></tr>
-<tr><td>Target (TP1)</td><td>First take-profit level at R:R 1.5+</td></tr>
-<tr><td>R:R</td><td>Risk-reward ratio (TP distance ÷ SL distance)</td></tr>
-<tr><td>ATR</td><td>Average True Range — volatility measure</td></tr>
-<tr><td>Strength (0-100)</td><td>Confluence score, NOT win probability</td></tr>
-<tr><td>Quality %</td><td>Data freshness/completeness/validation score</td></tr></table>` }
-        ]
-      },
-      {
-        id: "m7", icon: "fa-brain", title: "Module 7: Trading Psychology", sub: "80% of trading is between your ears",
-        lessons: [
-          { id:"m7-l1", title:"7.1 The Five Emotional Enemies", body:`<h4>FOMO (Fear Of Missing Out)</h4><p>Jumping into trades late because "it's moving and I can't miss it." FOMO entries almost always have terrible R:R because you're buying the high.</p>
-<h4>Revenge Trading</h4><p>Immediately opening another trade after a loss to "make it back." Usually over-sized. This is how accounts blow up in a single day.</p>
-<h4>Overconfidence</h4><p>After three wins in a row, you start skipping your checklist, widening your stops, adding size. The market notices and takes the money back.</p>
-<h4>Hope</h4><p>Turning a losing trade into an "investment" by moving your SL or adding to the loser. "It'll come back." Sometimes it won't.</p>
-<h4>Analysis Paralysis</h4><p>Adding more indicators, watching more YouTube videos, waiting for "perfect" confirmation that never comes. You don't need 12 indicators to trade well.</p>` },
-          { id:"m7-l2", title:"7.2 Building Discipline", body:`<ul>
-<li><strong>Have a written trading plan</strong> — rules for entry, SL, TP, size. Before each trade you must be able to answer "why this, why now, where am I wrong?"</li>
-<li><strong>Keep a trading journal</strong> — the app's Journal tab does this for you. Review every trade weekly.</li>
-<li><strong>Take breaks after two consecutive losses.</strong> Walk away for an hour. The market will still be there tomorrow.</li>
-<li><strong>Set a daily loss limit</strong> — if you lose 3% in a day, shut the platform down.</li>
-<li><strong>Never trade when angry, tired, intoxicated, or over-excited.</strong></li>
-</ul>` },
-          { id:"m7-l3", title:"7.3 Expectancy & The Law of Large Numbers", body:`<p>Trading is a probability business. Single trades are random. Your <strong>edge</strong> only shows up over a large sample (50+ trades).</p>
-<p><code>Expectancy = (Win Rate × Avg Win) − (Loss Rate × Avg Loss)</code></p>
-<p>Example: 50% wins, average win R300, average loss R150 → Expectancy = (0.5×300) − (0.5×150) = R75 per trade. That is a phenomenal edge.</p>
-<div class="lesson-tip"><span class="ex-title">💡 Mindset</span>Treat trading like a casino runs its tables. The casino doesn't care about one spin of the wheel — it knows that over thousands of spins, the house wins. You are the casino.</div>` }
-        ]
-      },
-      {
-        id: "m8", icon: "fa-coins", title: "Module 8: Putting It All Together", sub: "Your first 30 days as a disciplined trader",
-        lessons: [
-          { id:"m8-l1", title:"8.1 Pre-Trade Checklist", body:`<p>Before opening ANY trade, answer these out loud:</p>
-<ol>
-<li>What is the D1 trend? (bull/bear/sideways)</li>
-<li>What is the H4 trend? Does it agree?</li>
-<li>Where is the nearest key level (support/resistance)?</li>
-<li>What is the H1/M15 entry trigger (momentum + pattern)?</li>
-<li>Where is my invalidation point (where am I wrong)?</li>
-<li>What is the R:R (must be ≥ 1:1.5)?</li>
-<li>What is my lot size (1% risk)?</li>
-<li>Have I written this down in the journal?</li>
-</ol>
-<p>If any answer is "I don't know," DO NOT TAKE THE TRADE.</p>` },
-          { id:"m8-l2", title:"8.2 Sample Trading Plan (EUR/USD)", body:`<div class="lesson-example"><span class="ex-title">📋 Sample plan</span>
-<strong>Pair:</strong> EUR/USD<br/>
-<strong>Session:</strong> London / London-NY overlap only<br/>
-<strong>Timeframes:</strong> D1 bias, H4 structure, H1 entry, M15 timing<br/>
-<strong>Indicators:</strong> EMA9/21, SMA50/200, RSI14, MACD12/26/9, ATR14<br/>
-<strong>Entry rules:</strong>
-<ul>
-  <li>D1 and H4 trending same direction (HH/HL or LH/LL)</li>
-  <li>Pullback to a key support/resistance zone</li>
-  <li>Bullish/bearish candlestick pattern at the zone (hammer/engulfing/pin bar)</li>
-  <li>RSI oversold/overbought at the zone</li>
-  <li>MACD crossover confirmation on H1</li>
-</ul>
-<strong>Exit rules:</strong>
-<ul>
-  <li>SL at 1.5× ATR beyond the most recent swing high/low</li>
-  <li>TP1 at nearest opposing structure (min 1.5R); take 50% off there, move SL to breakeven</li>
-  <li>TP2 at 3R extension; trail stop on remaining 50%</li>
-  <li>If a higher-TF structure breaks, exit early.</li>
-</ul>
-<strong>Risk:</strong> 1% per trade. Max 2 open trades at a time.
-</div>` },
-          { id:"m8-l3", title:"8.3 Your First 30 Days", body:`<p><strong>Week 1-2: NO real money.</strong> Use the demo account. Only take bot signals. Journal every trade (even the ones you didn't take). Build the muscle memory.</p>
-<p><strong>Week 3:</strong> Micro account (0.01 lots). Real money, tiny size. Goal: follow your rules perfectly, not make money.</p>
-<p><strong>Week 4:</strong> Review. If your win rate is > 40% and R:R is consistently above 1:1.5, you're ready to increase size slightly. If not, go back to demo.</p>
-<div class="lesson-tip"><span class="ex-title">🐆 Panther Mindset</span>Precision. Discipline. Mastery. Wait patiently for the high-probability setup. Strike decisively when it appears. Move on quickly when stopped out. The panther doesn't chase every gazelle.</div>` }
-        ]
-      }
-    ]
-  },
-  zu: {
-    title: "Ukuhwebelana Kwe-Forex — Isifundo Esiphelele",
-    subtitle: "Umhlahlandlela wabahwebi bakwaNdumiso",
-    modules: [
-      { id:"m1", icon:"fa-globe", title:"Isahluko 1: Kuyini i-Forex?", sub:"Imakethe enkulu kunazo zonke emhlabeni",
-        lessons:[
-          {id:"m1-l1", title:"1.1 Incazelo Nobukhulu Bayo", body:`<p><strong>i-Forex (FX)</strong> ifushane ngelithi <em>foreign exchange</em> — imakethe yomhlaba wonke lapho kuthengwa futhi kuthengiswe khona izimali zamazwe ngamazwe.</p><p>Iyimakethe enkulu kunazo zonke emhlabeni — kuthengiswa ngaphezu kuka-<strong>$7.5 trillion</strong> ngosuku.</p><ul><li>Ivula ngoMsombuluko eWellington, ivalwe ngoLwesihlanu eNew York.</li><li>Alikho ihhovisi eliphakathi — ukuhweba kwenzeka nge-OTC (over-the-counter) ngamabhange nama-broker.</li><li>Kuhweba ngama-<em>pair</em> (ngababili): uthenga imali eyodwa ngesikhathi uthengisa enye.</li></ul><div class="lesson-tip"><span class="ex-title">💡 Qaphela</span>Awukho umumo "ophezulu" noma "ophansi" wedwa — i-EUR/USD ikhuphuka kusho ukuthi i-EUR iyaqina uma iqhathaniswa ne-USD.</div>`},
-          {id:"m1-l2", title:"1.2 Izikhathi Zemakethe", body:`<p>I-Forex isebenza amahora angu-24 izinsuku ezi-5 ngeviki.</p><table><tr><th>I-Session</th><th>Isikhathi (SAST)</th><th>Ukuhamba Kwentengo</th></tr><tr><td>Sydney / Tokyo (Asia)</td><td>00:00 – 08:00</td><td>Phansi</td></tr><tr><td>London (Europe)</td><td>09:00 – 18:00</td><td>Phezulu</td></tr><tr><td>New York (Americas)</td><td>15:00 – 00:00</td><td>Phezulu kakhulu</td></tr></table><p>Isikhathi esihle kakhulu sokuhweba yi-<strong>London/NY overlap (15:00 – 18:00 SAST)</strong>.</p>`},
-          {id:"m1-l3", title:"1.3 Ama-Currency Pair", body:`<p>Izimali zihlala zibhalwa ngazimbili. Eyokuqala yi-<em>base</em>, eyesibili yi-<em>quote</em>.</p><p>Isibonelo: <code>EUR/USD = 1.0850</code> kusho ukuthi i-1 Euro = 1.0850 US Dollar.</p><ul><li><strong>EUR/USD</strong> — i-pair ethandwa kakhulu</li><li><strong>GBP/USD</strong> (Cable) — iyahamba kakhulu</li><li><strong>USD/JPY</strong> — izwela kakhulu ezindabeni</li><li><strong>USD/CHF, AUD/USD, NZDUSD, USDCAD</strong></li><li><strong>EURGBP, EURJPY, GBPJPY</strong> — ama-cross pairs</li></ul><div class="lesson-warn">⚠️ Namathela kuma-pair ahlolwa i-bot. Ukwengeza ama-exotic pairs akuniki i-edge engcono.</div>`},
-          {id:"m1-l4", title:"1.4 I-Leverage Nama-Broker", body:`<p><strong>I-Leverage</strong> ikuvumela ukuthi ulawule inani elikhulu ngemali encane. I-leverage engu-1:100 isho ukuthi u-R100 wakho ulawula u-R10,000.</p><p>Kodwa i-leverage yandisa kokubili inzuzo kanye nokulahlekelwa.</p><div class="lesson-example"><span class="ex-title">📊 Isibonelo</span>Nge-akhawunti ka-R10,000 ne-leverage engu-1:100, ukulahlekelwa ngo-1% kuwisa u-R100. Nge-1:1000, ukulahlekelwa okufanayo kuwisa i-akhawunti yonke.</div><p>Sebenzisa i-broker elawulwayo (FSCA eNingizimu Afrika).</p><div class="lesson-tip"><span class="ex-title">💡 Umthetho kaNdumiso</span>Ku-akhawunti ka-R10,000, ungazibeki engozini ngaphezu kuka-R100–R200 (1–2%) nge-trade ngayinye.</div>`}
-        ]
-      },
-      { id:"m2", icon:"fa-fire", title:"Isahluko 2: Ama-Candlestick", sub:"Ulimi lwentengo",
-        lessons:[
-          {id:"m2-l1", title:"2.1 Ukwakheka Kwe-Candle", body:`<p>I-candlestick eyodwa ikhombisa amanani amane: Open, High, Low, Close.</p><ul><li>I-<strong>Bullish</strong> (eluhlaza) — ivalwa ngaphezu kwe-open yayo</li><li>I-<strong>Bearish</strong> (ebomvu) — ivalwa ngaphansi kwe-open yayo</li><li>Ama-<strong>wick</strong> akhombisa izindawo intengo efinyelele kuzona kodwa yabuyela emuva</li></ul><div class="lesson-tip"><span class="ex-title">💡 Funda</span>I-wick ende phezulu kwi-candle eluhlaza isho ukuthi abathengi bazame ukukhuphula intengo kodwa bahluleka — abathengisi sebeqalile.</div>`},
-          {id:"m2-l2", title:"2.2 Amaphethini E-Bullish Reversal", body:`<h4>I-Hammer</h4><p>Umzimba omncane phezulu, i-wick ende phansi (ubude obuphindwe ka-2 komzimba). Kwenzeka ngemuva kwe-downtrend. Ikhombisa ukuthi abathengi bayangena.</p><h4>I-Bullish Engulfing</h4><p>I-candle eluhlaza elimboza ngokuphelele i-candle ebomvu eyedlule. Kuyi-signal enamandla.</p><h4>I-Morning Star</h4><p>I-candle ende ebomvu → idoji → i-candle ende eluhlaza. Ingenye yama-reversals athembekileyo.</p>`},
-          {id:"m2-l3", title:"2.3 Amaphethini E-Bearish Reversal", body:`<h4>I-Shooting Star</h4><p>Umzimba omncane phansi, i-wick ende phezulu. Kwenzeka ku-resistance.</p><h4>I-Bearish Engulfing</h4><p>I-candle ebomvu elimboza i-candle eluhlaza eyedlule ku-resistance.</p><h4>I-Evening Star</h4><p>Isibuko se-morning star phezulu.</p><div class="lesson-warn">⚠️ Ungahwebi ama-candlestick patterns uwedwa. I-pin bar phakathi nobala awulutho. Lindela isiqinisekiso (confluence).</div>`},
-          {id:"m2-l4", title:"2.4 Ama-Continuation Pattern", body:`<ul><li><strong>Ifulegi (Flag)</strong> — ikhefu ngaphambi kokuthi intengo iqhubeke</li><li><strong>Onxantathu (Triangle)</strong> — intengo iyacindezeleka ngaphambi kokuqhuma</li><li><strong>Three White Soldiers</strong> — amakhandlela amathathu aluhlaza elandelanayo</li><li><strong>Three Black Crows</strong> — amakhandlela amathathu abomvu elandelanayo</li></ul>`}
-        ]
-      },
-      { id:"m3", icon:"fa-layer-group", title:"Isahluko 3: I-Support, Resistance Nohlaka", sub:"Imigqa yempi yemakethe",
-        lessons:[
-          {id:"m3-l1", title:"3.1 I-Support Ne-Resistance", body:`<p><strong>I-Support</strong> yindawo lapho abathengi bejwayele ukungena khona (phansi).</p><p><strong>I-Resistance</strong> yindawo lapho abathengisi bejwayele ukungena khona (phezulu).</p><p>Lapho ileveli yephuka, iyajika (role reversal): i-resistance ephukile iba yi-support entsha.</p><div class="lesson-example"><span class="ex-title">📊 Isibonelo</span>I-EUR/USD ifinyelela ku-1.0900 izikhathi ezine yehle. Okwesihlanu iyayephula, bese ibuya izoyihlola njenge-support. Manje usufuna ama-buys ku-1.0900.</div>`},
-          {id:"m3-l2", title:"3.2 Ama-Swing High Nama-Swing Low", body:`<p>I-<strong>swing high</strong> yisiqongo sentengo wendawo, i-<strong>swing low</strong> yisigodi. I-bot izithola ngokuzenzakalelayo isebenzisa ibha engu-5 ohlangothini ngalunye.</p><p>Amanani ayizindilinga (1.0800, 1.1000, 150.00) nawo asebenza njengama-level engqondo.</p>`},
-          {id:"m3-l3", title:"3.3 Ama-Trend (HH/HL/LH/LL)", body:`<h4>I-Uptrend (bullish)</h4><p>Intundo yenza <strong>Higher Highs (HH)</strong> kanye <strong>no-Higher Lows (HL)</strong>. Sithenga.</p><h4>I-Downtrend (bearish)</h4><p>Intengo yenza <strong>Lower Highs (LH)</strong> kanye <strong>no-Lower Lows (LL)</strong>. Sithengisa.</p><h4>I-Range</h4><p>Intengo ishaya phakathi kwe-support ne-resistance. Thengisa i-range noma ulinde i-breakout.</p><div class="lesson-tip"><span class="ex-title">🏛️ Isimiso se-MTF</span>Hlola i-D1 kuqala. Uma i-D1 iku-uptrend, bheka ama-BUYS kuphela ku-H4/H1/M15. Ukulwa ne-higher-TF trend kuyisona sizathu esikhulu sokulahlekelwa.</div>`},
-          {id:"m3-l4", title:"3.4 Ama-Breakout Nama-Retest", body:`<p>I-<strong>breakout</strong> kulapho intengo ivala iqine ngale kwe-level.</p><p>I-<strong>retest</strong> kulapho intengo ibuya izohlola i-level esephukile. Ukungena nge-retest kuvame ukuphepha kune-breakout uqobo (kugwema ama-fakeout).</p><div class="lesson-warn">⚠️ I-wick edlula kwi-level AKUSONA isiqinisekiso. Lindela ukuvala <strong>okuvaliwe</strong> ngale kwe-level.</div>`}
-        ]
-      },
-      { id:"m4", icon:"fa-wave-square", title:"Isahluko 4: Izinkomba (Indicators)", sub:"EMA, RSI, MACD, ATR",
-        lessons:[
-          {id:"m4-l1", title:"4.1 Ama-Moving Average", body:`<p>Sisebenzisa ama-MA amane: EMA 9, EMA 21, SMA 50, SMA 200.</p><p>Uma woni eqonde ohlangothi olulodwa (bull stack / bear stack), i-trend inamandla.</p>`},
-          {id:"m4-l2", title:"4.2 I-RSI", body:`<p>I-RSI isuka ku-0 iye ku-100.</p><ul><li><strong>Ngaphezu kuka-70</strong> → overbought (ingahlehla)</li><li><strong>Ngaphansi kuka-30</strong> → oversold (ingakhuphuka)</li><li><strong>Ukunqamula u-50</strong> → isiqinisekiso se-momentum</li></ul><p>Kumele uqaphele: kwi-trend enamandla i-RSI ingahlala i-overbought isikhathi eside.</p>`},
-          {id:"m4-l3", title:"4.3 I-MACD", body:`<p>I-MACD isetshenziselwa ukubona ama-crossover we-momentum.</p><ul><li>I-bullish crossover = MACD yeqa ngaphezulu kwe-signal line</li><li>I-bearish crossover = MACD yeqa ngaphansi</li><li><strong>I-Divergence</strong> = isexwayiso sokushintsha kwe-trend</li></ul>`},
-          {id:"m4-l4", title:"4.4 I-ATR", body:`<p>I-ATR ikala ukuthi intengo ihamba kangakanani ngebha ngayinye. Ayikhombisi direction — ikala i-volatility.</p><p>Siyisebenzisela: ukubeka ama-stop, ukubala i-lot size, ukugwema izikhathi ze-extreme volatility.</p><div class="lesson-tip"><span class="ex-title">💡 Isibonelo</span>Uma i-ATR ye-EUR/USD ku-H1 ingu-0.0012 (12 pips), i-SL elifanele lingu-1.5 × 0.0012 = 18 pips.</div>`}
-        ]
-      },
-      { id:"m5", icon:"fa-shield-halved", title:"Isahluko 5: Ukuphatha Ubungozi", sub:"Umthetho okugcina emdlalweni",
-        lessons:[
-          {id:"m5-l1", title:"5.1 Umthetho Ka-1%", body:`<p>Ukubeka u-1% we-akhawunti yakho nge-trade ngayinye kusho ukuthi ama-loss angu-10 alandelanayo akulahlekisela u-10% kuphela. Kuyabuhlungu kodwa kuyasinda.</p><p>Ukubeka u-5% nge-trade kusho ama-loss ayisi-7 akwisa phansi i-akhawunti.</p><div class="lesson-example"><span class="ex-title">📊 Izibalo</span>nge-win rate engu-50% kanye no-R:R ongu-1:2, ama-trade angu-10 akunika u-R300 ngenani elimaphakathi.</div>`},
-          {id:"m5-l2", title:"5.2 Ukubeka I-Stop-Loss", body:`<p>I-SL kufanele ibekwe lapho i-trade idea yakho ingasasebenzi khona.</p><ul><li>I-BUY: ngaphansi kwe-swing low yakamuva</li><li>I-SELL: ngaphezulu kwe-swing high yakamuva</li></ul><div class="lesson-warn">⚠️ UNGALOKOTHI uhambise i-SL kude uma i-tring ingahambi kahle. Uma i-trade ingalungile — yamukele ukulahlekelwa uqhubeke.</div>`},
-          {id:"m5-l3", title:"5.3 I-Risk-Reward", body:`<p>I-R:R engu-1:1.5 iyisilinganiso esiphansi i-bot esamukelayo. Ku-1:2, ungaba nephutha ku-2 kwabayi-3 bese wenza inzuzo.</p><table><tr><th>R:R</th><th>I-Win rate edingekayo</th></tr><tr><td>1:1</td><td>50%</td></tr><tr><td>1:1.5</td><td>40%</td></tr><tr><td>1:2</td><td>33%</td></tr></table>`},
-          {id:"m5-l4", title:"5.4 Indlela Yokubala I-Lot Size", body:`<p>Ifomula esetshenziswa yi-bot:</p><p><code>Lot = (Account × Risk%) / (Pips Risk × Pip Value)</code></p><div class="lesson-example"><span class="ex-title">📊 Isibonelo</span>I-akhawunti ka-R10,000, u-1% = R100. I-SL ngama-pips angu-40 ku-EURUSD. I-pip value nge-standard lot ilinganiselwa ku-R180. Ama-lots = R100 / (40 × R18) = 0.14 lots.</div>`}
-        ]
-      },
-      { id:"m6", icon:"fa-arrow-trend-up", title:"Isahluko 6: Isu Le-Multi-Timeframe", sub:"Indlela i-bot ethola ngayo amasetup",
-        lessons:[
-          {id:"m6-l1", title:"6.1 I-Hierarchy (D1 → H4 → H1 → M15)", body:`<p>I-bot ihlaziya izikhathi ezi-5 ngokulandelana: D1, H4, H1, M15, M5. Uma i-D1 ne-H4 zingavumelani, AKUKHO trade.</p>`},
-          {id:"m6-l2", title:"6.2 I-Confluence Score (0-100)", body:`<p>I-strength engu-70+ isho ukuthi amafactor amaningi ayavumelana. AKUSONA isiqinisekiso sokuwina — isilinganiso sokuvumelana kwezinto zobuchwepheshe.</p>`},
-          {id:"m6-l3", title:"6.3 Ukungena Nokuvimbela Okuphindaphindayo", body:`<p>I-bot ayifaki ama-signal amabili ku-pair elifanayo phakathi kwamahora angu-4 noma ngaphakathi kuka-0.5 ATR.</p>`},
-          {id:"m6-l4", title:"6.4 Incazelo Yekhadi Lesiginali", body:`<p>Ikhadi ngalinye libonisa: i-pair, isiqondiso, i-entry, i-SL, i-TP, i-R:R, i-ATR, istrength, i-quality %.</p>`}
-        ]
-      },
-      { id:"m7", icon:"fa-brain", title:"Isahluko 7: Ingqondo Yokuhweba", sub:"U-80% wokuhweba usemqondweni",
-        lessons:[
-          {id:"m7-l1", title:"7.1 Izitha Ezinhlanu", body:`<h4>I-FOMO</h4><p>Ukungena ngenxa yokwesaba ukuphuthelwa. I-FOMO entries ayajwayele ukuba ne-R:R embi.</p><h4>Ukuziphindiselela (Revenge)</h4><p>Ukuvula i-trade ngokushesha ngemuva kokulahlekelwa. Yindlela esheshayo yokushabalalisa i-akhawunti.</p><h4>Ukuzethemba ngokweqile</h4><p>Ngemuva kwama-win ama-3, weqa i-checklist. Imakethe iyakuqaphela.</p><h4>Ithemba (Hope)</h4><p>Ukuguqula i-losers ibe "yi-investment". Kwesinye isikhathi ayibuyi.</p><h4>I-Analysis Paralysis</h4><p>Ukwengeza ama-indicators amaningi esikhundleni sokuthatha i-trade.</p>`},
-          {id:"m7-l2", title:"7.2 Ukuzijwayeza Isiyalo", body:`<ul><li>Yiba nohlelo lokuhweba olubhaliwe</li><li>Gcina ijenali (i-app yakwenzela lokhu)</li><li>Thatha ikhefu ngemuva kwama-loss ama-2</li><li>Beka umkhawulo wosuku (3%)</li><li>Ungahwebi uma uthukuthele, ukhathele, noma udakiwe.</li></ul>`},
-          {id:"m7-l3", title:"7.3 I-Expectancy", body:`<p>I-edge yakho ibonakala kumasampula amakhulu (50+ trades). Ungakhathazeki nge-trade eyodwa.</p><div class="lesson-tip"><span class="ex-title">💡 Umbono</span>Yiba yikhasino. Ikhasino ayinendaba ne-spin eyodwa — iyazi ukuthi ngokuhamba kwesikhathi, iyawina. Wena uyikhasino.</div>`}
-        ]
-      },
-      { id:"m8", icon:"fa-coins", title:"Isahluko 8: Ukuhlanganisa Konke", sub:"Izinsuku zokuqala ezingu-30",
-        lessons:[
-          {id:"m8-l1", title:"8.1 I-Pre-Trade Checklist", body:`<ol><li>Ithini i-D1 trend?</li><li>Ithini i-H4 trend? Iyavumelana?</li><li>Ithini i-level eseduze?</li><li>Yini i-trigger yokungena?</li><li>Ngilapho uma nginephutha?</li><li>Ithini i-R:R (≥ 1:1.5)?</li><li>Ithini i-lot size (1% risk)?</li><li>Ngikubhalile phansi?</li></ol><p>Uma ungakwazi ukuphendula noma imuphi — UNGAYITHATHI I-TRADE.</p>`},
-          {id:"m8-l2", title:"8.2 Isibonelo Sohlelo (EUR/USD)", body:`<div class="lesson-example"><span class="ex-title">📋 Uhlelo</span><strong>Pair:</strong> EUR/USD<br/><strong>Isikhathi:</strong> London/NY overlap kuphela<br/><strong>Ama-Indicators:</strong> EMA9/21, SMA50/200, RSI14, MACD, ATR14<br/><strong>Ama-Rules:</strong><ul><li>D1 ne-H4 kumele zivumelane</li><li>Pullback kwi-key level</li><li>I-candlestick pattern kuleveli</li><li>RSI oversold/overbought</li><li>MACD crossover ku-H1</li></ul><strong>Ukukhipha:</strong><ul><li>SL ku-1.5 × ATR ngemuva kwe-swing</li><li>TP1 ku-structure eseduze (1.5R+)</li><li>50% off ku-TP1, SL iye ku-breakeven</li></ul><strong>Risk:</strong> 1% nge-trade, 2 trades max.</div>`},
-          {id:"m8-l3", title:"8.3 Izinsuku Zokuqala Ezingu-30", body:`<p><strong>Isonto 1-2:</strong> Akukho mali yangempela. Sebenzisa i-demo. Landela ama-signals e-bot kuphela.</p><p><strong>Isonto lesi-3:</strong> I-akhawunti encane (0.01 lots). Umgomo: ukulandela imithetho, hhayi ukwenza imali.</p><p><strong>Isonto lesi-4:</strong> Buyekeza. Uma win rate > 40% futhi R:R > 1:1.5, ungakhuphula kancane.</p><div class="lesson-tip"><span class="ex-title">🐆 Ingqondo Yengwe</strong>Ukunemba. Isiyalo. Ubungcweti. Lindela isetup se-high-probability ngesineke. Gadla ngokunqala lapho ivela. Qhubeka ngokushesha uma umisiwe.</div>`}
-        ]
-      }
-    ]
-  }
+<h4>Ukuphuma kancane (scale out)</h4><ol><li>Ku-TP1 (1.5R), thatha u-50%, hambisa i-SL ku-breakeven.</li><li>Ku-TP2 (3R), thatha enye i-30%.</li><li>Shiya u-20% wokugcina nge-trailing stop.</li></ol>`
+        },
+        { id:"m5-l4", title:"Isifundo 4: Uhlelo Lokuhweba Nendlela Yansuku Zonke",
+          body:`<p>Bhala phansi uhlelo lwakho: amapheya owahwebelayo, izikhathi, imithetho yokungena, i-SL, i-TP, usayizi omkhulu, umkhawulo wansuku zonke, nokuthi UNGAhwebi nini. Namathisela odongeni eduze kwesikrini sakho.</p>`
+        }
+      ]
+    },
+    { id:"m6", icon:"fa-brain", title:"Incwadi 6: Ingqondo Yomhwebi Onesiyalo",
+      sub:"U-80% wokuhweba wenzeka phakathi kwezindlebe zakho",
+      lessons:[
+        { id:"m6-l1", title:"Isifundo 1: Izitha Eziyisithupha Zemizwa",
+          body:`<h4>1. Ukwesaba</h4><p>Kukwenza ungangeni lapho kufanele, ukhiphe abawinile ngaphambi kwesikhathi. Ikhambi: themba uhlelo.</p>
+<h4>2. Ukuhaha</h4><p>Kukwenza usebenzise i-leverage enkulu kakhulu, weqe ama-TP. Ikhambi: thatha inzuzo emazingeni amisiwe.</p>
+<h4>3. Ithemba</h4><p>Umuzwa oyingozi kakhulu. Ukwenza uhambise ama-SL futhi ubambe ama-losers. Ikhambi: i-SL yakho yilapho onephutha khona.</p>
+<h4>4. Ukuziphindiselela</h4><p>Ngemva kokulahlekelwa, uvula i-trade ngokushesha ukubuyisela imali. Ayisebenzi. Ikhambi: awukho ama-trade imizuzu engama-30 ngemuva kokulahlekelwa.</p>
+<h4>5. Ukuzethemba ngokweqile</h4><p>Ngemuva kwama-win amathathu, weqa i-checklist. Ikhambi: buyekeza wonke ama-trade.</p>
+<h4>6. Isithukuthezi</h4><p>Ukuhweba ngenxa nje yokuthi ukuhlala kuthulekile akuthokozi. Ikhambi: ukungahwebi KUYISIKHUNDI.</p>`
+        },
+        { id:"m6-l2", title:"Isifundo 2: Ukwakha Isiyalo Ngenqubo",
+          body:`<p>Isiyalo akusona isici sobuntu. KUYISIJWAYELO. Usakha njengomsipha — ngokuphindaphinda kanye nokunqoba okuncane kwansuku zonke. Ngaphambi kwayo yonke i-trade, sebenzisa i-checklist. Gcina ijenali. Phefumula kathathu ngaphambi kokuchofoza.</p>`
+        },
+        { id:"m6-l3", title:"Isifundo 3: I-Expectancy Nengqondo Yekhasino",
+          body:`<p>Ikhasino ayinendaba nokuthi othile uwine u-R1 million ngenombolo eyodwa. Bayazi ukuthi ngaphezu kwama-spin angu-100,000, i-edge iqinisekisiwe. Umsebenzi wakho njengomhwebi UKUBA IKASINO, hhayi umgembuli.</p>
+<div class="lesson-math">I-Expectancy = (I-Win Rate × I-Avg Win) − (I-Loss Rate × I-Avg Loss)</div>`
+        }
+      ]
+    },
+    { id:"m7", icon:"fa-magnifying-glass-chart", title:"Incwadi 7: Isibonelo Esiphelele Se-Trade — EUR/USD",
+      sub:"Ukuhlanganisa konke: D1 → H4 → H1 → M15",
+      lessons:[
+        { id:"m7-l1", title:"Isifundo 1: Isinyathelo 1 — I-D1 Trend Bias",
+          body:`<p>Isinyathelo sokuqala: HLOLA I-D1 NJALO. NgoJanuwari 2025, i-EUR/USD yayiku-uptrend (HH/HL), ibuyela emuva kwi-support ku-1.0700.</p><p><strong>I-D1 BIAS = BULLISH. Sibheka ama-BUYS kuphela.</strong></p>`
+        },
+        { id:"m7-l2", title:"Isifundo 2: Isinyathelo 2 — I-H4 Structure",
+          body:`<p>Ku-H4, intengo yahlola i-zone engu-1.0700–1.0720. Ama-candles e-H4 abonisa ama-wick amade aphansi (abathengi bamunca ukuthengisa). Isitaki se-MA sisavumelana.</p><p><strong>I-H4 IQINISEKISA I-BULLISH BIAS. Indawo yokuthenga: 1.0700–1.0720.</strong></p>`
+        },
+        { id:"m7-l3", title:"Isifundo 3: Isinyathelo 3 — I-H1 Trigger, SL, TP",
+          body:`<p>Ku-H1, i-hammer yakha ku-1.0705, i-RSI yafika ku-28, i-MACD yeqa i-bullish. Sayithenga ku-1.0725, i-SL ku-1.0685 (40 pips), i-TP1 ku-1.0785 (60 pips / 1.5R), i-TP2 ku-1.0845 (120 pips / 3R). I-Strength 76/100.</p>`
+        },
+        { id:"m7-l4", title:"Isifundo 4: Isinyathelo 4 — Ukuphathwa kanye Nomphumela",
+          body:`<p>Sathatha u-50% ku-TP1 (R78), sahambisa i-SL ku-breakeven. Ngemuva kwamahora angu-24 safinyelela ku-TP2 (R111). Esinye isiqeshana sakhishwa nge-trailing stop (R75). <strong>Isamba esiphelele: +R264 (+2.6%) emahoreni angu-36.</strong></p>
+<div class="lesson-tip"><span class="ex-title">💡 Iphuzu</span>Audinga ama-trade amaningi anje. Amabili ngesonto angena ku-5% ngesonto. Lokho kuyinzuzo eguqula impilo.</div>`
+        },
+        { id:"m7-l5", title:"Isifundo 5: Ukufunda Kubadlulile",
+          body:`<p>Uma ulahlekelwa kodwa walandela imithetho, UKULAHLEKELWA OKUHLE. Uma ulahlekelwa ngenxa yokwephula imithetho, UKULAHLEKELWA OKUBIZAYO. Yamukela ukulahlekelwa kokuqala; qeda okwesibili.</p>`
+        }
+      ]
+    },
+    { id:"m8", icon:"fa-coins", title:"Incwadi 8: Izinsuku Zakuqala Ezingu-90",
+      sub:"Indlela ehleliwe yabahwebi bakaNdumiso",
+      lessons:[
+        { id:"m8-l1", title:"Isifundo 1: Isigaba 1 — I-Demo (Amaviki 1–4)",
+          body:`<p>AKUKHO MALI YANGEMPELA. Vula i-akhawunti yedemo ngo-R10,000. Thatha ama-trade angu-30+ alandela amasiginali e-bot kuphela. Inhloso AKUSIYO inzuzo — ukuzibonisa ukuthi ungalandela imithetho ngokungaguquguquki.</p>`
+        },
+        { id:"m8-l2", title:"Isifundo 2: Isigaba 2 — I-Micro Live (Amaviki 5–8)",
+          body:`<p>Faka imali encane ongakwazi ukuyilahlekela (R1,000–R5,000). Hweba ama-0.01 lots amaningi. Inhloso ukubhekana nemizwa YANGEMPELA ngemali yangempela.</p>`
+        },
+        { id:"m8-l3", title:"Isifundo 3: Isigaba 3 — Ukukhulisa Usayizi (Amaviki 9–24)",
+          body:`<p>Khulisa usayizi ngama-25% kuphela ngesikhathi, uhlobene nokukhula kwe-akhawunti. Ku-R100,000, wenza cishe u-R2,500 nge-trade enhle ngayinye.</p>
+<div class="lesson-warn">Izithembiso zika-R10,000 ngosuku, ama-indicators ayimfihlo, nezinsizakalo zokuphatha ama-akhawunti kuyimikhonyovu engu-99%. Ayikho indlela enqamulelayo.</div>`
+        },
+        { id:"m8-l4", title:"Isifundo 4: Amazwi Okugcina — Ingqondo Yengwe",
+          body:`<p>Ingwe ayijahi yonke insephe. Ilinda otshanini obude — ngezinye izikhathi amahora — kuze kube yilapho isisulu esifanele, ebangeni elifanele, ngesikhathi esifanele sivele. Bese igadla ngokuzibophezela okuphelele. Lapho iphutha (futhi iyaphutha), ayithukutheli. Ibuyela otshanini ilinde futhi. Yiba yingwe. 🐆</p>
+<p style="text-align:center;color:#d4af37;font-family:'Playfair Display',serif;font-size:20px;margin-top:30px;">Ukunemba • Isiyalo • Ubungcweti</p>`
+        }
+      ]
+    }
+  ]
 };
 
-// ─────── Academy state & renderer ───────
+// ─────── Enhanced academy renderer with chapter navigation & progress ───────
 var academyState = { lang: "en", openModule: null, currentLesson: null };
 
 function initAcademy() {
@@ -958,12 +1702,12 @@ function initAcademy() {
 }
 function setLang(l) {
   academyState.lang = l;
+  academyState.currentLesson = null; // return to module list on language change
   var enBtn = document.getElementById("langEN");
   var zuBtn = document.getElementById("langZU");
   if (enBtn) enBtn.classList.toggle("active", l==="en");
   if (zuBtn) zuBtn.classList.toggle("active", l==="zu");
-  if (academyState.currentLesson) renderLesson(academyState.currentLesson.moduleId, academyState.currentLesson.lessonId);
-  else renderModules();
+  renderModules();
 }
 function renderModules() {
   academyState.currentLesson = null;
@@ -977,13 +1721,14 @@ function renderModules() {
   data.modules.forEach(function(mod){
     var card = document.createElement("div");
     card.className = "edu-module";
+    var lessonCount = mod.lessons.length;
     card.innerHTML = '<div class="edu-mod-head">' +
       '<div class="edu-mod-icon"><i class="fa-solid ' + mod.icon + '"></i></div>' +
       '<div class="edu-mod-t"><h3></h3><p></p></div>' +
       '<i class="fa-solid fa-chevron-down edu-mod-chv"></i></div>' +
       '<div class="edu-lesson-list"></div>';
     card.querySelector(".edu-mod-t h3").textContent = mod.title;
-    card.querySelector(".edu-mod-t p").textContent = mod.sub;
+    card.querySelector(".edu-mod-t p").textContent = mod.sub + " (" + lessonCount + " lessons)";
     var lessonList = card.querySelector(".edu-lesson-list");
     mod.lessons.forEach(function(les){
       var item = document.createElement("div");
@@ -999,13 +1744,23 @@ function renderModules() {
     var head = card.querySelector(".edu-mod-head");
     head.addEventListener("click", function(){
       var isOpen = card.classList.contains("open");
-      // close all
       var all = list.querySelectorAll(".edu-module");
       for (var i=0;i<all.length;i++) all[i].classList.remove("open");
       if (!isOpen) card.classList.add("open");
     });
     list.appendChild(card);
   });
+}
+function findLesson(modId, lesId) {
+  var data = EDU[academyState.lang];
+  for (var m=0;m<data.modules.length;m++){
+    var mod = data.modules[m];
+    if (mod.id !== modId) continue;
+    for (var l=0;l<mod.lessons.length;l++){
+      if (mod.lessons[l].id === lesId) return { mod: mod, lesson: mod.lessons[l], mi:m, li:l };
+    }
+  }
+  return null;
 }
 function openLesson(modId, lesId) {
   var list = document.getElementById("eduModules");
@@ -1014,58 +1769,129 @@ function openLesson(modId, lesId) {
   if (view) view.style.display = "block";
   academyState.currentLesson = { moduleId: modId, lessonId: lesId };
   renderLesson(modId, lesId);
-  window.scrollTo({ top: view ? view.offsetTop - 80 : 0, behavior: "smooth" });
+  setTimeout(function(){ view.scrollIntoView({behavior:"smooth", block:"start"}); }, 50);
 }
 function renderLesson(modId, lesId) {
-  var data = EDU[academyState.lang];
-  var mod = data.modules.find(function(m){ return m.id === modId; });
-  if (!mod) return;
-  var les = mod.lessons.find(function(l){ return l.id === lesId; });
-  if (!les) return;
+  var found = findLesson(modId, lesId);
+  if (!found) return;
+  var mod = found.mod, les = found.lesson, mi = found.mi, li = found.li;
   var titleEl = document.getElementById("lessonTitle");
   var subEl = document.getElementById("lessonSubtitle");
   var bodyEl = document.getElementById("lessonBody");
   if (titleEl) titleEl.textContent = les.title;
-  if (subEl) subEl.textContent = mod.sub;
-  if (bodyEl) bodyEl.innerHTML = les.body;
+  if (subEl) subEl.textContent = mod.title + " — " + mod.sub;
+  var chapterNum = '<div class="lesson-chapter-num">' + mod.title.replace(/^Book \d+: /,"Chapter " + (mi+1) + " • ") + " • Lesson " + (li+1) + "/" + mod.lessons.length + '</div>';
+  // Add prev/next navigation
+  var prevBtn = "", nextBtn = "";
+  var prev = null, next = null;
+  if (li > 0) prev = mod.lessons[li-1];
+  else if (mi > 0) {
+    var pm = EDU[academyState.lang].modules[mi-1];
+    prev = pm.lessons[pm.lessons.length-1];
+    prevMod = pm;
+  }
+  var prevMod = mod;
+  if (li < mod.lessons.length-1) next = mod.lessons[li+1];
+  else if (mi < EDU[academyState.lang].modules.length-1) {
+    var nm = EDU[academyState.lang].modules[mi+1];
+    next = nm.lessons[0];
+    nextMod = nm;
+  }
+  var nextMod = mod;
+  // recalc with mod tracking
+  prev = null; next = null; var prevModT=null, nextModT=null;
+  var allLessons = [];
+  EDU[academyState.lang].modules.forEach(function(mo){ mo.lessons.forEach(function(le){ allLessons.push({m:mo,l:le}); }); });
+  var flatIdx = -1;
+  for (var i=0;i<allLessons.length;i++){ if(allLessons[i].m.id===mod.id && allLessons[i].l.id===les.id){ flatIdx=i; break; } }
+  var totalLessons = allLessons.length;
+  var progressPct = ((flatIdx+1)/totalLessons*100).toFixed(0);
+  var progressBar = '<div class="lesson-progress"><div class="lesson-progress-fill" style="width:'+progressPct+'%"></div></div>';
+  var navHtml = '<div class="lesson-nav-row">';
+  if (flatIdx > 0) {
+    var p = allLessons[flatIdx-1];
+    navHtml += '<button class="lesson-nav-btn nav-prev" data-mid="'+p.m.id+'" data-lid="'+p.l.id+'"><i class="fa-solid fa-arrow-left"></i><span>'+p.l.title+'</span></button>';
+  } else { navHtml += '<span></span>'; }
+  if (flatIdx < totalLessons-1) {
+    var n = allLessons[flatIdx+1];
+    navHtml += '<button class="lesson-nav-btn nav-next" data-mid="'+n.m.id+'" data-lid="'+n.l.id+'"><span>'+n.l.title+'</span><i class="fa-solid fa-arrow-right"></i></button>';
+  }
+  navHtml += '</div>';
+  if (bodyEl) bodyEl.innerHTML = chapterNum + progressBar + les.body + navHtml;
+  // Wire nav buttons
+  var navBtns = bodyEl.querySelectorAll(".lesson-nav-btn");
+  for (var b=0;b<navBtns.length;b++){
+    navBtns[b].addEventListener("click", function(){
+      openLesson(this.dataset.mid, this.dataset.lid);
+    });
+  }
 }
-function backToModules() { renderModules(); window.scrollTo({top: 0, behavior:"smooth"}); }
+function backToModules() { renderModules(); window.scrollTo({top:0,behavior:"smooth"}); }
 
-// ─────── PDF download (print view) ───────
+// ─────── PDF download (full book, print-ready) ───────
 function openPdf() {
   var w = window.open("", "_blank");
   var data = EDU[academyState.lang];
+  var langLabel = academyState.lang === "zu" ? "isiZulu" : "English";
   var html = '<!doctype html><html><head><meta charset="utf-8"><title>' + data.title + '</title>' +
-    '<link rel="stylesheet" href="css/app.css">' +
-    '<style>body{font-family:Inter,Arial,sans-serif;background:#0a0d14;color:#e4e7ee;padding:20px;}' +
-    '.bottom-nav,.app-header,#splash,.edu-toolbar,.back-btn{display:none!important;}' +
-    '.page{display:block;position:static;padding:0;}.edu-module{border:1px solid #222a3a;border-radius:10px;margin-bottom:12px;overflow:hidden;}' +
-    '.edu-mod-head{background:linear-gradient(135deg,#141a28,#0a0d14);padding:14px 16px;display:flex;align-items:center;gap:12px;}' +
-    '.edu-mod-icon{width:44px;height:44px;border-radius:12px;background:#1a2030;display:flex;align-items:center;justify-content:center;color:#d4af37;}' +
-    '.edu-mod-t h3{margin:0;color:#d4af37;font-size:16px;}.edu-mod-t p{margin:2px 0 0;color:#39d2c0;font-size:12px;}' +
-    '.edu-lesson-list{display:block;padding:12px 16px 16px;}.edu-lesson-item{padding:10px 0;border-bottom:1px solid #1a2030;color:#c8ccd8;}' +
-    '.edu-lesson-item:last-child{border:none;}.lesson-body{color:#c8ccd8;font-size:12px;line-height:1.7;}' +
-    'h1,h2,h3,h4{color:#fff}.lesson-example{background:linear-gradient(135deg,rgba(57,210,192,0.08),rgba(212,175,55,0.08));border-left:3px solid #39d2c0;padding:10px;border-radius:4px;margin:8px 0;}' +
-    '.lesson-warn{background:rgba(220,38,38,0.08);border-left:3px solid #dc2626;padding:10px;border-radius:4px;margin:8px 0;}' +
-    '.lesson-tip{background:rgba(212,175,55,0.08);border-left:3px solid #d4af37;padding:10px;border-radius:4px;margin:8px 0;}' +
-    'table{width:100%;border-collapse:collapse;margin:8px 0;}th{background:#1a2030;color:#d4af37;padding:6px;text-align:left;font-size:11px;}td{padding:6px;border-bottom:1px solid #1a2030;font-size:11px;}' +
-    'code{background:#1a2030;color:#39d2c0;padding:2px 6px;border-radius:3px;font-size:11px;}' +
-    '.print-cover{display:block!important;text-align:center;padding:60px 20px;page-break-after:always;}' +
-    '.print-cover h1{color:#d4af37;font-size:28px;font-family:"Playfair Display",serif;margin-bottom:10px;}' +
-    '.print-cover p{color:#39d2c0;}' +
-    '@page{margin:15mm;size:A4;}</style>' +
-    '</head><body>' +
-    '<div class="print-cover"><h1>🐆 ' + data.title + '</h1><p>' + data.subtitle + '</p><p style="color:#888;font-size:11px;margin-top:40px">Forex Trading with Ndumiso &mdash; ' + new Date().toISOString().slice(0,10) + '</p></div>';
+    '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">' +
+    '<style>' +
+    '@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Playfair+Display:wght@700;900&display=swap");' +
+    '*{box-sizing:border-box}body{font-family:Inter,Arial,sans-serif;background:#fff;color:#111;padding:20px;max-width:780px;margin:0 auto;font-size:12px;line-height:1.7;}' +
+    'h1,h2,h3{font-family:"Playfair Display",serif;color:#111;page-break-after:avoid;}' +
+    'h3{font-size:18px;margin-top:24px;border-bottom:2px solid #d4af37;padding-bottom:4px;}' +
+    'h4{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#39d2c0;margin-top:18px;}' +
+    'p{margin-bottom:10px;}' +
+    'ul,ol{padding-left:22px;margin-bottom:10px;}' +
+    'li{margin-bottom:4px;}' +
+    'table{width:100%;border-collapse:collapse;margin:12px 0;font-size:11px;}' +
+    'th{background:#1a2030;color:#d4af37;padding:6px;text-align:left;border:1px solid #ccc;font-size:10px;letter-spacing:1px;}' +
+    'td{padding:6px;border:1px solid #ccc;}' +
+    '.print-cover{text-align:center;padding:80px 20px;page-break-after:always;min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;}' +
+    '.print-cover h1{color:#d4af37;font-size:36px;margin-bottom:10px;}' +
+    '.print-cover p{color:#555;font-size:14px;}' +
+    '.lesson-chapter-num{color:#39d2c0;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:24px 0 6px;}' +
+    '.lesson-example,.lesson-box{background:#f7f5ec;border-left:4px solid #39d2c0;padding:10px 14px;margin:12px 0;border-radius:4px;}' +
+    '.lesson-warn{background:#fff0f0;border-left:4px solid #dc2626;padding:10px 14px;margin:12px 0;border-radius:4px;}' +
+    '.lesson-tip{background:#f7f5ec;border-left:4px solid #d4af37;padding:10px 14px;margin:12px 0;border-radius:4px;}' +
+    '.lesson-quote{font-style:italic;color:#555;border-left:4px solid #d4af37;padding:10px 16px;margin:14px 0;font-family:"Playfair Display",serif;}' +
+    '.lesson-math{background:#f4f4f4;border:1px solid #ccc;border-radius:6px;padding:12px;margin:12px 0;font-family:"Courier New",monospace;text-align:center;font-size:13px;color:#111;font-weight:700;}' +
+    '.lesson-chart{background:#f4f4f4;border:1px solid #ccc;border-radius:6px;padding:12px;margin:12px 0;font-family:"Courier New",monospace;font-size:10px;line-height:1.4;white-space:pre;overflow-x:auto;}' +
+    '.lesson-chart-title{font-family:Inter,sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#d4af37;font-weight:800;}' +
+    '.ex-title{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#39d2c0;display:block;margin-bottom:4px;}' +
+    '.lesson-step-list{list-style:none;padding:0;margin:12px 0;counter-reset:step;}' +
+    '.lesson-step-list li{padding:8px 10px 8px 38px;margin-bottom:6px;background:#f9f9f9;border-radius:6px;position:relative;}' +
+    '.lesson-step-list li::before{counter-increment:step;content:counter(step);position:absolute;left:10px;top:8px;width:20px;height:20px;background:#d4af37;color:#000;font-weight:800;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;}' +
+    '.lesson-two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;}' +
+    '.lesson-two-col > div{background:#f9f9f9;border:1px solid #ccc;border-radius:6px;padding:10px;}' +
+    '.lesson-two-col h5{margin:0 0 4px 0;font-size:9px;letter-spacing:1px;}' +
+    '.edu-module{page-break-inside:auto;margin-bottom:20px;}' +
+    '.edu-mod-head{background:linear-gradient(135deg,#141a28,#0a0d14);color:#fff;padding:14px;border-radius:6px 6px 0 0;page-break-after:avoid;}' +
+    '.edu-mod-head h3{color:#d4af37;margin:0 0 2px 0;font-size:15px;}' +
+    '.edu-mod-head p{color:#39d2c0;margin:0;font-size:10px;}' +
+    '.edu-lesson-item{color:#111;font-weight:700;padding:8px 0;border-bottom:1px solid #eee;page-break-after:avoid;}' +
+    '.lesson-body{padding:12px 0;}' +
+    '.lesson-divider{height:1px;background:#ccc;margin:16px 0;}' +
+    '.lesson-progress,.lesson-nav-row,.back-btn,.edu-toolbar,.nav-btn,.bottom-nav,.app-header,#splash,.update-banner{display:none!important;}' +
+    'code{background:#f0f0f0;padding:1px 4px;border-radius:3px;font-size:11px;color:#111;}' +
+    '@page{margin:15mm;size:A4;}' +
+    '.bull{color:#22c55e;font-weight:700;}.bear{color:#dc2626;font-weight:700;}.resist{color:#dc2626;}.sup{color:#22c55e;}.label{color:#555;}.entry{color:#d4af37;font-weight:700;}' +
+    '.col-bull h5{color:#22c55e;}' +
+    '</style></head><body>' +
+    '<div class="print-cover"><div style="font-size:64px">🐆</div><h1>' + data.title + '</h1><p style="font-size:16px;color:#39d2c0;text-transform:uppercase;letter-spacing:3px;">' + data.subtitle + '</p>' +
+    '<p style="margin-top:40px;color:#888;font-size:11px;">Complete course · ' + langLabel + ' edition</p>' +
+    '<p style="color:#888;font-size:11px;">' + new Date().toISOString().slice(0,10) + '</p>' +
+    '<p style="margin-top:60px;font-style:italic;color:#555;font-family:Playfair Display,serif;">Precision • Discipline • Mastery</p></div>';
   data.modules.forEach(function(mod){
-    html += '<div class="edu-module"><div class="edu-mod-head"><div class="edu-mod-icon"><i class="fa-solid ' + mod.icon + '"></i></div><div class="edu-mod-t"><h3>' + mod.title + '</h3><p>' + mod.sub + '</p></div></div><div class="edu-lesson-list">';
+    html += '<div class="edu-module"><div class="edu-mod-head"><h3>' + mod.title + '</h3><p>' + mod.sub + '</p></div>';
     mod.lessons.forEach(function(les){
-      html += '<div class="edu-lesson-item" style="color:#fff;font-weight:700;border-bottom:1px solid #222a3a">' + les.title + '</div>';
-      html += '<div class="lesson-body" style="padding:8px 0 16px">' + les.body + '</div>';
+      html += '<div class="edu-lesson-item">' + les.title + '</div>';
+      html += '<div class="lesson-body">' + les.body + '</div>';
     });
-    html += '</div></div>';
+    html += '</div>';
   });
-  html += '<p style="text-align:center;color:#888;font-size:11px;margin-top:30px">🐆 Precision. Discipline. Mastery.</p>';
-  html += '<script>window.onload=function(){setTimeout(function(){window.print();},500);};</scr' + 'ipt>';
+  html += '<div style="text-align:center;margin:40px 0;color:#888;font-size:11px;font-family:Playfair Display,serif;">🐆 Precision · Discipline · Mastery</div>';
+  html += '<script>window.onload=function(){setTimeout(function(){window.print();},600);};</scr' + 'ipt>';
   html += '</body></html>';
   w.document.write(html);
   w.document.close();

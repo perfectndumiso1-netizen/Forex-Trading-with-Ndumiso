@@ -274,6 +274,62 @@
   </nav>
 </div>
 
+<!-- UPDATE BANNER (hidden until new SW is found) -->
+<div id="updateBanner" class="update-banner" style="display:none">
+  <div class="update-banner-inner">
+    <i class="fa-solid fa-download"></i>
+    <span id="updateBannerText">New version available — reload to update.</span>
+    <button id="updateReloadBtn" class="update-reload">Update</button>
+    <button id="updateDismissBtn" class="update-dismiss" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+</div>
+
 <script src="js/app.js"></script>
+<script>
+// Service Worker registration + auto-update detection
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').then(function (reg) {
+      // If a new SW is waiting/installing, prompt the user
+      function promptUpdate(worker) {
+        var banner = document.getElementById('updateBanner');
+        if (!banner) return;
+        document.body.classList.add("update-showing");
+        banner.style.display = 'block';
+        var reload = document.getElementById('updateReloadBtn');
+        var dismiss = document.getElementById('updateDismissBtn');
+        reload.onclick = function () {
+          if (worker) worker.postMessage({ type: 'SKIP_WAITING' });
+          window.location.reload();
+        };
+        dismiss.onclick = function () { banner.style.display = "none"; document.body.classList.remove("update-showing"); };
+      }
+      if (reg.waiting) promptUpdate(reg.waiting);
+      if (reg.installing) {
+        reg.installing.addEventListener('statechange', function () {
+          if (this.state === 'installed' && navigator.serviceWorker.controller) promptUpdate(this);
+        });
+      }
+      reg.addEventListener('updatefound', function () {
+        var newSW = reg.installing;
+        if (!newSW) return;
+        newSW.addEventListener('statechange', function () {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller) promptUpdate(newSW);
+        });
+      });
+      // Check for updates every 15 minutes
+      setInterval(function () { reg.update(); }, 15 * 60 * 1000);
+    }).catch(function () { /* SW unsupported / private mode */ });
+
+    // Controller changed means new SW took over -> reload once
+    var refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+  });
+}
+</script>
 </body>
 </html>
