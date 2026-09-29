@@ -109,20 +109,30 @@
       <div class="pair-grid" id="pairGrid"></div>
 
       <div class="section-header" style="margin-top:28px">
-        <h2><i class="fa-solid fa-chart-area" style="color:var(--teal)"></i> Chart</h2>
+        <h2><i class="fa-solid fa-chart-area" style="color:var(--teal)"></i> Live Chart</h2>
+        <span class="sh-count" id="chartSource">TradingView</span>
       </div>
       <div class="chart-card">
         <div class="chart-head">
           <select id="chartPair" class="chart-select"></select>
           <div class="tf-pills" id="tfPills">
-            <button data-tf="D1">D1</button>
-            <button data-tf="H4">H4</button>
-            <button class="active" data-tf="H1">H1</button>
-            <button data-tf="M15">M15</button>
-            <button data-tf="M5">M5</button>
+            <button data-tv="D" data-tf="D1">D1</button>
+            <button data-tv="240" data-tf="H4">H4</button>
+            <button class="active" data-tv="60" data-tf="H1">H1</button>
+            <button data-tv="15" data-tf="M15">M15</button>
+            <button data-tv="5" data-tf="M5">M5</button>
           </div>
         </div>
-        <div id="liveChart" class="chart-area"></div>
+        <!-- Real-time TradingView chart (primary) -->
+        <div id="tvChart" class="chart-area">
+          <iframe id="tvFrame" class="tv-frame" title="TradingView Chart" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+        </div>
+        <!-- Lightweight Charts canvas (fallback / offline / cached-data) -->
+        <div id="liveChart" class="chart-area" style="display:none"></div>
+        <div class="chart-source-row">
+          <button class="src-btn active" id="srcLive"><i class="fa-solid fa-broadcast-tower"></i> Live</button>
+          <button class="src-btn" id="srcCached"><i class="fa-solid fa-database"></i> Cached</button>
+        </div>
         <div class="chart-info" id="chartInfo"></div>
       </div>
     </section>
@@ -132,227 +142,29 @@
       <div class="section-header">
         <h2><i class="fa-solid fa-graduation-cap" style="color:var(--gold)"></i> Forex Academy</h2>
       </div>
-      <p class="edu-intro">Master the fundamentals before you master the markets. Every successful trader started here.</p>
+      <p class="edu-intro" id="eduIntro">Master the fundamentals before you master the markets. Click a module, then a lesson. Every successful trader started here.</p>
 
-      <div class="edu-cards">
-        <!-- Card: What is Forex -->
-        <details class="edu-card">
-          <summary>
-            <div class="edu-icon"><i class="fa-solid fa-globe"></i></div>
-            <div class="edu-t"><h3>What is Forex?</h3><p>The world's largest financial market</p></div>
-            <i class="fa-solid fa-chevron-down chev"></i>
-          </summary>
-          <div class="edu-body">
-            <p><strong>Forex (FX)</strong> stands for <em>foreign exchange</em> — the global marketplace where national currencies are traded against one another. It is the <strong>largest and most liquid financial market in the world</strong>, with over <strong>$7.5 trillion traded daily</strong>.</p>
-            <h4>Key facts:</h4>
-            <ul>
-              <li><strong>Open 24/5</strong> — from Sydney open on Monday to New York close on Friday</li>
-              <li><strong>No central exchange</strong> — trades happen over-the-counter (OTC) through banks, brokers, and electronic networks</li>
-              <li><strong>Traded in pairs</strong> — you buy one currency while simultaneously selling another (e.g. EUR/USD)</li>
-              <li><strong>Leveraged</strong> — brokers let you control larger positions with a small deposit (amplifies both gains AND losses)</li>
-            </ul>
-            <p class="edu-callout">💡 <strong>Lesson:</strong> Because Forex is decentralized and leveraged, risk management is not optional — it is the #1 skill that separates surviving traders from those who blow their accounts.</p>
-          </div>
-        </details>
+      <div class="edu-toolbar">
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="langEN" data-lang="en">EN</button>
+          <button class="lang-btn" id="langZU" data-lang="zu">ZU</button>
+        </div>
+        <button class="pdf-btn" id="pdfBtn"><i class="fa-solid fa-file-pdf"></i> <span id="pdfBtnLabel">Download Course PDF</span></button>
+      </div>
 
-        <!-- Card: Candlesticks -->
-        <details class="edu-card">
-          <summary>
-            <div class="edu-icon"><i class="fa-solid fa-fire"></i></div>
-            <div class="edu-t"><h3>Understanding Candlesticks</h3><p>The language of price action</p></div>
-            <i class="fa-solid fa-chevron-down chev"></i>
-          </summary>
-          <div class="edu-body">
-            <p>A <strong>candlestick</strong> is a single visual bar that shows four prices for a given time period (1 min, 1 hour, 1 day, etc.):</p>
-            <div class="candle-diagram">
-              <div class="candle-ex bull">
-                <div class="cd-wick"></div>
-                <div class="cd-body">
-                  <div class="cd-label top">High</div>
-                  <div class="cd-label">Close</div>
-                  <div class="cd-label">Open</div>
-                  <div class="cd-label bottom">Low</div>
-                </div>
-                <div class="cd-wick"></div>
-                <span>Bullish<br/>(close > open)</span>
-              </div>
-              <div class="candle-ex bear">
-                <div class="cd-wick"></div>
-                <div class="cd-body">
-                  <div class="cd-label top">High</div>
-                  <div class="cd-label">Open</div>
-                  <div class="cd-label">Close</div>
-                  <div class="cd-label bottom">Low</div>
-                </div>
-                <div class="cd-wick"></div>
-                <span>Bearish<br/>(close &lt; open)</span>
-              </div>
-            </div>
-            <ul>
-              <li><strong>Body</strong> — the thick rectangle between open and close. Green/white = bullish (up). Red/black = bearish (down).</li>
-              <li><strong>Wicks (shadows)</strong> — thin lines showing the high and low extremes reached during the period.</li>
-              <li><strong>Long upper wick</strong> = sellers pushed price down from the high (potential rejection / resistance)</li>
-              <li><strong>Long lower wick</strong> = buyers pushed price up from the low (potential support / rejection)</li>
-            </ul>
-            <h4>Powerful candlestick patterns to learn:</h4>
-            <ul>
-              <li><strong>Hammer / Shooting Star</strong> — small body, long wick on one side → potential reversal</li>
-              <li><strong>Engulfing</strong> — a candle that fully "eats" the previous one → strong momentum shift</li>
-              <li><strong>Doji</strong> — open ≈ close (indecision between buyers and sellers)</li>
-              <li><strong>Pin bar</strong> — long tail with small body → rejection of a key level</li>
-            </ul>
-          </div>
-        </details>
+      <div class="edu-modules" id="eduModules"></div>
 
-        <!-- Card: Support & Resistance -->
-        <details class="edu-card">
-          <summary>
-            <div class="edu-icon"><i class="fa-solid fa-layer-group"></i></div>
-            <div class="edu-t"><h3>Support & Resistance</h3><p>The battle lines of the market</p></div>
-            <i class="fa-solid fa-chevron-down chev"></i>
-          </summary>
-          <div class="edu-body">
-            <p><strong>Support</strong> is a price level where buyers have historically stepped in and pushed price UP (a "floor").</p>
-            <p><strong>Resistance</strong> is a price level where sellers have historically stepped in and pushed price DOWN (a "ceiling").</p>
-            <p>These levels form because institutional traders remember price history and place orders at familiar zones. When a level breaks, it often <em>flips</em>: broken resistance becomes new support, and vice versa — this is called a <strong>role reversal</strong>.</p>
-            <h4>How we detect them in this app:</h4>
-            <ul>
-              <li><strong>Swing highs / swing lows</strong> — local peaks and troughs confirmed by surrounding bars</li>
-              <li><strong>Zone clustering</strong> — multiple touches in the same price area make the level stronger</li>
-              <li><strong>Round numbers</strong> (e.g. 1.1000, 150.00) act as psychological levels</li>
-            </ul>
-          </div>
-        </details>
+      <div class="edu-lesson" id="eduLesson" style="display:none">
+        <button class="back-btn" id="backBtn"><i class="fa-solid fa-arrow-left"></i> <span id="backLabel">Back to modules</span></button>
+        <div class="lesson-subtitle" id="lessonSubtitle"></div>
+        <h2 class="lesson-title" id="lessonTitle"></h2>
+        <div class="lesson-body" id="lessonBody"></div>
+      </div>
 
-        <!-- Card: Trends -->
-        <details class="edu-card">
-          <summary>
-            <div class="edu-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-            <div class="edu-t"><h3>Trends & Market Structure</h3><p>Higher highs, lower lows — the map of price</p></div>
-            <i class="fa-solid fa-chevron-down chev"></i>
-          </summary>
-          <div class="edu-body">
-            <p><strong>"The trend is your friend" — but you must be able to identify it.</strong></p>
-            <h4>Uptrend (bullish):</h4>
-            <p>Price makes <strong>Higher Highs (HH)</strong> and <strong>Higher Lows (HL)</strong>. Buyers are in control. We look for long (BUY) entries.</p>
-            <h4>Downtrend (bearish):</h4>
-            <p>Price makes <strong>Lower Highs (LH)</strong> and <strong>Lower Lows (LL)</strong>. Sellers are in control. We look for short (SELL) entries.</p>
-            <h4>Range / Sideways:</h4>
-            <p>Price bounces between horizontal support and resistance with no clear direction. We either trade the range or wait for a breakout.</p>
-            <p class="edu-callout">🏛️ <strong>Multi-timeframe principle:</strong> Always check the higher timeframe (D1 → H4) before entering on a lower timeframe. If D1 is in a strong uptrend, buying on H1 pullbacks has far better odds than selling.</p>
-          </div>
-        </details>
-
-        <!-- Card: Indicators -->
-        <details class="edu-card">
-          <summary>
-            <div class="edu-icon"><i class="fa-solid fa-wave-square"></i></div>
-            <div class="edu-t"><h3>Indicators Explained</h3><p>RSI, MACD, EMA, ATR — what they actually mean</p></div>
-            <i class="fa-solid fa-chevron-down chev"></i>
-          </summary>
-          <div class="edu-body">
-            <h4>EMA (Exponential Moving Average)</h4>
-            <p>A smoothed line showing average price over N periods, weighted toward recent candles. When price is <em>above</em> the EMA → bullish bias. EMAs crossing each other signal momentum shifts. We use EMA 9 (fast), EMA 21 (slow), SMA 50 (trend), SMA 200 (long-term trend).</p>
-            <h4>RSI (Relative Strength Index)</h4>
-            <p>Oscillator from 0–100 measuring the speed of recent price changes.</p>
-            <ul>
-              <li><strong>Above 70</strong> = overbought (possible pullback)</li>
-              <li><strong>Below 30</strong> = oversold (possible bounce)</li>
-              <li><strong>50 level</strong> = momentum midpoint; crossing above 50 is bullish</li>
-            </ul>
-            <h4>MACD (Moving Average Convergence Divergence)</h4>
-            <p>Two lines (MACD and Signal) plus a histogram. A <strong>crossover</strong> of MACD above its signal line is bullish; below is bearish. Divergence between MACD and price can warn of an upcoming reversal.</p>
-            <h4>ATR (Average True Range)</h4>
-            <p>Measures <em>volatility</em> — how much price typically moves in a bar. We use ATR to set stop-losses and position sizes, so you don't get stopped out by random noise, and so you size your trades consistently.</p>
-            <p class="edu-callout">⚠️ <strong>Never trade indicators alone.</strong> Indicators are derived from price — they don't predict the future. The best signals combine indicators with price action (structure, candlestick patterns, support/resistance, and trend).</p>
-          </div>
-        </details>
-
-        <!-- Card: Risk Management -->
-        <details class="edu-card">
-          <summary>
-            <div class="edu-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <div class="edu-t"><h3>Risk Management</h3><p>The only rule that keeps you in the game</p></div>
-            <i class="fa-solid fa-chevron-down chev"></i>
-          </summary>
-          <div class="edu-body">
-            <p>You can have the best strategy in the world and still blow up without risk management. This is <strong>not optional</strong>.</p>
-            <h4>Golden rules:</h4>
-            <ul>
-              <li><strong>Never risk more than 1-2% of your account on a single trade.</strong></li>
-              <li><strong>Always use a stop-loss.</strong> Before you enter, know exactly where you're wrong.</li>
-              <li><strong>Always know your risk:reward (R:R)</strong> before entering. Only take trades with at least 1:1.5.</li>
-              <li><strong>Never move your stop further away</strong> when a trade goes against you — that is how accounts die.</li>
-              <li><strong>Don't overtrade.</strong> Not every day has a setup. No-trade is a valid position.</li>
-              <li><strong>Don't revenge-trade</strong> after a loss. The market doesn't owe you anything.</li>
-            </ul>
-            <p class="edu-callout">🎯 A trader with a 50% win rate and consistent 1:2 risk-reward is <strong>profitable</strong>. A trader with a 70% win rate risking 3× their target is broke.</p>
-          </div>
-        </details>
-
-        <!-- Card: Psychology -->
-        <details class="edu-card">
-          <summary>
-            <div class="edu-icon"><i class="fa-solid fa-brain"></i></div>
-            <div class="edu-t"><h3>Trading Psychology</h3><p>The market is a mirror of your emotions</p></div>
-            <i class="fa-solid fa-chevron-down chev"></i>
-          </summary>
-          <div class="edu-body">
-            <p>Trading is 20% strategy and 80% psychology.</p>
-            <h4>Common emotional traps:</h4>
-            <ul>
-              <li><strong>FOMO</strong> (Fear Of Missing Out) — jumping into trades late because you don't want to miss a move</li>
-              <li><strong>Revenge trading</strong> — over-sizing after a loss to "make it back"</li>
-              <li><strong>Overconfidence</strong> after a winning streak (leads to sloppy trades)</li>
-              <li><strong>Analysis paralysis</strong> — adding more indicators instead of taking the trade</li>
-              <li><strong>Hope</strong> — turning a losing trade into an "investment" instead of cutting losses</li>
-            </ul>
-            <h4>Disciplines that help:</h4>
-            <ul>
-              <li>Keep a <strong>trading journal</strong> — review every trade, win or lose</li>
-              <li><strong>Trade the plan, plan the trade</strong> — no impulsive entries</li>
-              <li>Treat trading like a business, not a casino</li>
-              <li>Accept that <strong>losses are part of the business</strong>, like inventory for a store</li>
-            </ul>
-          </div>
-        </details>
-
-        <!-- Card: Sessions -->
-        <details class="edu-card">
-          <summary>
-            <div class="edu-icon"><i class="fa-solid fa-clock"></i></div>
-            <div class="edu-t"><h3>Trading Sessions</h3><p>When the market moves (and why)</p></div>
-            <i class="fa-solid fa-chevron-down chev"></i>
-          </summary>
-          <div class="edu-body">
-            <p>Forex runs 24 hours, but volatility comes in sessions:</p>
-            <ul>
-              <li><strong>🕘 Sydney / Tokyo (Asian session)</strong> — lower volatility, range-bound</li>
-              <li><strong>🕘 London (European session)</strong> — high volume, major moves start here</li>
-              <li><strong>🕘 New York (US session)</strong> — highest volatility; overlaps with London for a few hours ("London-New York kill zone" is the most liquid time to trade)</li>
-            </ul>
-            <p>For our pairs (EUR/USD, GBP/USD, etc.) the sweet spot is during the <strong>London session and London/NY overlap</strong>.</p>
-          </div>
-        </details>
-
-        <!-- Card: Pips & Lots -->
-        <details class="edu-card">
-          <summary>
-            <div class="edu-icon"><i class="fa-solid fa-coins"></i></div>
-            <div class="edu-t"><h3>Pips, Lots & Position Size</h3><p>The units you trade in</p></div>
-            <i class="fa-solid fa-chevron-down chev"></i>
-          </summary>
-          <div class="edu-body">
-            <p>A <strong>pip</strong> is the smallest standard price move. For most pairs it's <strong>0.0001</strong> (e.g. EUR/USD moving from 1.0850 → 1.0851 = 1 pip). For JPY pairs it's <strong>0.01</strong>.</p>
-            <p>A <strong>lot</strong> is the standard trade size:</p>
-            <ul>
-              <li><strong>Standard lot</strong> = 100,000 units (~$10/pip on EUR/USD)</li>
-              <li><strong>Mini lot</strong> = 10,000 units (~$1/pip)</li>
-              <li><strong>Micro lot</strong> = 1,000 units (~$0.10/pip)</li>
-            </ul>
-            <p class="edu-callout">💰 Calculate lot size from your stop distance and risk %: <strong>Lot = Account Risk ÷ (Pips at Risk × Pip Value)</strong>. This app calculates this automatically for each signal.</p>
-          </div>
-        </details>
+      <div class="setting-card panther-footer" style="margin-top:24px">
+        <img src="icons/icon-192.png" alt="" class="footer-panther" />
+        <p class="tagline">Precision • Discipline • Mastery</p>
+        <p class="copyright">© 2026 Trading Forex with Ndumiso</p>
       </div>
     </section>
 
@@ -413,6 +225,30 @@
       </div>
     </section>
   </main>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-page="dashboard">
+      <i class="fa-solid fa-gauge-high"></i>
+      <span>Dashboard</span>
+    </button>
+    <button class="nav-btn" data-page="markets">
+      <i class="fa-solid fa-chart-column"></i>
+      <span>Markets</span>
+    </button>
+    <button class="nav-btn center-btn" data-page="dashboard" id="centerLogoBtn">
+      <img src="icons/icon-96.png" alt="" />
+    </button>
+    <button class="nav-btn" data-page="academy">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <span>Academy</span>
+    </button>
+    <button class="nav-btn" data-page="journal">
+      <i class="fa-solid fa-book"></i>
+      <span>Journal</span>
+    </button>
+  </nav>
+</div>
 
   <!-- BOTTOM NAV -->
   <nav class="bottom-nav">
