@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURGBP",
     "timeframe": "M15",
-    "lastUpdated": "2026-09-29T23:28:21.573Z",
+    "lastUpdated": "2026-09-29T23:44:07.398Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
@@ -11,10 +11,10 @@
     "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 1651,
+    "count": 1652,
     "issues": [
-      "2 gap(s) detected in candle sequence",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 3090 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "3 gap(s) detected in candle sequence",
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 3140 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -13221,10 +13221,18 @@
     },
     {
       "time": 1790724600,
-      "open": 0.857200026512146,
-      "high": 0.857200026512146,
-      "low": 0.857200026512146,
-      "close": 0.857200026512146,
+      "open": 0.8572700023651123,
+      "high": 0.8572999835014343,
+      "low": 0.8570500016212463,
+      "close": 0.8572199940681458,
+      "volume": 0
+    },
+    {
+      "time": 1790725500,
+      "open": 0.8570700287818909,
+      "high": 0.8570700287818909,
+      "low": 0.8570700287818909,
+      "close": 0.8570700287818909,
       "volume": 0
     }
   ]
