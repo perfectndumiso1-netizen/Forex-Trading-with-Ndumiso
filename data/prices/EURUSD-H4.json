@@ -2,17 +2,16 @@
   "meta": {
     "pair": "EURUSD",
     "timeframe": "H4",
-    "lastUpdated": "2026-09-30T03:59:50.183Z",
+    "lastUpdated": "2026-09-30T04:22:29.233Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 0.99,
+    "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 1029,
+    "count": 1030,
     "issues": [
-      "Rejected future-dated candle at 1790755200 (2026-09-30T08:00:00.000Z)",
       "Rejected future-dated candle at 1790769600 (2026-09-30T12:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
@@ -8248,6 +8247,14 @@
       "high": 1.13444,
       "low": 1.13097,
       "close": 1.13432,
+      "volume": 0
+    },
+    {
+      "time": 1790755200,
+      "open": 1.13431,
+      "high": 1.13461,
+      "low": 1.13365,
+      "close": 1.13401,
       "volume": 0
     }
   ]
