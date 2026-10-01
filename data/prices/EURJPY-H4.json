@@ -2,17 +2,16 @@
   "meta": {
     "pair": "EURJPY",
     "timeframe": "H4",
-    "lastUpdated": "2026-10-01T03:50:53.500Z",
+    "lastUpdated": "2026-10-01T04:20:04.163Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 0.99,
+    "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 1035,
+    "count": 1036,
     "issues": [
-      "Rejected future-dated candle at 1790841600 (2026-10-01T08:00:00.000Z)",
       "Rejected future-dated candle at 1790856000 (2026-10-01T12:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
@@ -8296,6 +8295,14 @@
       "high": 178.42695,
       "low": 178.21031,
       "close": 178.35629,
+      "volume": 0
+    },
+    {
+      "time": 1790841600,
+      "open": 178.35285,
+      "high": 179.00884,
+      "low": 178.28171,
+      "close": 178.96554,
       "volume": 0
     }
   ]
