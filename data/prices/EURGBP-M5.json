@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURGBP",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-02T02:48:14.893Z",
+    "lastUpdated": "2026-10-02T03:03:11.018Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.41,
     "freshness": 1,
     "usable": false,
-    "count": 2833,
+    "count": 2836,
     "issues": [
-      "Rejected future-dated candle at 1790909700 (2026-10-02T02:55:00.000Z)",
-      "Rejected future-dated candle at 1790910000 (2026-10-02T03:00:00.000Z)",
-      "Rejected future-dated candle at 1790910300 (2026-10-02T03:05:00.000Z)",
       "Rejected future-dated candle at 1790910600 (2026-10-02T03:10:00.000Z)",
       "Rejected future-dated candle at 1790910900 (2026-10-02T03:15:00.000Z)",
       "Rejected future-dated candle at 1790911200 (2026-10-02T03:20:00.000Z)",
@@ -130,7 +127,10 @@
       "Rejected future-dated candle at 1790944200 (2026-10-02T12:30:00.000Z)",
       "Rejected future-dated candle at 1790944500 (2026-10-02T12:35:00.000Z)",
       "Rejected future-dated candle at 1790944800 (2026-10-02T12:40:00.000Z)",
-      "Rejected future-dated candle at 1790945100 (2026-10-02T12:45:00.000Z)"
+      "Rejected future-dated candle at 1790945100 (2026-10-02T12:45:00.000Z)",
+      "Rejected future-dated candle at 1790945400 (2026-10-02T12:50:00.000Z)",
+      "Rejected future-dated candle at 1790945700 (2026-10-02T12:55:00.000Z)",
+      "Rejected future-dated candle at 1790946000 (2026-10-02T13:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -22797,6 +22797,30 @@
       "high": 0.85096,
       "low": 0.85064,
       "close": 0.85082,
+      "volume": 0
+    },
+    {
+      "time": 1790909700,
+      "open": 0.85081,
+      "high": 0.85088,
+      "low": 0.85068,
+      "close": 0.85085,
+      "volume": 0
+    },
+    {
+      "time": 1790910000,
+      "open": 0.85077,
+      "high": 0.85108,
+      "low": 0.85074,
+      "close": 0.85102,
+      "volume": 0
+    },
+    {
+      "time": 1790910300,
+      "open": 0.85096,
+      "high": 0.85104,
+      "low": 0.85081,
+      "close": 0.85087,
       "volume": 0
     }
   ]
