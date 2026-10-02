@@ -2,19 +2,20 @@
   "meta": {
     "pair": "USDCHF",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-02T21:57:37.295Z",
+    "lastUpdated": "2026-10-02T22:17:52.183Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
       "yahoo"
     ],
-    "quality": 1,
-    "freshness": 1,
+    "quality": 0.7,
+    "freshness": 0.7022222222222223,
     "usable": true,
     "count": 1925,
     "issues": [
       "1 gap(s) detected in candle sequence",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2869 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Stale data: latest candle is 78 min old (max 60)",
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2919 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
