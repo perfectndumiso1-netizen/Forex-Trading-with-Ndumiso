@@ -2,7 +2,7 @@
   "meta": {
     "pair": "USDCAD",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-02T20:59:29.832Z",
+    "lastUpdated": "2026-10-02T21:19:56.275Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
@@ -11,9 +11,10 @@
     "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 3046,
+    "count": 3048,
     "issues": [
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2730 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "1 gap(s) detected in candle sequence",
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2780 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -24374,16 +24375,32 @@
       "time": 1790974500,
       "open": 1.42562997341156,
       "high": 1.4257500171661377,
-      "low": 1.4244400262832642,
-      "close": 1.4246599674224854,
+      "low": 1.424399971961975,
+      "close": 1.4244999885559082,
       "volume": 0
     },
     {
       "time": 1790974800,
-      "open": 1.4248299598693848,
-      "high": 1.4248299598693848,
-      "low": 1.4248299598693848,
-      "close": 1.4248299598693848,
+      "open": 1.4247000217437744,
+      "high": 1.4247000217437744,
+      "low": 1.4247000217437744,
+      "close": 1.4247000217437744,
+      "volume": 0
+    },
+    {
+      "time": 1790975700,
+      "open": 1.4244999885559082,
+      "high": 1.4244999885559082,
+      "low": 1.4244999885559082,
+      "close": 1.4244999885559082,
+      "volume": 0
+    },
+    {
+      "time": 1790976000,
+      "open": 1.4244999885559082,
+      "high": 1.4244999885559082,
+      "low": 1.4244999885559082,
+      "close": 1.4244999885559082,
       "volume": 0
     }
   ]
