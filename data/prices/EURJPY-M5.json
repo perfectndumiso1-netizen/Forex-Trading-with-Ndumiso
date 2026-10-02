@@ -2,18 +2,19 @@
   "meta": {
     "pair": "EURJPY",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-02T21:43:59.130Z",
+    "lastUpdated": "2026-10-02T21:57:41.663Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
       "yahoo"
     ],
-    "quality": 1,
-    "freshness": 1,
+    "quality": 0.62,
+    "freshness": 0.6158333333333333,
     "usable": true,
     "count": 3056,
     "issues": [
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2845 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Stale data: latest candle is 28 min old (max 20)",
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2895 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
