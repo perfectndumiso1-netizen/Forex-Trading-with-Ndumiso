@@ -2,17 +2,16 @@
   "meta": {
     "pair": "USDJPY",
     "timeframe": "H4",
-    "lastUpdated": "2026-10-02T03:46:32.054Z",
+    "lastUpdated": "2026-10-02T04:01:09.487Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 0.99,
+    "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 1041,
+    "count": 1042,
     "issues": [
-      "Rejected future-dated candle at 1790928000 (2026-10-02T08:00:00.000Z)",
       "Rejected future-dated candle at 1790942400 (2026-10-02T12:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
@@ -8344,6 +8343,14 @@
       "high": 158.28017,
       "low": 157.64212,
       "close": 158.09256,
+      "volume": 0
+    },
+    {
+      "time": 1790928000,
+      "open": 158.09109,
+      "high": 158.17331,
+      "low": 157.79947,
+      "close": 158.13525,
       "volume": 0
     }
   ]
