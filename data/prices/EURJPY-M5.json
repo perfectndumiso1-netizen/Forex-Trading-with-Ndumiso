@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURJPY",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-04T21:15:26.509Z",
+    "lastUpdated": "2026-10-04T21:45:49.638Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,14 +10,8 @@
     "quality": 0.35,
     "freshness": 1,
     "usable": false,
-    "count": 3439,
+    "count": 3446,
     "issues": [
-      "Rejected future-dated candle at 1791149100 (2026-10-04T21:25:00.000Z)",
-      "Rejected future-dated candle at 1791149400 (2026-10-04T21:30:00.000Z)",
-      "Rejected future-dated candle at 1791149700 (2026-10-04T21:35:00.000Z)",
-      "Rejected future-dated candle at 1791150000 (2026-10-04T21:40:00.000Z)",
-      "Rejected future-dated candle at 1791150300 (2026-10-04T21:45:00.000Z)",
-      "Rejected future-dated candle at 1791150600 (2026-10-04T21:50:00.000Z)",
       "Rejected future-dated candle at 1791150900 (2026-10-04T21:55:00.000Z)",
       "Rejected future-dated candle at 1791151200 (2026-10-04T22:00:00.000Z)",
       "Rejected future-dated candle at 1791151500 (2026-10-04T22:05:00.000Z)",
@@ -142,7 +136,12 @@
       "Rejected future-dated candle at 1791187200 (2026-10-05T08:00:00.000Z)",
       "Rejected future-dated candle at 1791187500 (2026-10-05T08:05:00.000Z)",
       "Rejected future-dated candle at 1791187800 (2026-10-05T08:10:00.000Z)",
-      "Removed spike outlier at t=1791133200 (move 0.10924 > 5× ATR 0.02087)"
+      "Rejected future-dated candle at 1791188100 (2026-10-05T08:15:00.000Z)",
+      "Rejected future-dated candle at 1791188400 (2026-10-05T08:20:00.000Z)",
+      "Rejected future-dated candle at 1791188700 (2026-10-05T08:25:00.000Z)",
+      "Rejected future-dated candle at 1791189000 (2026-10-05T08:30:00.000Z)",
+      "Rejected future-dated candle at 1791189300 (2026-10-05T08:35:00.000Z)",
+      "Rejected future-dated candle at 1791189600 (2026-10-05T08:40:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -27244,6 +27243,14 @@
       "volume": 0
     },
     {
+      "time": 1791133200,
+      "open": 177.71599,
+      "high": 177.71978,
+      "low": 177.60543,
+      "close": 177.69565,
+      "volume": 0
+    },
+    {
       "time": 1791133500,
       "open": 177.694,
       "high": 177.75733,
@@ -27657,6 +27664,54 @@
       "high": 177.73636,
       "low": 177.72584,
       "close": 177.73206,
+      "volume": 0
+    },
+    {
+      "time": 1791149100,
+      "open": 177.72839,
+      "high": 177.73575,
+      "low": 177.72741,
+      "close": 177.73099,
+      "volume": 0
+    },
+    {
+      "time": 1791149400,
+      "open": 177.72842,
+      "high": 177.73636,
+      "low": 177.72582,
+      "close": 177.72736,
+      "volume": 0
+    },
+    {
+      "time": 1791149700,
+      "open": 177.72842,
+      "high": 177.73492,
+      "low": 177.72632,
+      "close": 177.73067,
+      "volume": 0
+    },
+    {
+      "time": 1791150000,
+      "open": 177.72843,
+      "high": 177.73632,
+      "low": 177.7258,
+      "close": 177.7322,
+      "volume": 0
+    },
+    {
+      "time": 1791150300,
+      "open": 177.72843,
+      "high": 177.73598,
+      "low": 177.72711,
+      "close": 177.73079,
+      "volume": 0
+    },
+    {
+      "time": 1791150600,
+      "open": 177.72844,
+      "high": 177.73642,
+      "low": 177.72593,
+      "close": 177.72728,
       "volume": 0
     }
   ]

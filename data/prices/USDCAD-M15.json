@@ -2,7 +2,7 @@
   "meta": {
     "pair": "USDCAD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-04T21:13:20.722Z",
+    "lastUpdated": "2026-10-04T21:43:45.471Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,10 +10,8 @@
     "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 2116,
+    "count": 2118,
     "issues": [
-      "Rejected future-dated candle at 1791149400 (2026-10-04T21:30:00.000Z)",
-      "Rejected future-dated candle at 1791150300 (2026-10-04T21:45:00.000Z)",
       "Rejected future-dated candle at 1791151200 (2026-10-04T22:00:00.000Z)",
       "Rejected future-dated candle at 1791152100 (2026-10-04T22:15:00.000Z)",
       "Rejected future-dated candle at 1791153000 (2026-10-04T22:30:00.000Z)",
@@ -55,6 +53,8 @@
       "Rejected future-dated candle at 1791185400 (2026-10-05T07:30:00.000Z)",
       "Rejected future-dated candle at 1791186300 (2026-10-05T07:45:00.000Z)",
       "Rejected future-dated candle at 1791187200 (2026-10-05T08:00:00.000Z)",
+      "Rejected future-dated candle at 1791188100 (2026-10-05T08:15:00.000Z)",
+      "Rejected future-dated candle at 1791189000 (2026-10-05T08:30:00.000Z)",
       "1 gap(s) detected in candle sequence",
       "Removed spike outlier at t=1791083700 (move 0.00970 > 5× ATR 0.00083)"
     ],
@@ -16987,6 +16987,22 @@
       "high": 1.42498,
       "low": 1.4249,
       "close": 1.42494,
+      "volume": 0
+    },
+    {
+      "time": 1791149400,
+      "open": 1.42492,
+      "high": 1.42498,
+      "low": 1.4249,
+      "close": 1.42495,
+      "volume": 0
+    },
+    {
+      "time": 1791150300,
+      "open": 1.42492,
+      "high": 1.42498,
+      "low": 1.4249,
+      "close": 1.42493,
       "volume": 0
     }
   ]
