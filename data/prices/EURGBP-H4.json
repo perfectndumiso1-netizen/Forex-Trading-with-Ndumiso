@@ -2,17 +2,16 @@
   "meta": {
     "pair": "EURGBP",
     "timeframe": "H4",
-    "lastUpdated": "2026-10-04T02:34:32.025Z",
+    "lastUpdated": "2026-10-04T04:31:48.489Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 0.99,
+    "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 1053,
+    "count": 1054,
     "issues": [
-      "Rejected future-dated candle at 1791100800 (2026-10-04T08:00:00.000Z)",
       "Rejected future-dated candle at 1791115200 (2026-10-04T12:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
@@ -8440,6 +8439,14 @@
       "high": 0.85094,
       "low": 0.84981,
       "close": 0.85001,
+      "volume": 0
+    },
+    {
+      "time": 1791100800,
+      "open": 0.84999,
+      "high": 0.85062,
+      "low": 0.84976,
+      "close": 0.8502,
       "volume": 0
     }
   ]

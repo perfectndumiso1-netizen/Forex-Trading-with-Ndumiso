@@ -2,17 +2,16 @@
   "meta": {
     "pair": "GBPJPY",
     "timeframe": "H4",
-    "lastUpdated": "2026-10-04T02:35:49.402Z",
+    "lastUpdated": "2026-10-04T04:33:06.410Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 0.99,
+    "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 1053,
+    "count": 1054,
     "issues": [
-      "Rejected future-dated candle at 1791100800 (2026-10-04T08:00:00.000Z)",
       "Rejected future-dated candle at 1791115200 (2026-10-04T12:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
@@ -8440,6 +8439,14 @@
       "high": 209.05691,
       "low": 208.8132,
       "close": 209.03385,
+      "volume": 0
+    },
+    {
+      "time": 1791100800,
+      "open": 209.03374,
+      "high": 209.06795,
+      "low": 208.92296,
+      "close": 208.99988,
       "volume": 0
     }
   ]
