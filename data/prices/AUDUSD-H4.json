@@ -2,17 +2,18 @@
   "meta": {
     "pair": "AUDUSD",
     "timeframe": "H4",
-    "lastUpdated": "2026-10-04T04:29:50.439Z",
+    "lastUpdated": "2026-10-04T10:53:53.191Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 1,
+    "quality": 0.99,
     "freshness": 1,
     "usable": true,
-    "count": 1054,
+    "count": 1055,
     "issues": [
-      "Rejected future-dated candle at 1791115200 (2026-10-04T12:00:00.000Z)"
+      "Rejected future-dated candle at 1791129600 (2026-10-04T16:00:00.000Z)",
+      "Rejected future-dated candle at 1791144000 (2026-10-04T20:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -8447,6 +8448,14 @@
       "high": 0.69608,
       "low": 0.69453,
       "close": 0.69556,
+      "volume": 0
+    },
+    {
+      "time": 1791115200,
+      "open": 0.69556,
+      "high": 0.69592,
+      "low": 0.69454,
+      "close": 0.69554,
       "volume": 0
     }
   ]

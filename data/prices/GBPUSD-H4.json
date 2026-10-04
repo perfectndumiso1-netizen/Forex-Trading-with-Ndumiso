@@ -2,17 +2,18 @@
   "meta": {
     "pair": "GBPUSD",
     "timeframe": "H4",
-    "lastUpdated": "2026-10-04T04:27:53.915Z",
+    "lastUpdated": "2026-10-04T10:51:56.253Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 1,
+    "quality": 0.99,
     "freshness": 1,
     "usable": true,
-    "count": 1054,
+    "count": 1055,
     "issues": [
-      "Rejected future-dated candle at 1791115200 (2026-10-04T12:00:00.000Z)"
+      "Rejected future-dated candle at 1791129600 (2026-10-04T16:00:00.000Z)",
+      "Rejected future-dated candle at 1791144000 (2026-10-04T20:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -8447,6 +8448,14 @@
       "high": 1.32451,
       "low": 1.32349,
       "close": 1.32394,
+      "volume": 0
+    },
+    {
+      "time": 1791115200,
+      "open": 1.32395,
+      "high": 1.32429,
+      "low": 1.32382,
+      "close": 1.32413,
       "volume": 0
     }
   ]
