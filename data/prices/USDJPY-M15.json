@@ -2,7 +2,7 @@
   "meta": {
     "pair": "USDJPY",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-05T04:17:44.996Z",
+    "lastUpdated": "2026-10-05T05:07:30.603Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 2144,
+    "count": 2147,
     "issues": [
-      "Rejected future-dated candle at 1791175500 (2026-10-05T04:45:00.000Z)",
-      "Rejected future-dated candle at 1791176400 (2026-10-05T05:00:00.000Z)",
-      "Rejected future-dated candle at 1791177300 (2026-10-05T05:15:00.000Z)",
       "Rejected future-dated candle at 1791178200 (2026-10-05T05:30:00.000Z)",
       "Rejected future-dated candle at 1791179100 (2026-10-05T05:45:00.000Z)",
       "Rejected future-dated candle at 1791180000 (2026-10-05T06:00:00.000Z)",
@@ -55,6 +52,9 @@
       "Rejected future-dated candle at 1791211500 (2026-10-05T14:45:00.000Z)",
       "Rejected future-dated candle at 1791212400 (2026-10-05T15:00:00.000Z)",
       "Rejected future-dated candle at 1791213300 (2026-10-05T15:15:00.000Z)",
+      "Rejected future-dated candle at 1791214200 (2026-10-05T15:30:00.000Z)",
+      "Rejected future-dated candle at 1791215100 (2026-10-05T15:45:00.000Z)",
+      "Rejected future-dated candle at 1791216000 (2026-10-05T16:00:00.000Z)",
       "1 gap(s) detected in candle sequence",
       "Removed spike outlier at t=1791083700 (move 1.47043 > 5× ATR 0.14680)"
     ],
@@ -17211,6 +17211,30 @@
       "high": 157.86493,
       "low": 157.85549,
       "close": 157.85719,
+      "volume": 0
+    },
+    {
+      "time": 1791175500,
+      "open": 157.85785,
+      "high": 157.86631,
+      "low": 157.85629,
+      "close": 157.86041,
+      "volume": 0
+    },
+    {
+      "time": 1791176400,
+      "open": 157.85787,
+      "high": 157.96705,
+      "low": 157.80413,
+      "close": 157.84686,
+      "volume": 0
+    },
+    {
+      "time": 1791177300,
+      "open": 157.84399,
+      "high": 157.97803,
+      "low": 157.56422,
+      "close": 157.97198,
       "volume": 0
     }
   ]

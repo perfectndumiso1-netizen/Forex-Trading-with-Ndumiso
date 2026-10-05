@@ -2,7 +2,7 @@
   "meta": {
     "pair": "USDCAD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-05T04:19:41.423Z",
+    "lastUpdated": "2026-10-05T05:09:27.197Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 2145,
+    "count": 2148,
     "issues": [
-      "Rejected future-dated candle at 1791175500 (2026-10-05T04:45:00.000Z)",
-      "Rejected future-dated candle at 1791176400 (2026-10-05T05:00:00.000Z)",
-      "Rejected future-dated candle at 1791177300 (2026-10-05T05:15:00.000Z)",
       "Rejected future-dated candle at 1791178200 (2026-10-05T05:30:00.000Z)",
       "Rejected future-dated candle at 1791179100 (2026-10-05T05:45:00.000Z)",
       "Rejected future-dated candle at 1791180000 (2026-10-05T06:00:00.000Z)",
@@ -55,6 +52,9 @@
       "Rejected future-dated candle at 1791211500 (2026-10-05T14:45:00.000Z)",
       "Rejected future-dated candle at 1791212400 (2026-10-05T15:00:00.000Z)",
       "Rejected future-dated candle at 1791213300 (2026-10-05T15:15:00.000Z)",
+      "Rejected future-dated candle at 1791214200 (2026-10-05T15:30:00.000Z)",
+      "Rejected future-dated candle at 1791215100 (2026-10-05T15:45:00.000Z)",
+      "Rejected future-dated candle at 1791216000 (2026-10-05T16:00:00.000Z)",
       "1 gap(s) detected in candle sequence",
       "Removed spike outlier at t=1791083700 (move 0.00970 > 5× ATR 0.00083)"
     ],
@@ -17219,6 +17219,30 @@
       "high": 1.4251,
       "low": 1.425,
       "close": 1.42502,
+      "volume": 0
+    },
+    {
+      "time": 1791175500,
+      "open": 1.42502,
+      "high": 1.42507,
+      "low": 1.42492,
+      "close": 1.42504,
+      "volume": 0
+    },
+    {
+      "time": 1791176400,
+      "open": 1.42501,
+      "high": 1.42555,
+      "low": 1.42406,
+      "close": 1.42458,
+      "volume": 0
+    },
+    {
+      "time": 1791177300,
+      "open": 1.42452,
+      "high": 1.42607,
+      "low": 1.42265,
+      "close": 1.42548,
       "volume": 0
     }
   ]
