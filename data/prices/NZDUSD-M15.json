@@ -2,7 +2,7 @@
   "meta": {
     "pair": "NZDUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-05T05:10:06.579Z",
+    "lastUpdated": "2026-10-05T05:38:43.725Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,10 +10,8 @@
     "quality": 0.77,
     "freshness": 1,
     "usable": true,
-    "count": 2149,
+    "count": 2151,
     "issues": [
-      "Rejected future-dated candle at 1791178200 (2026-10-05T05:30:00.000Z)",
-      "Rejected future-dated candle at 1791179100 (2026-10-05T05:45:00.000Z)",
       "Rejected future-dated candle at 1791180000 (2026-10-05T06:00:00.000Z)",
       "Rejected future-dated candle at 1791180900 (2026-10-05T06:15:00.000Z)",
       "Rejected future-dated candle at 1791181800 (2026-10-05T06:30:00.000Z)",
@@ -55,6 +53,8 @@
       "Rejected future-dated candle at 1791214200 (2026-10-05T15:30:00.000Z)",
       "Rejected future-dated candle at 1791215100 (2026-10-05T15:45:00.000Z)",
       "Rejected future-dated candle at 1791216000 (2026-10-05T16:00:00.000Z)",
+      "Rejected future-dated candle at 1791216900 (2026-10-05T16:15:00.000Z)",
+      "Rejected future-dated candle at 1791217800 (2026-10-05T16:30:00.000Z)",
       "1 gap(s) detected in candle sequence",
       "Removed spike outlier at t=1791083700 (move 0.00217 > 5× ATR 0.00027)",
       "Removed spike outlier at t=1791117000 (move 0.00221 > 5× ATR 0.00022)",
@@ -17253,6 +17253,22 @@
       "high": 0.56183,
       "low": 0.56076,
       "close": 0.56102,
+      "volume": 0
+    },
+    {
+      "time": 1791178200,
+      "open": 0.56106,
+      "high": 0.56211,
+      "low": 0.56106,
+      "close": 0.56118,
+      "volume": 0
+    },
+    {
+      "time": 1791179100,
+      "open": 0.5613,
+      "high": 0.56184,
+      "low": 0.56109,
+      "close": 0.56161,
       "volume": 0
     }
   ]
