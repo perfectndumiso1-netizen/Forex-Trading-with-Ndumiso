@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURJPY",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-07T23:13:13.221Z",
+    "lastUpdated": "2026-10-07T23:29:51.957Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
@@ -11,10 +11,11 @@
     "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 4327,
+    "count": 4330,
     "issues": [
-      "2 gap(s) detected in candle sequence",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2695 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "1 gap(s) detected in candle sequence",
+      "Removed spike outlier at t=1791406800 (move 0.26401 > 5× ATR 0.05193)",
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2745 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -34157,7 +34158,7 @@
     },
     {
       "time": 1791397200,
-      "open": 176.88499450683594,
+      "open": 176.88699340820312,
       "high": 176.9040069580078,
       "low": 176.88299560546875,
       "close": 176.89199829101562,
@@ -34597,10 +34598,10 @@
     },
     {
       "time": 1791413700,
-      "open": 176.9669952392578,
-      "high": 176.9669952392578,
-      "low": 176.9669952392578,
-      "close": 176.9669952392578,
+      "open": 176.9709930419922,
+      "high": 176.9759979248047,
+      "low": 176.95899963378906,
+      "close": 176.9739990234375,
       "volume": 0
     },
     {
@@ -34624,15 +34625,39 @@
       "open": 176.9810028076172,
       "high": 176.9949951171875,
       "low": 176.9739990234375,
-      "close": 176.9770050048828,
+      "close": 176.98599243164062,
       "volume": 0
     },
     {
       "time": 1791414900,
-      "open": 176.97999572753906,
-      "high": 176.97999572753906,
+      "open": 176.98800659179688,
+      "high": 176.99600219726562,
+      "low": 176.97799682617188,
+      "close": 176.98500061035156,
+      "volume": 0
+    },
+    {
+      "time": 1791415200,
+      "open": 176.98500061035156,
+      "high": 176.9980010986328,
       "low": 176.97999572753906,
-      "close": 176.97999572753906,
+      "close": 176.98800659179688,
+      "volume": 0
+    },
+    {
+      "time": 1791415500,
+      "open": 176.98800659179688,
+      "high": 177.0019989013672,
+      "low": 176.98399353027344,
+      "close": 176.99099731445312,
+      "volume": 0
+    },
+    {
+      "time": 1791415800,
+      "open": 176.99000549316406,
+      "high": 176.99000549316406,
+      "low": 176.99000549316406,
+      "close": 176.99000549316406,
       "volume": 0
     }
   ]
