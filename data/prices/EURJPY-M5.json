@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURJPY",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-07T21:00:14.313Z",
+    "lastUpdated": "2026-10-07T21:22:19.141Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
@@ -11,10 +11,11 @@
     "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 4300,
+    "count": 4304,
     "issues": [
       "1 gap(s) detected in candle sequence",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2395 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Removed spike outlier at t=1791406800 (move 0.26401 > 5× ATR 0.05193)",
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2445 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -34417,6 +34418,38 @@
       "high": 176.90899658203125,
       "low": 176.90899658203125,
       "close": 176.90899658203125,
+      "volume": 0
+    },
+    {
+      "time": 1791407100,
+      "open": 176.8780059814453,
+      "high": 176.98500061035156,
+      "low": 176.8679962158203,
+      "close": 176.94000244140625,
+      "volume": 0
+    },
+    {
+      "time": 1791407400,
+      "open": 176.93800354003906,
+      "high": 176.98599243164062,
+      "low": 176.79600524902344,
+      "close": 176.86199951171875,
+      "volume": 0
+    },
+    {
+      "time": 1791407700,
+      "open": 176.86500549316406,
+      "high": 176.9669952392578,
+      "low": 176.83399963378906,
+      "close": 176.83399963378906,
+      "volume": 0
+    },
+    {
+      "time": 1791408000,
+      "open": 176.85800170898438,
+      "high": 176.85800170898438,
+      "low": 176.85800170898438,
+      "close": 176.85800170898438,
       "volume": 0
     }
   ]
