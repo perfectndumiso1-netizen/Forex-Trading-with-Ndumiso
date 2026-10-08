@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURUSD",
     "timeframe": "H1",
-    "lastUpdated": "2026-10-08T02:56:42.725Z",
+    "lastUpdated": "2026-10-08T03:17:25.537Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,9 +10,8 @@
     "quality": 0.95,
     "freshness": 1,
     "usable": true,
-    "count": 1491,
+    "count": 1492,
     "issues": [
-      "Rejected future-dated candle at 1791432000 (2026-10-08T04:00:00.000Z)",
       "Rejected future-dated candle at 1791435600 (2026-10-08T05:00:00.000Z)",
       "Rejected future-dated candle at 1791439200 (2026-10-08T06:00:00.000Z)",
       "Rejected future-dated candle at 1791442800 (2026-10-08T07:00:00.000Z)",
@@ -22,6 +21,7 @@
       "Rejected future-dated candle at 1791457200 (2026-10-08T11:00:00.000Z)",
       "Rejected future-dated candle at 1791460800 (2026-10-08T12:00:00.000Z)",
       "Rejected future-dated candle at 1791464400 (2026-10-08T13:00:00.000Z)",
+      "Rejected future-dated candle at 1791468000 (2026-10-08T14:00:00.000Z)",
       "1 gap(s) detected in candle sequence"
     ],
     "strategyVersion": "1.0.0"
@@ -11953,6 +11953,14 @@
       "high": 1.11983,
       "low": 1.11858,
       "close": 1.11927,
+      "volume": 0
+    },
+    {
+      "time": 1791432000,
+      "open": 1.1192,
+      "high": 1.12007,
+      "low": 1.11893,
+      "close": 1.11993,
       "volume": 0
     }
   ]
