@@ -2,7 +2,7 @@
   "meta": {
     "pair": "GBPJPY",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-08T06:25:46.346Z",
+    "lastUpdated": "2026-10-08T06:58:29.411Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,10 +10,8 @@
     "quality": 0.79,
     "freshness": 1,
     "usable": true,
-    "count": 2441,
+    "count": 2443,
     "issues": [
-      "Rejected future-dated candle at 1791441900 (2026-10-08T06:45:00.000Z)",
-      "Rejected future-dated candle at 1791442800 (2026-10-08T07:00:00.000Z)",
       "Rejected future-dated candle at 1791443700 (2026-10-08T07:15:00.000Z)",
       "Rejected future-dated candle at 1791444600 (2026-10-08T07:30:00.000Z)",
       "Rejected future-dated candle at 1791445500 (2026-10-08T07:45:00.000Z)",
@@ -54,7 +52,9 @@
       "Rejected future-dated candle at 1791477000 (2026-10-08T16:30:00.000Z)",
       "Rejected future-dated candle at 1791477900 (2026-10-08T16:45:00.000Z)",
       "Rejected future-dated candle at 1791478800 (2026-10-08T17:00:00.000Z)",
-      "Rejected future-dated candle at 1791479700 (2026-10-08T17:15:00.000Z)"
+      "Rejected future-dated candle at 1791479700 (2026-10-08T17:15:00.000Z)",
+      "Rejected future-dated candle at 1791480600 (2026-10-08T17:30:00.000Z)",
+      "Rejected future-dated candle at 1791481500 (2026-10-08T17:45:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -19585,6 +19585,22 @@
       "high": 208.875,
       "low": 208.80878,
       "close": 208.82862,
+      "volume": 0
+    },
+    {
+      "time": 1791441900,
+      "open": 208.82837,
+      "high": 208.84753,
+      "low": 208.80048,
+      "close": 208.84436,
+      "volume": 0
+    },
+    {
+      "time": 1791442800,
+      "open": 208.83461,
+      "high": 208.92302,
+      "low": 208.80255,
+      "close": 208.91386,
       "volume": 0
     }
   ]
