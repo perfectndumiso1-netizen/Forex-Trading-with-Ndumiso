@@ -2,19 +2,20 @@
   "meta": {
     "pair": "NZDUSD",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-09T21:34:38.707Z",
+    "lastUpdated": "2026-10-09T21:57:32.885Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
       "yahoo"
     ],
-    "quality": 1,
-    "freshness": 1,
+    "quality": 0.87,
+    "freshness": 0.8733333333333333,
     "usable": true,
     "count": 4885,
     "issues": [
       "Removed spike outlier at t=1791234000 (move 0.00075 > 5× ATR 0.00012)",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2485 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Stale data: latest candle is 23 min old (max 20)",
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2535 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
