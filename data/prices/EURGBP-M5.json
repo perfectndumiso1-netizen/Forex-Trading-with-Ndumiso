@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURGBP",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-09T07:16:30.609Z",
+    "lastUpdated": "2026-10-09T07:46:46.416Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
@@ -11,10 +11,10 @@
     "quality": 1,
     "freshness": 1,
     "usable": true,
-    "count": 4713,
+    "count": 4719,
     "issues": [
       "Removed spike outlier at t=1791406800 (move 0.00138 > 5× ATR 0.00024)",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 840 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 890 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -37717,10 +37717,58 @@
     },
     {
       "time": 1791530100,
-      "open": 0.8479200005531311,
-      "high": 0.8479200005531311,
+      "open": 0.8479300141334534,
+      "high": 0.8480100035667419,
+      "low": 0.8478599786758423,
+      "close": 0.8479899764060974,
+      "volume": 0
+    },
+    {
+      "time": 1791530400,
+      "open": 0.8479599952697754,
+      "high": 0.8482000231742859,
+      "low": 0.8479400277137756,
+      "close": 0.8481400012969971,
+      "volume": 0
+    },
+    {
+      "time": 1791530700,
+      "open": 0.8481400012969971,
+      "high": 0.8482000231742859,
+      "low": 0.8479400277137756,
+      "close": 0.848039984703064,
+      "volume": 0
+    },
+    {
+      "time": 1791531000,
+      "open": 0.848039984703064,
+      "high": 0.8481199741363525,
+      "low": 0.8479999899864197,
+      "close": 0.8480499982833862,
+      "volume": 0
+    },
+    {
+      "time": 1791531300,
+      "open": 0.8480499982833862,
+      "high": 0.8481500148773193,
       "low": 0.8479200005531311,
-      "close": 0.8479200005531311,
+      "close": 0.8479599952697754,
+      "volume": 0
+    },
+    {
+      "time": 1791531600,
+      "open": 0.8479599952697754,
+      "high": 0.8481000065803528,
+      "low": 0.8479099869728088,
+      "close": 0.8480100035667419,
+      "volume": 0
+    },
+    {
+      "time": 1791531900,
+      "open": 0.8480100035667419,
+      "high": 0.8480100035667419,
+      "low": 0.8480100035667419,
+      "close": 0.8480100035667419,
       "volume": 0
     }
   ]
