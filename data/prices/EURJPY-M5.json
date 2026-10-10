@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURJPY",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-10T22:56:03.115Z",
+    "lastUpdated": "2026-10-10T23:13:06.982Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
@@ -13,9 +13,10 @@
     "usable": false,
     "count": 4996,
     "issues": [
+      "1 gap(s) detected in candle sequence",
       "Removed spike outlier at t=1791406800 (move 0.26401 > 5× ATR 0.05193)",
-      "Stale data: latest candle is 1531 min old (max 20)",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 3145 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Stale data: latest candle is 1453 min old (max 20)",
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 3195 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -39214,10 +39215,10 @@
     },
     {
       "time": 1791586800,
-      "open": 177.39528,
-      "high": 177.44057,
-      "low": 177.39528,
-      "close": 177.42268,
+      "open": 177.10000610351562,
+      "high": 177.10000610351562,
+      "low": 177.10000610351562,
+      "close": 177.10000610351562,
       "volume": 0
     },
     {
