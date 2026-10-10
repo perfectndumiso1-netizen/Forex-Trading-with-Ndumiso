@@ -2,19 +2,20 @@
   "meta": {
     "pair": "GBPUSD",
     "timeframe": "H4",
-    "lastUpdated": "2026-10-10T11:58:02.732Z",
+    "lastUpdated": "2026-10-10T12:22:30.727Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
       "yahoo"
     ],
-    "quality": 0.97,
-    "freshness": 1,
+    "quality": 0.95,
+    "freshness": 0.9765625,
     "usable": true,
     "count": 1090,
     "issues": [
       "11 gap(s) detected in candle sequence",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 1507 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Stale data: latest candle is 983 min old (max 960)",
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 1557 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -5384,7 +5385,7 @@
       "open": 1.3560609817504883,
       "high": 1.3567968606948853,
       "low": 1.3531250953674316,
-      "close": 1.3536745309829712,
+      "close": 1.3535096645355225,
       "volume": 0
     },
     {
@@ -8333,7 +8334,7 @@
     },
     {
       "time": 1790899200,
-      "open": 1.319591999053955,
+      "open": 1.3195745944976807,
       "high": 1.3202017545700073,
       "low": 1.318235158920288,
       "close": 1.3200448751449585,
