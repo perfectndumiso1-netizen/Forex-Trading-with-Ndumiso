@@ -2,7 +2,7 @@
   "meta": {
     "pair": "NZDUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-11T02:20:37.857Z",
+    "lastUpdated": "2026-10-11T02:50:07.835Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,10 +10,8 @@
     "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 2714,
+    "count": 2716,
     "issues": [
-      "Rejected future-dated candle at 1791686700 (2026-10-11T02:45:00.000Z)",
-      "Rejected future-dated candle at 1791687600 (2026-10-11T03:00:00.000Z)",
       "Rejected future-dated candle at 1791688500 (2026-10-11T03:15:00.000Z)",
       "Rejected future-dated candle at 1791689400 (2026-10-11T03:30:00.000Z)",
       "Rejected future-dated candle at 1791690300 (2026-10-11T03:45:00.000Z)",
@@ -55,6 +53,8 @@
       "Rejected future-dated candle at 1791722700 (2026-10-11T12:45:00.000Z)",
       "Rejected future-dated candle at 1791723600 (2026-10-11T13:00:00.000Z)",
       "Rejected future-dated candle at 1791724500 (2026-10-11T13:15:00.000Z)",
+      "Rejected future-dated candle at 1791725400 (2026-10-11T13:30:00.000Z)",
+      "Rejected future-dated candle at 1791726300 (2026-10-11T13:45:00.000Z)",
       "Removed spike outlier at t=1791673200 (move 0.00102 > 5× ATR 0.00017)"
     ],
     "strategyVersion": "1.0.0"
@@ -21770,6 +21770,22 @@
       "high": 0.56129,
       "low": 0.56126,
       "close": 0.56126,
+      "volume": 0
+    },
+    {
+      "time": 1791686700,
+      "open": 0.56126,
+      "high": 0.56129,
+      "low": 0.56126,
+      "close": 0.56127,
+      "volume": 0
+    },
+    {
+      "time": 1791687600,
+      "open": 0.56126,
+      "high": 0.56133,
+      "low": 0.56112,
+      "close": 0.56128,
       "volume": 0
     }
   ]
