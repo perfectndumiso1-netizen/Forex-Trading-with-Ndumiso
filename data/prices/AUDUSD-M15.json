@@ -2,7 +2,7 @@
   "meta": {
     "pair": "AUDUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-11T04:01:21.884Z",
+    "lastUpdated": "2026-10-11T04:22:58.698Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,9 +10,8 @@
     "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 2722,
+    "count": 2723,
     "issues": [
-      "Rejected future-dated candle at 1791693000 (2026-10-11T04:30:00.000Z)",
       "Rejected future-dated candle at 1791693900 (2026-10-11T04:45:00.000Z)",
       "Rejected future-dated candle at 1791694800 (2026-10-11T05:00:00.000Z)",
       "Rejected future-dated candle at 1791695700 (2026-10-11T05:15:00.000Z)",
@@ -55,6 +54,7 @@
       "Rejected future-dated candle at 1791729000 (2026-10-11T14:30:00.000Z)",
       "Rejected future-dated candle at 1791729900 (2026-10-11T14:45:00.000Z)",
       "Rejected future-dated candle at 1791730800 (2026-10-11T15:00:00.000Z)",
+      "Rejected future-dated candle at 1791731700 (2026-10-11T15:15:00.000Z)",
       "Removed spike outlier at t=1791681300 (move 0.00309 > 5× ATR 0.00037)"
     ],
     "strategyVersion": "1.0.0"
@@ -21834,6 +21834,14 @@
       "high": 0.69861,
       "low": 0.69855,
       "close": 0.69856,
+      "volume": 0
+    },
+    {
+      "time": 1791693000,
+      "open": 0.69856,
+      "high": 0.69883,
+      "low": 0.69847,
+      "close": 0.69859,
       "volume": 0
     }
   ]
