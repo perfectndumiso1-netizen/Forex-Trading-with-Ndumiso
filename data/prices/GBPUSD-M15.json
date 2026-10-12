@@ -2,7 +2,7 @@
   "meta": {
     "pair": "GBPUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-12T06:59:20.591Z",
+    "lastUpdated": "2026-10-12T07:26:29.763Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,10 +10,8 @@
     "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 2827,
+    "count": 2829,
     "issues": [
-      "Rejected future-dated candle at 1791789300 (2026-10-12T07:15:00.000Z)",
-      "Rejected future-dated candle at 1791790200 (2026-10-12T07:30:00.000Z)",
       "Rejected future-dated candle at 1791791100 (2026-10-12T07:45:00.000Z)",
       "Rejected future-dated candle at 1791792000 (2026-10-12T08:00:00.000Z)",
       "Rejected future-dated candle at 1791792900 (2026-10-12T08:15:00.000Z)",
@@ -55,6 +53,8 @@
       "Rejected future-dated candle at 1791825300 (2026-10-12T17:15:00.000Z)",
       "Rejected future-dated candle at 1791826200 (2026-10-12T17:30:00.000Z)",
       "Rejected future-dated candle at 1791827100 (2026-10-12T17:45:00.000Z)",
+      "Rejected future-dated candle at 1791828000 (2026-10-12T18:00:00.000Z)",
+      "Rejected future-dated candle at 1791828900 (2026-10-12T18:15:00.000Z)",
       "Removed spike outlier at t=1791681300 (move 0.00248 > 5× ATR 0.00044)"
     ],
     "strategyVersion": "1.0.0"
@@ -22674,6 +22674,22 @@
       "high": 1.32376,
       "low": 1.32304,
       "close": 1.32331,
+      "volume": 0
+    },
+    {
+      "time": 1791789300,
+      "open": 1.32328,
+      "high": 1.32357,
+      "low": 1.32286,
+      "close": 1.32338,
+      "volume": 0
+    },
+    {
+      "time": 1791790200,
+      "open": 1.32333,
+      "high": 1.32361,
+      "low": 1.32308,
+      "close": 1.32332,
       "volume": 0
     }
   ]
