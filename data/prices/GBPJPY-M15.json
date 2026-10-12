@@ -2,7 +2,7 @@
   "meta": {
     "pair": "GBPJPY",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-12T06:28:19.625Z",
+    "lastUpdated": "2026-10-12T07:04:34.977Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 2824,
+    "count": 2827,
     "issues": [
-      "Rejected future-dated candle at 1791787500 (2026-10-12T06:45:00.000Z)",
-      "Rejected future-dated candle at 1791788400 (2026-10-12T07:00:00.000Z)",
-      "Rejected future-dated candle at 1791789300 (2026-10-12T07:15:00.000Z)",
       "Rejected future-dated candle at 1791790200 (2026-10-12T07:30:00.000Z)",
       "Rejected future-dated candle at 1791791100 (2026-10-12T07:45:00.000Z)",
       "Rejected future-dated candle at 1791792000 (2026-10-12T08:00:00.000Z)",
@@ -55,6 +52,9 @@
       "Rejected future-dated candle at 1791823500 (2026-10-12T16:45:00.000Z)",
       "Rejected future-dated candle at 1791824400 (2026-10-12T17:00:00.000Z)",
       "Rejected future-dated candle at 1791825300 (2026-10-12T17:15:00.000Z)",
+      "Rejected future-dated candle at 1791826200 (2026-10-12T17:30:00.000Z)",
+      "Rejected future-dated candle at 1791827100 (2026-10-12T17:45:00.000Z)",
+      "Rejected future-dated candle at 1791828000 (2026-10-12T18:00:00.000Z)",
       "Removed spike outlier at t=1791681300 (move 0.67569 > 5× ATR 0.11220)"
     ],
     "strategyVersion": "1.0.0"
@@ -22650,6 +22650,30 @@
       "high": 209.55255,
       "low": 209.34812,
       "close": 209.44323,
+      "volume": 0
+    },
+    {
+      "time": 1791787500,
+      "open": 209.46748,
+      "high": 209.54014,
+      "low": 209.37253,
+      "close": 209.48807,
+      "volume": 0
+    },
+    {
+      "time": 1791788400,
+      "open": 209.42465,
+      "high": 209.55706,
+      "low": 209.38486,
+      "close": 209.48097,
+      "volume": 0
+    },
+    {
+      "time": 1791789300,
+      "open": 209.47392,
+      "high": 209.49367,
+      "low": 209.38047,
+      "close": 209.46789,
       "volume": 0
     }
   ]

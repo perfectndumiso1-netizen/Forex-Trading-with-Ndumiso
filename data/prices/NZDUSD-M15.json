@@ -2,7 +2,7 @@
   "meta": {
     "pair": "NZDUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-12T06:26:21.907Z",
+    "lastUpdated": "2026-10-12T07:02:36.401Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 2825,
+    "count": 2828,
     "issues": [
-      "Rejected future-dated candle at 1791787500 (2026-10-12T06:45:00.000Z)",
-      "Rejected future-dated candle at 1791788400 (2026-10-12T07:00:00.000Z)",
-      "Rejected future-dated candle at 1791789300 (2026-10-12T07:15:00.000Z)",
       "Rejected future-dated candle at 1791790200 (2026-10-12T07:30:00.000Z)",
       "Rejected future-dated candle at 1791791100 (2026-10-12T07:45:00.000Z)",
       "Rejected future-dated candle at 1791792000 (2026-10-12T08:00:00.000Z)",
@@ -55,6 +52,9 @@
       "Rejected future-dated candle at 1791823500 (2026-10-12T16:45:00.000Z)",
       "Rejected future-dated candle at 1791824400 (2026-10-12T17:00:00.000Z)",
       "Rejected future-dated candle at 1791825300 (2026-10-12T17:15:00.000Z)",
+      "Rejected future-dated candle at 1791826200 (2026-10-12T17:30:00.000Z)",
+      "Rejected future-dated candle at 1791827100 (2026-10-12T17:45:00.000Z)",
+      "Rejected future-dated candle at 1791828000 (2026-10-12T18:00:00.000Z)",
       "Removed spike outlier at t=1791673200 (move 0.00102 > 5× ATR 0.00017)",
       "Removed spike outlier at t=1791720000 (move 0.00104 > 5× ATR 0.00020)"
     ],
@@ -22659,6 +22659,30 @@
       "high": 0.56153,
       "low": 0.5611,
       "close": 0.56118,
+      "volume": 0
+    },
+    {
+      "time": 1791787500,
+      "open": 0.56116,
+      "high": 0.5621,
+      "low": 0.56093,
+      "close": 0.56127,
+      "volume": 0
+    },
+    {
+      "time": 1791788400,
+      "open": 0.56122,
+      "high": 0.56268,
+      "low": 0.56079,
+      "close": 0.56189,
+      "volume": 0
+    },
+    {
+      "time": 1791789300,
+      "open": 0.56181,
+      "high": 0.56196,
+      "low": 0.56107,
+      "close": 0.5614,
       "volume": 0
     }
   ]
