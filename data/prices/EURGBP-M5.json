@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURGBP",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-13T08:18:02.747Z",
+    "lastUpdated": "2026-10-13T08:50:10.395Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
@@ -15,59 +15,11 @@
     "issues": [
       "2 gap(s) detected in candle sequence",
       "Removed spike outlier at t=1791406800 (move 0.00138 > 5× ATR 0.00024)",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 840 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 890 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
   "candles": [
-    {
-      "time": 1790208300,
-      "open": 0.859749972820282,
-      "high": 0.8597999811172485,
-      "low": 0.8597300052642822,
-      "close": 0.8597599864006042,
-      "volume": 0
-    },
-    {
-      "time": 1790208600,
-      "open": 0.8597599864006042,
-      "high": 0.8598300218582153,
-      "low": 0.8597400188446045,
-      "close": 0.8597999811172485,
-      "volume": 0
-    },
-    {
-      "time": 1790208900,
-      "open": 0.8597999811172485,
-      "high": 0.8599100112915039,
-      "low": 0.8597999811172485,
-      "close": 0.8598700165748596,
-      "volume": 0
-    },
-    {
-      "time": 1790209200,
-      "open": 0.8598799705505371,
-      "high": 0.8599200248718262,
-      "low": 0.8598499894142151,
-      "close": 0.8598799705505371,
-      "volume": 0
-    },
-    {
-      "time": 1790209500,
-      "open": 0.8598899841308594,
-      "high": 0.8599200248718262,
-      "low": 0.8598600029945374,
-      "close": 0.8598899841308594,
-      "volume": 0
-    },
-    {
-      "time": 1790209800,
-      "open": 0.8598899841308594,
-      "high": 0.8599200248718262,
-      "low": 0.8598600029945374,
-      "close": 0.8598899841308594,
-      "volume": 0
-    },
     {
       "time": 1790210100,
       "open": 0.8598899841308594,
@@ -40008,16 +39960,64 @@
       "time": 1791879300,
       "open": 0.8453099727630615,
       "high": 0.8453999757766724,
-      "low": 0.8452399969100952,
-      "close": 0.8452500104904175,
+      "low": 0.8451799750328064,
+      "close": 0.8452699780464172,
       "volume": 0
     },
     {
       "time": 1791879600,
-      "open": 0.8452500104904175,
-      "high": 0.8452500104904175,
-      "low": 0.8452500104904175,
-      "close": 0.8452500104904175,
+      "open": 0.8452699780464172,
+      "high": 0.845300018787384,
+      "low": 0.8451200127601624,
+      "close": 0.8451300263404846,
+      "volume": 0
+    },
+    {
+      "time": 1791879900,
+      "open": 0.8451300263404846,
+      "high": 0.8452000021934509,
+      "low": 0.845009982585907,
+      "close": 0.8451200127601624,
+      "volume": 0
+    },
+    {
+      "time": 1791880200,
+      "open": 0.8451200127601624,
+      "high": 0.8452399969100952,
+      "low": 0.8450899720191956,
+      "close": 0.8451399803161621,
+      "volume": 0
+    },
+    {
+      "time": 1791880500,
+      "open": 0.8451399803161621,
+      "high": 0.8452000021934509,
+      "low": 0.844980001449585,
+      "close": 0.8450000286102295,
+      "volume": 0
+    },
+    {
+      "time": 1791880800,
+      "open": 0.8450000286102295,
+      "high": 0.8450999855995178,
+      "low": 0.8448699712753296,
+      "close": 0.8448899984359741,
+      "volume": 0
+    },
+    {
+      "time": 1791881100,
+      "open": 0.8448899984359741,
+      "high": 0.8450300097465515,
+      "low": 0.8447999954223633,
+      "close": 0.845009982585907,
+      "volume": 0
+    },
+    {
+      "time": 1791881400,
+      "open": 0.8450000286102295,
+      "high": 0.8450000286102295,
+      "low": 0.8450000286102295,
+      "close": 0.8450000286102295,
       "volume": 0
     }
   ]
