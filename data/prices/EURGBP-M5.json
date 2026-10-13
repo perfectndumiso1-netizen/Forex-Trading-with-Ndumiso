@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURGBP",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-13T13:25:36.590Z",
+    "lastUpdated": "2026-10-13T13:54:01.303Z",
     "provider": "yahoo",
     "providersAttempted": [
       "twelvedata",
@@ -15,59 +15,11 @@
     "issues": [
       "2 gap(s) detected in candle sequence",
       "Removed spike outlier at t=1791406800 (move 0.00138 > 5× ATR 0.00024)",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 1340 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 1390 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
     ],
     "strategyVersion": "1.0.0"
   },
   "candles": [
-    {
-      "time": 1790226600,
-      "open": 0.8597300052642822,
-      "high": 0.8597999811172485,
-      "low": 0.8597000241279602,
-      "close": 0.85971999168396,
-      "volume": 0
-    },
-    {
-      "time": 1790226900,
-      "open": 0.8597300052642822,
-      "high": 0.8597999811172485,
-      "low": 0.8596699833869934,
-      "close": 0.8597300052642822,
-      "volume": 0
-    },
-    {
-      "time": 1790227200,
-      "open": 0.8597400188446045,
-      "high": 0.8597999811172485,
-      "low": 0.85971999168396,
-      "close": 0.859749972820282,
-      "volume": 0
-    },
-    {
-      "time": 1790227500,
-      "open": 0.8597400188446045,
-      "high": 0.8597999811172485,
-      "low": 0.8597000241279602,
-      "close": 0.859749972820282,
-      "volume": 0
-    },
-    {
-      "time": 1790227800,
-      "open": 0.8597400188446045,
-      "high": 0.8597999811172485,
-      "low": 0.8596400022506714,
-      "close": 0.8596900105476379,
-      "volume": 0
-    },
-    {
-      "time": 1790228100,
-      "open": 0.8596799969673157,
-      "high": 0.8597000241279602,
-      "low": 0.8595600128173828,
-      "close": 0.8595799803733826,
-      "volume": 0
-    },
     {
       "time": 1790228400,
       "open": 0.8595799803733826,
@@ -40014,10 +39966,58 @@
     },
     {
       "time": 1791897900,
-      "open": 0.8450599908828735,
-      "high": 0.8450599908828735,
-      "low": 0.8450599908828735,
-      "close": 0.8450599908828735,
+      "open": 0.8451200127601624,
+      "high": 0.8452000021934509,
+      "low": 0.8450400233268738,
+      "close": 0.8451399803161621,
+      "volume": 0
+    },
+    {
+      "time": 1791898200,
+      "open": 0.8451499938964844,
+      "high": 0.8453199863433838,
+      "low": 0.8450400233268738,
+      "close": 0.845229983329773,
+      "volume": 0
+    },
+    {
+      "time": 1791898500,
+      "open": 0.845229983329773,
+      "high": 0.8453500270843506,
+      "low": 0.8451300263404846,
+      "close": 0.8452000021934509,
+      "volume": 0
+    },
+    {
+      "time": 1791898800,
+      "open": 0.8452100157737732,
+      "high": 0.8452399969100952,
+      "low": 0.8451200127601624,
+      "close": 0.8451399803161621,
+      "volume": 0
+    },
+    {
+      "time": 1791899100,
+      "open": 0.8451300263404846,
+      "high": 0.8452000021934509,
+      "low": 0.8450400233268738,
+      "close": 0.8451099991798401,
+      "volume": 0
+    },
+    {
+      "time": 1791899400,
+      "open": 0.8451099991798401,
+      "high": 0.8451499938964844,
+      "low": 0.8449400067329407,
+      "close": 0.8449500203132629,
+      "volume": 0
+    },
+    {
+      "time": 1791899700,
+      "open": 0.8449500203132629,
+      "high": 0.8449500203132629,
+      "low": 0.8449500203132629,
+      "close": 0.8449500203132629,
       "volume": 0
     }
   ]
