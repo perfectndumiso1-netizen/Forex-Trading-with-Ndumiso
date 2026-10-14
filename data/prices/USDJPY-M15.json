@@ -2,7 +2,7 @@
   "meta": {
     "pair": "USDJPY",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-14T06:39:56.821Z",
+    "lastUpdated": "2026-10-14T07:25:43.339Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.79,
     "freshness": 1,
     "usable": true,
-    "count": 3016,
+    "count": 3019,
     "issues": [
-      "Rejected future-dated candle at 1791961200 (2026-10-14T07:00:00.000Z)",
-      "Rejected future-dated candle at 1791962100 (2026-10-14T07:15:00.000Z)",
-      "Rejected future-dated candle at 1791963000 (2026-10-14T07:30:00.000Z)",
       "Rejected future-dated candle at 1791963900 (2026-10-14T07:45:00.000Z)",
       "Rejected future-dated candle at 1791964800 (2026-10-14T08:00:00.000Z)",
       "Rejected future-dated candle at 1791965700 (2026-10-14T08:15:00.000Z)",
@@ -54,7 +51,10 @@
       "Rejected future-dated candle at 1791996300 (2026-10-14T16:45:00.000Z)",
       "Rejected future-dated candle at 1791997200 (2026-10-14T17:00:00.000Z)",
       "Rejected future-dated candle at 1791998100 (2026-10-14T17:15:00.000Z)",
-      "Rejected future-dated candle at 1791999000 (2026-10-14T17:30:00.000Z)"
+      "Rejected future-dated candle at 1791999000 (2026-10-14T17:30:00.000Z)",
+      "Rejected future-dated candle at 1791999900 (2026-10-14T17:45:00.000Z)",
+      "Rejected future-dated candle at 1792000800 (2026-10-14T18:00:00.000Z)",
+      "Rejected future-dated candle at 1792001700 (2026-10-14T18:15:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -24185,6 +24185,30 @@
       "high": 158.36661,
       "low": 158.3151,
       "close": 158.36506,
+      "volume": 0
+    },
+    {
+      "time": 1791961200,
+      "open": 158.36114,
+      "high": 158.36114,
+      "low": 158.33353,
+      "close": 158.3387,
+      "volume": 0
+    },
+    {
+      "time": 1791962100,
+      "open": 158.3352,
+      "high": 158.3448,
+      "low": 158.32569,
+      "close": 158.32901,
+      "volume": 0
+    },
+    {
+      "time": 1791963000,
+      "open": 158.32705,
+      "high": 158.345,
+      "low": 158.32705,
+      "close": 158.32922,
       "volume": 0
     }
   ]
