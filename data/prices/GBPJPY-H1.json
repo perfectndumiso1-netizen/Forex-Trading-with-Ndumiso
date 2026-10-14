@@ -2,7 +2,7 @@
   "meta": {
     "pair": "GBPJPY",
     "timeframe": "H1",
-    "lastUpdated": "2026-10-14T01:51:56.548Z",
+    "lastUpdated": "2026-10-14T02:29:38.673Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,9 +10,8 @@
     "quality": 0.95,
     "freshness": 1,
     "usable": true,
-    "count": 1633,
+    "count": 1634,
     "issues": [
-      "Rejected future-dated candle at 1791946800 (2026-10-14T03:00:00.000Z)",
       "Rejected future-dated candle at 1791950400 (2026-10-14T04:00:00.000Z)",
       "Rejected future-dated candle at 1791954000 (2026-10-14T05:00:00.000Z)",
       "Rejected future-dated candle at 1791957600 (2026-10-14T06:00:00.000Z)",
@@ -22,6 +21,7 @@
       "Rejected future-dated candle at 1791972000 (2026-10-14T10:00:00.000Z)",
       "Rejected future-dated candle at 1791975600 (2026-10-14T11:00:00.000Z)",
       "Rejected future-dated candle at 1791979200 (2026-10-14T12:00:00.000Z)",
+      "Rejected future-dated candle at 1791982800 (2026-10-14T13:00:00.000Z)",
       "Removed spike outlier at t=1791680400 (move 0.71779 > 5× ATR 0.13432)"
     ],
     "strategyVersion": "1.0.0"
@@ -13089,6 +13089,14 @@
       "high": 209.93861,
       "low": 209.77341,
       "close": 209.85784,
+      "volume": 0
+    },
+    {
+      "time": 1791946800,
+      "open": 209.85025,
+      "high": 209.865,
+      "low": 209.7489,
+      "close": 209.80443,
       "volume": 0
     }
   ]

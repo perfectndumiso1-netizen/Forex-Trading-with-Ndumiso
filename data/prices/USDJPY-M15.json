@@ -2,7 +2,7 @@
   "meta": {
     "pair": "USDJPY",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-14T01:47:18.292Z",
+    "lastUpdated": "2026-10-14T02:25:08.012Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,10 +10,8 @@
     "quality": 0.79,
     "freshness": 1,
     "usable": true,
-    "count": 2997,
+    "count": 2999,
     "issues": [
-      "Rejected future-dated candle at 1791944100 (2026-10-14T02:15:00.000Z)",
-      "Rejected future-dated candle at 1791945000 (2026-10-14T02:30:00.000Z)",
       "Rejected future-dated candle at 1791945900 (2026-10-14T02:45:00.000Z)",
       "Rejected future-dated candle at 1791946800 (2026-10-14T03:00:00.000Z)",
       "Rejected future-dated candle at 1791947700 (2026-10-14T03:15:00.000Z)",
@@ -54,7 +52,9 @@
       "Rejected future-dated candle at 1791979200 (2026-10-14T12:00:00.000Z)",
       "Rejected future-dated candle at 1791980100 (2026-10-14T12:15:00.000Z)",
       "Rejected future-dated candle at 1791981000 (2026-10-14T12:30:00.000Z)",
-      "Rejected future-dated candle at 1791981900 (2026-10-14T12:45:00.000Z)"
+      "Rejected future-dated candle at 1791981900 (2026-10-14T12:45:00.000Z)",
+      "Rejected future-dated candle at 1791982800 (2026-10-14T13:00:00.000Z)",
+      "Rejected future-dated candle at 1791983700 (2026-10-14T13:15:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -24033,6 +24033,22 @@
       "high": 158.46251,
       "low": 158.34021,
       "close": 158.41952,
+      "volume": 0
+    },
+    {
+      "time": 1791944100,
+      "open": 158.41924,
+      "high": 158.43747,
+      "low": 158.40236,
+      "close": 158.42067,
+      "volume": 0
+    },
+    {
+      "time": 1791945000,
+      "open": 158.41475,
+      "high": 158.46649,
+      "low": 158.38221,
+      "close": 158.44375,
       "volume": 0
     }
   ]
