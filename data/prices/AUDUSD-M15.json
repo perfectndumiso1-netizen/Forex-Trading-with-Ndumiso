@@ -2,7 +2,7 @@
   "meta": {
     "pair": "AUDUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-15T01:46:37.768Z",
+    "lastUpdated": "2026-10-15T02:16:20.403Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,10 +10,8 @@
     "quality": 0.79,
     "freshness": 1,
     "usable": true,
-    "count": 3097,
+    "count": 3099,
     "issues": [
-      "Rejected future-dated candle at 1792030500 (2026-10-15T02:15:00.000Z)",
-      "Rejected future-dated candle at 1792031400 (2026-10-15T02:30:00.000Z)",
       "Rejected future-dated candle at 1792032300 (2026-10-15T02:45:00.000Z)",
       "Rejected future-dated candle at 1792033200 (2026-10-15T03:00:00.000Z)",
       "Rejected future-dated candle at 1792034100 (2026-10-15T03:15:00.000Z)",
@@ -54,7 +52,9 @@
       "Rejected future-dated candle at 1792065600 (2026-10-15T12:00:00.000Z)",
       "Rejected future-dated candle at 1792066500 (2026-10-15T12:15:00.000Z)",
       "Rejected future-dated candle at 1792067400 (2026-10-15T12:30:00.000Z)",
-      "Rejected future-dated candle at 1792068300 (2026-10-15T12:45:00.000Z)"
+      "Rejected future-dated candle at 1792068300 (2026-10-15T12:45:00.000Z)",
+      "Rejected future-dated candle at 1792069200 (2026-10-15T13:00:00.000Z)",
+      "Rejected future-dated candle at 1792070100 (2026-10-15T13:15:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -24833,6 +24833,22 @@
       "high": 0.69608,
       "low": 0.6952,
       "close": 0.69541,
+      "volume": 0
+    },
+    {
+      "time": 1792030500,
+      "open": 0.69529,
+      "high": 0.69628,
+      "low": 0.69529,
+      "close": 0.696,
+      "volume": 0
+    },
+    {
+      "time": 1792031400,
+      "open": 0.69608,
+      "high": 0.69608,
+      "low": 0.69538,
+      "close": 0.69558,
       "volume": 0
     }
   ]
