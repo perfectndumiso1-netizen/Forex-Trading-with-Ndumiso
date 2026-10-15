@@ -2,7 +2,7 @@
   "meta": {
     "pair": "GBPJPY",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-15T00:35:37.444Z",
+    "lastUpdated": "2026-10-15T01:16:57.589Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.79,
     "freshness": 1,
     "usable": true,
-    "count": 3089,
+    "count": 3092,
     "issues": [
-      "Rejected future-dated candle at 1792026000 (2026-10-15T01:00:00.000Z)",
-      "Rejected future-dated candle at 1792026900 (2026-10-15T01:15:00.000Z)",
-      "Rejected future-dated candle at 1792027800 (2026-10-15T01:30:00.000Z)",
       "Rejected future-dated candle at 1792028700 (2026-10-15T01:45:00.000Z)",
       "Rejected future-dated candle at 1792029600 (2026-10-15T02:00:00.000Z)",
       "Rejected future-dated candle at 1792030500 (2026-10-15T02:15:00.000Z)",
@@ -54,7 +51,10 @@
       "Rejected future-dated candle at 1792061100 (2026-10-15T10:45:00.000Z)",
       "Rejected future-dated candle at 1792062000 (2026-10-15T11:00:00.000Z)",
       "Rejected future-dated candle at 1792062900 (2026-10-15T11:15:00.000Z)",
-      "Rejected future-dated candle at 1792063800 (2026-10-15T11:30:00.000Z)"
+      "Rejected future-dated candle at 1792063800 (2026-10-15T11:30:00.000Z)",
+      "Rejected future-dated candle at 1792064700 (2026-10-15T11:45:00.000Z)",
+      "Rejected future-dated candle at 1792065600 (2026-10-15T12:00:00.000Z)",
+      "Rejected future-dated candle at 1792066500 (2026-10-15T12:15:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -24769,6 +24769,30 @@
       "high": 209.62308,
       "low": 209.32603,
       "close": 209.33624,
+      "volume": 0
+    },
+    {
+      "time": 1792026000,
+      "open": 209.35472,
+      "high": 209.35472,
+      "low": 209.13506,
+      "close": 209.19211,
+      "volume": 0
+    },
+    {
+      "time": 1792026900,
+      "open": 209.20064,
+      "high": 209.36612,
+      "low": 209.17015,
+      "close": 209.3259,
+      "volume": 0
+    },
+    {
+      "time": 1792027800,
+      "open": 209.32709,
+      "high": 209.32891,
+      "low": 209.12425,
+      "close": 209.19368,
       "volume": 0
     }
   ]
