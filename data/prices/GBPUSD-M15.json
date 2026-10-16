@@ -2,7 +2,7 @@
   "meta": {
     "pair": "GBPUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-16T09:05:26.884Z",
+    "lastUpdated": "2026-10-16T09:45:54.095Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.79,
     "freshness": 1,
     "usable": true,
-    "count": 3220,
+    "count": 3223,
     "issues": [
-      "Rejected future-dated candle at 1792143000 (2026-10-16T09:30:00.000Z)",
-      "Rejected future-dated candle at 1792143900 (2026-10-16T09:45:00.000Z)",
-      "Rejected future-dated candle at 1792144800 (2026-10-16T10:00:00.000Z)",
       "Rejected future-dated candle at 1792145700 (2026-10-16T10:15:00.000Z)",
       "Rejected future-dated candle at 1792146600 (2026-10-16T10:30:00.000Z)",
       "Rejected future-dated candle at 1792147500 (2026-10-16T10:45:00.000Z)",
@@ -54,7 +51,9 @@
       "Rejected future-dated candle at 1792178100 (2026-10-16T19:15:00.000Z)",
       "Rejected future-dated candle at 1792179000 (2026-10-16T19:30:00.000Z)",
       "Rejected future-dated candle at 1792179900 (2026-10-16T19:45:00.000Z)",
-      "Rejected future-dated candle at 1792180800 (2026-10-16T20:00:00.000Z)"
+      "Rejected future-dated candle at 1792180800 (2026-10-16T20:00:00.000Z)",
+      "Rejected future-dated candle at 1792181700 (2026-10-16T20:15:00.000Z)",
+      "Rejected future-dated candle at 1792182600 (2026-10-16T20:30:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -25817,6 +25816,30 @@
       "high": 1.32758,
       "low": 1.32714,
       "close": 1.32724,
+      "volume": 0
+    },
+    {
+      "time": 1792143000,
+      "open": 1.32722,
+      "high": 1.32736,
+      "low": 1.32718,
+      "close": 1.3272,
+      "volume": 0
+    },
+    {
+      "time": 1792143900,
+      "open": 1.3272,
+      "high": 1.32729,
+      "low": 1.32709,
+      "close": 1.32721,
+      "volume": 0
+    },
+    {
+      "time": 1792144800,
+      "open": 1.32722,
+      "high": 1.32739,
+      "low": 1.3271,
+      "close": 1.32723,
       "volume": 0
     }
   ]
