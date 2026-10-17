@@ -2,12 +2,12 @@
   "meta": {
     "description": "Live signal output from engine v1.0.0. Generated from validated market data. Demo/mock signals are excluded.",
     "isMockData": false,
-    "lastUpdated": "2026-10-17T05:03:19.422Z",
+    "lastUpdated": "2026-10-17T05:30:05.796Z",
     "strategyVersion": "1.0.0",
-    "totalSignals": 143,
-    "newSignalsThisRun": 0,
+    "totalSignals": 144,
+    "newSignalsThisRun": 1,
     "containsDemoSignals": false,
-    "activeSignals": 143
+    "activeSignals": 144
   },
   "signals": [
     {
@@ -158883,6 +158883,1048 @@
       ],
       "timestamp": "2026-10-17T02:50:43.867Z",
       "id": "sig-2026-10-17-000-USDCHF",
+      "status": "ACTIVE",
+      "closedAt": null,
+      "pipsResult": null,
+      "provider": "engine"
+    },
+    {
+      "signal": "BUY",
+      "pair": "GBPUSD",
+      "entryTF": "H1",
+      "entry": 1.33287,
+      "stopLoss": 1.33053779767326,
+      "takeProfit": 1.3378340148798624,
+      "takeProfitLevels": [
+        {
+          "level": 1.3378340148798624,
+          "rr": 2.1284666527201184,
+          "label": "TP1 (structure/1R)"
+        },
+        {
+          "level": 1.338000845118828,
+          "rr": 2.2,
+          "label": "TP2 (2.2R)"
+        },
+        {
+          "level": 1.3410327081435902,
+          "rr": 3.5,
+          "label": "TP3 (3.5R)"
+        }
+      ],
+      "riskReward": 2.1284666527201184,
+      "atr": 0.0015548015511600197,
+      "pipSize": 0.0001,
+      "strength": 65,
+      "dataQuality": 93,
+      "strategyVersion": "1.0.0",
+      "reasons": [
+        "M5: data not usable (Rejected future-dated candle at 1792215000 (2026-10-17T05:30:00.000Z))",
+        "D1: BUY bias (MA BULL, trend SIDEWAYS 100%)",
+        "H4: BUY bias (MA BULL, trend SIDEWAYS 86%)",
+        "H1: BUY bias (MA BULL, trend SIDEWAYS 86%)",
+        "M15: neutral/conflicting",
+        "Entry on H1 at 1.33287",
+        "SL: 1.33054 (23.3 pips)",
+        "TP1: 1.33783 (R:R 2.13)",
+        "Volatility: normal (ATR 0.00155)"
+      ],
+      "tfAnalysis": {
+        "D1": {
+          "ma": {
+            "alignment": "BULL",
+            "score": 100,
+            "details": [
+              "Full bullish MA alignment: fast > slow > trend > long"
+            ]
+          },
+          "trend": {
+            "direction": "SIDEWAYS",
+            "confidence": 100,
+            "details": [
+              "Mixed structure — ranging"
+            ],
+            "higherHighs": 2,
+            "lowerHighs": 5,
+            "higherLows": 5,
+            "lowerLows": 2
+          },
+          "zones": [
+            {
+              "price": 1.3334578275680542,
+              "type": "support",
+              "touches": 3,
+              "high": 1.3336355686187744,
+              "low": 1.3331378698349,
+              "strength": 60
+            },
+            {
+              "price": 1.3379972873840331,
+              "type": "zone",
+              "touches": 5,
+              "high": 1.3391542434692383,
+              "low": 1.3367375135421753,
+              "strength": 100
+            },
+            {
+              "price": 1.3273699902216594,
+              "type": "resistance",
+              "touches": 3,
+              "high": 1.32859,
+              "low": 1.326259970664978,
+              "strength": 60
+            },
+            {
+              "price": 1.3238830437342326,
+              "type": "resistance",
+              "touches": 3,
+              "high": 1.325065016746521,
+              "low": 1.32315,
+              "strength": 60
+            },
+            {
+              "price": 1.3445272060224744,
+              "type": "resistance",
+              "touches": 9,
+              "high": 1.34614,
+              "low": 1.34318,
+              "strength": 100
+            },
+            {
+              "price": 1.320109617958069,
+              "type": "resistance",
+              "touches": 3,
+              "high": 1.3213530778884888,
+              "low": 1.31853,
+              "strength": 60
+            },
+            {
+              "price": 1.3480149244689943,
+              "type": "resistance",
+              "touches": 10,
+              "high": 1.3488723039627075,
+              "low": 1.34658,
+              "strength": 100
+            },
+            {
+              "price": 1.3508433333333334,
+              "type": "resistance",
+              "touches": 3,
+              "high": 1.35095,
+              "low": 1.35065,
+              "strength": 60
+            },
+            {
+              "price": 1.3143022656440735,
+              "type": "support",
+              "touches": 2,
+              "high": 1.314405918121338,
+              "low": 1.314198613166809,
+              "strength": 40
+            },
+            {
+              "price": 1.3558681254768374,
+              "type": "resistance",
+              "touches": 10,
+              "high": 1.35762,
+              "low": 1.3530151844024658,
+              "strength": 100
+            },
+            {
+              "price": 1.3592239563655855,
+              "type": "resistance",
+              "touches": 4,
+              "high": 1.35983,
+              "low": 1.3587141036987305,
+              "strength": 80
+            },
+            {
+              "price": 1.3042571147282918,
+              "type": "resistance",
+              "touches": 3,
+              "high": 1.3044612407684326,
+              "low": 1.3039339780807495,
+              "strength": 60
+            },
+            {
+              "price": 1.3010050455729167,
+              "type": "support",
+              "touches": 3,
+              "high": 1.3015241622924805,
+              "low": 1.3003225326538086,
+              "strength": 60
+            },
+            {
+              "price": 1.3653651052856444,
+              "type": "resistance",
+              "touches": 7,
+              "high": 1.3670727014541626,
+              "low": 1.3632521629333496,
+              "strength": 100
+            },
+            {
+              "price": 1.2965916,
+              "type": "support",
+              "touches": 5,
+              "high": 1.297818,
+              "low": 1.295063,
+              "strength": 100
+            },
+            {
+              "price": 1.3723075985908508,
+              "type": "resistance",
+              "touches": 2,
+              "high": 1.3733245134353638,
+              "low": 1.371290683746338,
+              "strength": 40
+            },
+            {
+              "price": 1.2891827234420776,
+              "type": "zone",
+              "touches": 2,
+              "high": 1.289307,
+              "low": 1.2890584468841553,
+              "strength": 40
+            },
+            {
+              "price": 1.286516901184082,
+              "type": "support",
+              "touches": 3,
+              "high": 1.2876144647598267,
+              "low": 1.285928,
+              "strength": 60
+            },
+            {
+              "price": 1.2812341517143249,
+              "type": "resistance",
+              "touches": 6,
+              "high": 1.2826762199401855,
+              "low": 1.279663,
+              "strength": 100
+            },
+            {
+              "price": 1.2777051130930583,
+              "type": "resistance",
+              "touches": 3,
+              "high": 1.2784616947174072,
+              "low": 1.2772860527038574,
+              "strength": 60
+            },
+            {
+              "price": 1.2714145205020904,
+              "type": "zone",
+              "touches": 4,
+              "high": 1.2722808122634888,
+              "low": 1.2709063291549683,
+              "strength": 80
+            },
+            {
+              "price": 1.2674145891049704,
+              "type": "support",
+              "touches": 6,
+              "high": 1.268343448638916,
+              "low": 1.266166,
+              "strength": 100
+            },
+            {
+              "price": 1.2623205633239747,
+              "type": "support",
+              "touches": 11,
+              "high": 1.263534,
+              "low": 1.261240839958191,
+              "strength": 100
+            },
+            {
+              "price": 1.2587296655731202,
+              "type": "support",
+              "touches": 5,
+              "high": 1.2601124048233032,
+              "low": 1.2575136423110962,
+              "strength": 100
+            },
+            {
+              "price": 1.253447501248169,
+              "type": "zone",
+              "touches": 5,
+              "high": 1.2548468112945557,
+              "low": 1.2520031929016113,
+              "strength": 100
+            },
+            {
+              "price": 1.2485574928003949,
+              "type": "support",
+              "touches": 3,
+              "high": 1.248860478401184,
+              "low": 1.248111,
+              "strength": 60
+            }
+          ],
+          "volatility": {
+            "regime": "low",
+            "atr": 0.017424844525966123,
+            "atrPercent": 1.307278400339567,
+            "atrRatio": 0.229759952237897,
+            "bbWidth": 1.082649354281076,
+            "details": [
+              "ATR 0.01742 (1.31% of price)",
+              "ATR/avg ratio 0.23 → low regime",
+              "BB width 1.08%"
+            ]
+          },
+          "squeeze": {
+            "squeezed": true,
+            "bbWidth": 0.014339355076153026,
+            "keltnerWidth": 0.052274533577898366,
+            "details": [
+              "Volatility squeeze (BB inside Keltner)"
+            ]
+          },
+          "momentum": {
+            "score": 80,
+            "details": [
+              "RSI 53.2 rising above midline",
+              "Bullish MACD crossover (0-3 bars ago)"
+            ],
+            "rsi": {
+              "state": "bullish",
+              "value": 53.16721215313764,
+              "details": [
+                "RSI 53.2 rising above midline"
+              ]
+            },
+            "macd": {
+              "state": "bullish_cross",
+              "macd": 0.004102800939897122,
+              "signal": 0.003479243641297612,
+              "histogram": 0.00062355729859951,
+              "details": [
+                "Bullish MACD crossover (0-3 bars ago)"
+              ]
+            }
+          },
+          "breakout": {
+            "type": null,
+            "level": null
+          },
+          "atr": 0.017424844525966123,
+          "emaFast": 1.3266812992707986,
+          "emaSlow": 1.3226685749622398,
+          "smaTrend": 1.3154845999999991,
+          "smaLong": 1.3075645350000007,
+          "close": 1.33291,
+          "dataQuality": 1
+        },
+        "H4": {
+          "ma": {
+            "alignment": "BULL",
+            "score": 100,
+            "details": [
+              "Full bullish MA alignment: fast > slow > trend > long"
+            ]
+          },
+          "trend": {
+            "direction": "SIDEWAYS",
+            "confidence": 86,
+            "details": [
+              "Mixed structure — ranging"
+            ],
+            "higherHighs": 4,
+            "lowerHighs": 3,
+            "higherLows": 2,
+            "lowerLows": 5
+          },
+          "zones": [
+            {
+              "price": 1.3349692622820537,
+              "type": "support",
+              "touches": 6,
+              "high": 1.3363802433013916,
+              "low": 1.3324450254440308,
+              "strength": 100
+            },
+            {
+              "price": 1.3300731327915192,
+              "type": "resistance",
+              "touches": 4,
+              "high": 1.3311325311660767,
+              "low": 1.32859,
+              "strength": 80
+            },
+            {
+              "price": 1.3260640000000001,
+              "type": "resistance",
+              "touches": 5,
+              "high": 1.32737,
+              "low": 1.32504,
+              "strength": 100
+            },
+            {
+              "price": 1.3439000844955444,
+              "type": "resistance",
+              "touches": 3,
+              "high": 1.345152735710144,
+              "low": 1.3427144289016724,
+              "strength": 60
+            },
+            {
+              "price": 1.31943,
+              "type": "support",
+              "touches": 6,
+              "high": 1.32067,
+              "low": 1.31814,
+              "strength": 100
+            },
+            {
+              "price": 1.3486607074737549,
+              "type": "resistance",
+              "touches": 6,
+              "high": 1.3502929210662842,
+              "low": 1.3476543426513672,
+              "strength": 100
+            },
+            {
+              "price": 1.351989040608406,
+              "type": "resistance",
+              "touches": 8,
+              "high": 1.3534,
+              "low": 1.3507490158081055,
+              "strength": 100
+            },
+            {
+              "price": 1.3556072708982578,
+              "type": "resistance",
+              "touches": 17,
+              "high": 1.3571467399597168,
+              "low": 1.3540594577789307,
+              "strength": 100
+            },
+            {
+              "price": 1.3601847263590494,
+              "type": "resistance",
+              "touches": 3,
+              "high": 1.36025,
+              "low": 1.36013,
+              "strength": 60
+            },
+            {
+              "price": 1.366153359413147,
+              "type": "resistance",
+              "touches": 4,
+              "high": 1.3675401210784912,
+              "low": 1.3655232191085815,
+              "strength": 80
+            },
+            {
+              "price": 1.2771724,
+              "type": "support",
+              "touches": 5,
+              "high": 1.278229,
+              "low": 1.275657,
+              "strength": 100
+            },
+            {
+              "price": 1.2720064166666665,
+              "type": "support",
+              "touches": 12,
+              "high": 1.273579,
+              "low": 1.270222,
+              "strength": 100
+            },
+            {
+              "price": 1.268101818181818,
+              "type": "support",
+              "touches": 11,
+              "high": 1.269634,
+              "low": 1.266569,
+              "strength": 100
+            },
+            {
+              "price": 1.2640352631578948,
+              "type": "support",
+              "touches": 19,
+              "high": 1.265571,
+              "low": 1.262617,
+              "strength": 100
+            },
+            {
+              "price": 1.2606625,
+              "type": "support",
+              "touches": 8,
+              "high": 1.26218,
+              "low": 1.259031,
+              "strength": 100
+            },
+            {
+              "price": 1.2570115000000002,
+              "type": "support",
+              "touches": 8,
+              "high": 1.258506,
+              "low": 1.25577,
+              "strength": 100
+            }
+          ],
+          "volatility": {
+            "regime": "normal",
+            "atr": 0.002998696088758625,
+            "atrPercent": 0.22499895620806637,
+            "atrRatio": 0.7691130605758374,
+            "bbWidth": 1.3767929292372976,
+            "details": [
+              "ATR 0.00300 (0.22% of price)",
+              "ATR/avg ratio 0.77 → normal regime",
+              "BB width 1.38%"
+            ]
+          },
+          "squeeze": {
+            "squeezed": false,
+            "bbWidth": 0.01826762589938813,
+            "keltnerWidth": 0.008996088266275876,
+            "details": [
+              "No squeeze — normal/expanding volatility"
+            ]
+          },
+          "momentum": {
+            "score": 10,
+            "details": [
+              "RSI 65.7 in mid-range",
+              "MACD above signal but momentum fading"
+            ],
+            "rsi": {
+              "state": "neutral",
+              "value": 65.68313298383411,
+              "details": [
+                "RSI 65.7 in mid-range"
+              ]
+            },
+            "macd": {
+              "state": "bullish_fading",
+              "macd": 0.0025077862606033285,
+              "signal": 0.001638654431740235,
+              "histogram": 0.0008691318288630936,
+              "details": [
+                "MACD above signal but momentum fading"
+              ]
+            }
+          },
+          "breakout": {
+            "type": "retest_bear",
+            "level": {
+              "price": 1.3349692622820537,
+              "type": "support",
+              "touches": 6,
+              "high": 1.3363802433013916,
+              "low": 1.3324450254440308,
+              "strength": 100
+            }
+          },
+          "atr": 0.002998696088758625,
+          "emaFast": 1.3306309080297547,
+          "emaSlow": 1.3278419074064058,
+          "smaTrend": 1.3246521999999998,
+          "smaLong": 1.3158672649999987,
+          "close": 1.33276,
+          "dataQuality": 0.99
+        },
+        "H1": {
+          "ma": {
+            "alignment": "BULL",
+            "score": 100,
+            "details": [
+              "Full bullish MA alignment: fast > slow > trend > long"
+            ]
+          },
+          "trend": {
+            "direction": "SIDEWAYS",
+            "confidence": 86,
+            "details": [
+              "Mixed structure — ranging"
+            ],
+            "higherHighs": 5,
+            "lowerHighs": 2,
+            "higherLows": 3,
+            "lowerLows": 4
+          },
+          "zones": [
+            {
+              "price": 1.330960183982849,
+              "type": "resistance",
+              "touches": 3,
+              "high": 1.3322319984436035,
+              "low": 1.32964,
+              "strength": 60
+            },
+            {
+              "price": 1.3378340148798624,
+              "type": "resistance",
+              "touches": 12,
+              "high": 1.33962,
+              "low": 1.3351134061813354,
+              "strength": 100
+            },
+            {
+              "price": 1.3270679203620324,
+              "type": "resistance",
+              "touches": 13,
+              "high": 1.3285152912139893,
+              "low": 1.32614,
+              "strength": 100
+            },
+            {
+              "price": 1.3401682674884796,
+              "type": "resistance",
+              "touches": 4,
+              "high": 1.3406083583831787,
+              "low": 1.3398540019989014,
+              "strength": 80
+            },
+            {
+              "price": 1.3241403570677104,
+              "type": "resistance",
+              "touches": 38,
+              "high": 1.32593,
+              "low": 1.32212,
+              "strength": 100
+            },
+            {
+              "price": 1.3196765807696753,
+              "type": "support",
+              "touches": 14,
+              "high": 1.32128,
+              "low": 1.3181308507919312,
+              "strength": 100
+            },
+            {
+              "price": 1.3485094904899597,
+              "type": "resistance",
+              "touches": 8,
+              "high": 1.3496551513671875,
+              "low": 1.3462392091751099,
+              "strength": 100
+            },
+            {
+              "price": 1.3521695286035538,
+              "type": "resistance",
+              "touches": 16,
+              "high": 1.3533813953399658,
+              "low": 1.3506578207015991,
+              "strength": 100
+            },
+            {
+              "price": 1.3556052389599027,
+              "type": "resistance",
+              "touches": 21,
+              "high": 1.3571099042892456,
+              "low": 1.3544996976852417,
+              "strength": 100
+            },
+            {
+              "price": 1.3593903541564942,
+              "type": "zone",
+              "touches": 5,
+              "high": 1.3601741790771484,
+              "low": 1.3585665225982666,
+              "strength": 100
+            },
+            {
+              "price": 1.3626341819763184,
+              "type": "support",
+              "touches": 7,
+              "high": 1.3640704154968262,
+              "low": 1.3619153499603271,
+              "strength": 100
+            },
+            {
+              "price": 1.3654611905415852,
+              "type": "resistance",
+              "touches": 6,
+              "high": 1.3659149408340454,
+              "low": 1.3649827241897583,
+              "strength": 100
+            },
+            {
+              "price": 1.268451,
+              "type": "support",
+              "touches": 2,
+              "high": 1.268463,
+              "low": 1.268439,
+              "strength": 40
+            },
+            {
+              "price": 1.2663693846153845,
+              "type": "support",
+              "touches": 13,
+              "high": 1.267934,
+              "low": 1.265181,
+              "strength": 100
+            },
+            {
+              "price": 1.2631269,
+              "type": "support",
+              "touches": 10,
+              "high": 1.264484,
+              "low": 1.261638,
+              "strength": 100
+            },
+            {
+              "price": 1.2595539600000003,
+              "type": "support",
+              "touches": 25,
+              "high": 1.261303,
+              "low": 1.257507,
+              "strength": 100
+            }
+          ],
+          "volatility": {
+            "regime": "normal",
+            "atr": 0.0015548015511600197,
+            "atrPercent": 0.11665065243872394,
+            "atrRatio": 1.2524233279688108,
+            "bbWidth": 0.7092063342827082,
+            "details": [
+              "ATR 0.00155 (0.12% of price)",
+              "ATR/avg ratio 1.25 → normal regime",
+              "BB width 0.71%"
+            ]
+          },
+          "squeeze": {
+            "squeezed": false,
+            "bbWidth": 0.00944459295046629,
+            "keltnerWidth": 0.004664404653480059,
+            "details": [
+              "No squeeze — normal/expanding volatility"
+            ]
+          },
+          "momentum": {
+            "score": 15,
+            "details": [
+              "RSI 59.5 rising above midline",
+              "MACD below signal, weakening"
+            ],
+            "rsi": {
+              "state": "bullish",
+              "value": 59.4792960816477,
+              "details": [
+                "RSI 59.5 rising above midline"
+              ]
+            },
+            "macd": {
+              "state": "bearish_fading",
+              "macd": 0.0015622009471609744,
+              "signal": 0.0018800522525895984,
+              "histogram": -0.0003178513054286241,
+              "details": [
+                "MACD below signal, weakening"
+              ]
+            }
+          },
+          "breakout": {
+            "type": "breakout_bull",
+            "level": {
+              "price": 1.330960183982849,
+              "type": "resistance",
+              "touches": 3,
+              "high": 1.3322319984436035,
+              "low": 1.32964,
+              "strength": 60
+            }
+          },
+          "atr": 0.0015548015511600197,
+          "emaFast": 1.3326089237993533,
+          "emaSlow": 1.3314361749060035,
+          "smaTrend": 1.3274088000000017,
+          "smaLong": 1.3243440935504909,
+          "close": 1.33287,
+          "dataQuality": 0.95
+        },
+        "M15": {
+          "ma": {
+            "alignment": "BEAR",
+            "score": 67,
+            "details": [
+              "Partial bearish alignment (2/3)"
+            ]
+          },
+          "trend": {
+            "direction": "UP",
+            "confidence": 79,
+            "details": [
+              "6 HH, 5 HL vs 1 LH, 2 LL"
+            ],
+            "higherHighs": 6,
+            "lowerHighs": 1,
+            "higherLows": 5,
+            "lowerLows": 2
+          },
+          "zones": [
+            {
+              "price": 1.3315922817929586,
+              "type": "zone",
+              "touches": 12,
+              "high": 1.33294,
+              "low": 1.3300879001617432,
+              "strength": 100
+            },
+            {
+              "price": 1.327937266113758,
+              "type": "resistance",
+              "touches": 16,
+              "high": 1.32927,
+              "low": 1.3272985219955444,
+              "strength": 100
+            },
+            {
+              "price": 1.3363021842500897,
+              "type": "support",
+              "touches": 36,
+              "high": 1.3380612134933472,
+              "low": 1.333653450012207,
+              "strength": 100
+            },
+            {
+              "price": 1.3252387175993487,
+              "type": "resistance",
+              "touches": 99,
+              "high": 1.3271400928497314,
+              "low": 1.32406,
+              "strength": 100
+            },
+            {
+              "price": 1.3394724564118818,
+              "type": "resistance",
+              "touches": 11,
+              "high": 1.3406083583831787,
+              "low": 1.3387418985366821,
+              "strength": 100
+            },
+            {
+              "price": 1.3220592802496358,
+              "type": "zone",
+              "touches": 142,
+              "high": 1.3239772319793701,
+              "low": 1.3181308507919312,
+              "strength": 100
+            },
+            {
+              "price": 1.3468987439808093,
+              "type": "zone",
+              "touches": 19,
+              "high": 1.3484176397323608,
+              "low": 1.3446824550628662,
+              "strength": 100
+            },
+            {
+              "price": 1.34929558634758,
+              "type": "resistance",
+              "touches": 4,
+              "high": 1.3496551513671875,
+              "low": 1.3489633798599243,
+              "strength": 80
+            },
+            {
+              "price": 1.2644113333333336,
+              "type": "support",
+              "touches": 18,
+              "high": 1.266145,
+              "low": 1.263219,
+              "strength": 100
+            },
+            {
+              "price": 1.2606384545454545,
+              "type": "support",
+              "touches": 22,
+              "high": 1.261905,
+              "low": 1.258372,
+              "strength": 100
+            }
+          ],
+          "volatility": {
+            "regime": "normal",
+            "atr": 0.0007483238813783961,
+            "atrPercent": 0.05618595518919985,
+            "atrRatio": 1.1591343578589581,
+            "bbWidth": 0.5715793326963428,
+            "details": [
+              "ATR 0.00075 (0.06% of price)",
+              "ATR/avg ratio 1.16 → normal regime",
+              "BB width 0.57%"
+            ]
+          },
+          "squeeze": {
+            "squeezed": false,
+            "bbWidth": 0.007621033000846822,
+            "keltnerWidth": 0.0022449716441351884,
+            "details": [
+              "No squeeze — normal/expanding volatility"
+            ]
+          },
+          "momentum": {
+            "score": -35,
+            "details": [
+              "RSI 42.5 falling below midline",
+              "MACD below signal, weakening"
+            ],
+            "rsi": {
+              "state": "bearish",
+              "value": 42.5153106071729,
+              "details": [
+                "RSI 42.5 falling below midline"
+              ]
+            },
+            "macd": {
+              "state": "bearish_fading",
+              "macd": -0.0005415091116740545,
+              "signal": -0.0003424688362528404,
+              "histogram": -0.0001990402754212141,
+              "details": [
+                "MACD below signal, weakening"
+              ]
+            }
+          },
+          "breakout": {
+            "type": null,
+            "level": null
+          },
+          "atr": 0.0007483238813783961,
+          "emaFast": 1.3319789956016903,
+          "emaSlow": 1.3326310628222835,
+          "smaTrend": 1.3331402000000008,
+          "smaLong": 1.3276575102554335,
+          "close": 1.33187,
+          "dataQuality": 0.79
+        }
+      },
+      "zones": [
+        {
+          "price": 1.330960183982849,
+          "type": "resistance",
+          "touches": 3,
+          "high": 1.3322319984436035,
+          "low": 1.32964,
+          "strength": 60
+        },
+        {
+          "price": 1.3378340148798624,
+          "type": "resistance",
+          "touches": 12,
+          "high": 1.33962,
+          "low": 1.3351134061813354,
+          "strength": 100
+        },
+        {
+          "price": 1.3270679203620324,
+          "type": "resistance",
+          "touches": 13,
+          "high": 1.3285152912139893,
+          "low": 1.32614,
+          "strength": 100
+        },
+        {
+          "price": 1.3401682674884796,
+          "type": "resistance",
+          "touches": 4,
+          "high": 1.3406083583831787,
+          "low": 1.3398540019989014,
+          "strength": 80
+        },
+        {
+          "price": 1.3241403570677104,
+          "type": "resistance",
+          "touches": 38,
+          "high": 1.32593,
+          "low": 1.32212,
+          "strength": 100
+        },
+        {
+          "price": 1.3196765807696753,
+          "type": "support",
+          "touches": 14,
+          "high": 1.32128,
+          "low": 1.3181308507919312,
+          "strength": 100
+        },
+        {
+          "price": 1.3485094904899597,
+          "type": "resistance",
+          "touches": 8,
+          "high": 1.3496551513671875,
+          "low": 1.3462392091751099,
+          "strength": 100
+        },
+        {
+          "price": 1.3521695286035538,
+          "type": "resistance",
+          "touches": 16,
+          "high": 1.3533813953399658,
+          "low": 1.3506578207015991,
+          "strength": 100
+        },
+        {
+          "price": 1.3556052389599027,
+          "type": "resistance",
+          "touches": 21,
+          "high": 1.3571099042892456,
+          "low": 1.3544996976852417,
+          "strength": 100
+        },
+        {
+          "price": 1.3593903541564942,
+          "type": "zone",
+          "touches": 5,
+          "high": 1.3601741790771484,
+          "low": 1.3585665225982666,
+          "strength": 100
+        },
+        {
+          "price": 1.3626341819763184,
+          "type": "support",
+          "touches": 7,
+          "high": 1.3640704154968262,
+          "low": 1.3619153499603271,
+          "strength": 100
+        },
+        {
+          "price": 1.3654611905415852,
+          "type": "resistance",
+          "touches": 6,
+          "high": 1.3659149408340454,
+          "low": 1.3649827241897583,
+          "strength": 100
+        },
+        {
+          "price": 1.268451,
+          "type": "support",
+          "touches": 2,
+          "high": 1.268463,
+          "low": 1.268439,
+          "strength": 40
+        },
+        {
+          "price": 1.2663693846153845,
+          "type": "support",
+          "touches": 13,
+          "high": 1.267934,
+          "low": 1.265181,
+          "strength": 100
+        },
+        {
+          "price": 1.2631269,
+          "type": "support",
+          "touches": 10,
+          "high": 1.264484,
+          "low": 1.261638,
+          "strength": 100
+        },
+        {
+          "price": 1.2595539600000003,
+          "type": "support",
+          "touches": 25,
+          "high": 1.261303,
+          "low": 1.257507,
+          "strength": 100
+        }
+      ],
+      "timestamp": "2026-10-17T05:30:05.749Z",
+      "id": "sig-2026-10-17-000-GBPUSD",
       "status": "ACTIVE",
       "closedAt": null,
       "pipsResult": null,
