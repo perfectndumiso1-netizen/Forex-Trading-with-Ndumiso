@@ -2,7 +2,7 @@
   "meta": {
     "pair": "NZDUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-19T04:21:09.736Z",
+    "lastUpdated": "2026-10-19T05:09:59.403Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 3489,
+    "count": 3492,
     "issues": [
-      "Rejected future-dated candle at 1792385100 (2026-10-19T04:45:00.000Z)",
-      "Rejected future-dated candle at 1792386000 (2026-10-19T05:00:00.000Z)",
-      "Rejected future-dated candle at 1792386900 (2026-10-19T05:15:00.000Z)",
       "Rejected future-dated candle at 1792387800 (2026-10-19T05:30:00.000Z)",
       "Rejected future-dated candle at 1792388700 (2026-10-19T05:45:00.000Z)",
       "Rejected future-dated candle at 1792389600 (2026-10-19T06:00:00.000Z)",
@@ -55,6 +52,9 @@
       "Rejected future-dated candle at 1792421100 (2026-10-19T14:45:00.000Z)",
       "Rejected future-dated candle at 1792422000 (2026-10-19T15:00:00.000Z)",
       "Rejected future-dated candle at 1792422900 (2026-10-19T15:15:00.000Z)",
+      "Rejected future-dated candle at 1792423800 (2026-10-19T15:30:00.000Z)",
+      "Rejected future-dated candle at 1792424700 (2026-10-19T15:45:00.000Z)",
+      "Rejected future-dated candle at 1792425600 (2026-10-19T16:00:00.000Z)",
       "Removed spike outlier at t=1792378800 (move 0.00031 > 5× ATR 0.00006)"
     ],
     "strategyVersion": "1.0.0"
@@ -27970,6 +27970,30 @@
       "high": 0.56522,
       "low": 0.56517,
       "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792385100,
+      "open": 0.56519,
+      "high": 0.56546,
+      "low": 0.56516,
+      "close": 0.56541,
+      "volume": 0
+    },
+    {
+      "time": 1792386000,
+      "open": 0.56534,
+      "high": 0.56583,
+      "low": 0.56311,
+      "close": 0.56324,
+      "volume": 0
+    },
+    {
+      "time": 1792386900,
+      "open": 0.56351,
+      "high": 0.56633,
+      "low": 0.56297,
+      "close": 0.56614,
       "volume": 0
     }
   ]
