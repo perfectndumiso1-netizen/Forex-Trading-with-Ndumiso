@@ -2,19 +2,59 @@
   "meta": {
     "pair": "NZDUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-18T23:48:39.876Z",
-    "provider": "yahoo",
+    "lastUpdated": "2026-10-19T00:32:39.937Z",
+    "provider": "twelvedata",
     "providersAttempted": [
-      "twelvedata",
-      "yahoo"
+      "twelvedata"
     ],
-    "quality": 1,
+    "quality": 0.79,
     "freshness": 1,
     "usable": true,
-    "count": 3416,
+    "count": 3475,
     "issues": [
-      "3 gap(s) detected in candle sequence",
-      "Twelve Data failed: Twelve Data error: You have run out of API credits for the day. 2284 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing"
+      "Rejected future-dated candle at 1792371600 (2026-10-19T01:00:00.000Z)",
+      "Rejected future-dated candle at 1792372500 (2026-10-19T01:15:00.000Z)",
+      "Rejected future-dated candle at 1792373400 (2026-10-19T01:30:00.000Z)",
+      "Rejected future-dated candle at 1792374300 (2026-10-19T01:45:00.000Z)",
+      "Rejected future-dated candle at 1792375200 (2026-10-19T02:00:00.000Z)",
+      "Rejected future-dated candle at 1792376100 (2026-10-19T02:15:00.000Z)",
+      "Rejected future-dated candle at 1792377000 (2026-10-19T02:30:00.000Z)",
+      "Rejected future-dated candle at 1792377900 (2026-10-19T02:45:00.000Z)",
+      "Rejected future-dated candle at 1792378800 (2026-10-19T03:00:00.000Z)",
+      "Rejected future-dated candle at 1792379700 (2026-10-19T03:15:00.000Z)",
+      "Rejected future-dated candle at 1792380600 (2026-10-19T03:30:00.000Z)",
+      "Rejected future-dated candle at 1792381500 (2026-10-19T03:45:00.000Z)",
+      "Rejected future-dated candle at 1792382400 (2026-10-19T04:00:00.000Z)",
+      "Rejected future-dated candle at 1792383300 (2026-10-19T04:15:00.000Z)",
+      "Rejected future-dated candle at 1792384200 (2026-10-19T04:30:00.000Z)",
+      "Rejected future-dated candle at 1792385100 (2026-10-19T04:45:00.000Z)",
+      "Rejected future-dated candle at 1792386000 (2026-10-19T05:00:00.000Z)",
+      "Rejected future-dated candle at 1792386900 (2026-10-19T05:15:00.000Z)",
+      "Rejected future-dated candle at 1792387800 (2026-10-19T05:30:00.000Z)",
+      "Rejected future-dated candle at 1792388700 (2026-10-19T05:45:00.000Z)",
+      "Rejected future-dated candle at 1792389600 (2026-10-19T06:00:00.000Z)",
+      "Rejected future-dated candle at 1792390500 (2026-10-19T06:15:00.000Z)",
+      "Rejected future-dated candle at 1792391400 (2026-10-19T06:30:00.000Z)",
+      "Rejected future-dated candle at 1792392300 (2026-10-19T06:45:00.000Z)",
+      "Rejected future-dated candle at 1792393200 (2026-10-19T07:00:00.000Z)",
+      "Rejected future-dated candle at 1792394100 (2026-10-19T07:15:00.000Z)",
+      "Rejected future-dated candle at 1792395000 (2026-10-19T07:30:00.000Z)",
+      "Rejected future-dated candle at 1792395900 (2026-10-19T07:45:00.000Z)",
+      "Rejected future-dated candle at 1792396800 (2026-10-19T08:00:00.000Z)",
+      "Rejected future-dated candle at 1792397700 (2026-10-19T08:15:00.000Z)",
+      "Rejected future-dated candle at 1792398600 (2026-10-19T08:30:00.000Z)",
+      "Rejected future-dated candle at 1792399500 (2026-10-19T08:45:00.000Z)",
+      "Rejected future-dated candle at 1792400400 (2026-10-19T09:00:00.000Z)",
+      "Rejected future-dated candle at 1792401300 (2026-10-19T09:15:00.000Z)",
+      "Rejected future-dated candle at 1792402200 (2026-10-19T09:30:00.000Z)",
+      "Rejected future-dated candle at 1792403100 (2026-10-19T09:45:00.000Z)",
+      "Rejected future-dated candle at 1792404000 (2026-10-19T10:00:00.000Z)",
+      "Rejected future-dated candle at 1792404900 (2026-10-19T10:15:00.000Z)",
+      "Rejected future-dated candle at 1792405800 (2026-10-19T10:30:00.000Z)",
+      "Rejected future-dated candle at 1792406700 (2026-10-19T10:45:00.000Z)",
+      "Rejected future-dated candle at 1792407600 (2026-10-19T11:00:00.000Z)",
+      "Rejected future-dated candle at 1792408500 (2026-10-19T11:15:00.000Z)",
+      "Rejected future-dated candle at 1792409400 (2026-10-19T11:30:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -27316,35 +27356,507 @@
       "volume": 0
     },
     {
+      "time": 1792314900,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792315800,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792316700,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792317600,
+      "open": 0.56518,
+      "high": 0.56523,
+      "low": 0.56516,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792318500,
+      "open": 0.56518,
+      "high": 0.56534,
+      "low": 0.56512,
+      "close": 0.56522,
+      "volume": 0
+    },
+    {
+      "time": 1792319400,
+      "open": 0.56521,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792320300,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792321200,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792322100,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792323000,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792323900,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792324800,
+      "open": 0.56518,
+      "high": 0.5653,
+      "low": 0.5651,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792325700,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792326600,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792327500,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792328400,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792329300,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792330200,
+      "open": 0.56518,
+      "high": 0.56523,
+      "low": 0.56516,
+      "close": 0.5652,
+      "volume": 0
+    },
+    {
+      "time": 1792331100,
+      "open": 0.56519,
+      "high": 0.56531,
+      "low": 0.56509,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792332000,
+      "open": 0.56517,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56517,
+      "volume": 0
+    },
+    {
+      "time": 1792332900,
+      "open": 0.56517,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792333800,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792334700,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792335600,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56517,
+      "volume": 0
+    },
+    {
+      "time": 1792336500,
+      "open": 0.56517,
+      "high": 0.56534,
+      "low": 0.56517,
+      "close": 0.56522,
+      "volume": 0
+    },
+    {
+      "time": 1792337400,
+      "open": 0.56522,
+      "high": 0.56524,
+      "low": 0.56515,
+      "close": 0.5652,
+      "volume": 0
+    },
+    {
+      "time": 1792338300,
+      "open": 0.56519,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792339200,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792340100,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792341000,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792341900,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792342800,
+      "open": 0.56518,
+      "high": 0.56531,
+      "low": 0.56518,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792343700,
+      "open": 0.56518,
+      "high": 0.56522,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792344600,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792345500,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792346400,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792347300,
+      "open": 0.56518,
+      "high": 0.56523,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792348200,
+      "open": 0.56518,
+      "high": 0.56526,
+      "low": 0.56517,
+      "close": 0.56521,
+      "volume": 0
+    },
+    {
+      "time": 1792349100,
+      "open": 0.5652,
+      "high": 0.56533,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792350000,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792350900,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792351800,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792352700,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792353600,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792354500,
+      "open": 0.56518,
+      "high": 0.56526,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792355400,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792356300,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792357200,
+      "open": 0.56518,
+      "high": 0.56523,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792358100,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792359000,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792359900,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792360800,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
+      "time": 1792361700,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56517,
+      "volume": 0
+    },
+    {
+      "time": 1792362600,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792363500,
+      "open": 0.56518,
+      "high": 0.5652,
+      "low": 0.56517,
+      "close": 0.56519,
+      "volume": 0
+    },
+    {
       "time": 1792364400,
-      "open": 0.5652591586112976,
-      "high": 0.5652591586112976,
-      "low": 0.5651952624320984,
-      "close": 0.5651952624320984,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
       "volume": 0
     },
     {
       "time": 1792365300,
-      "open": 0.5651952624320984,
-      "high": 0.5655468702316284,
-      "low": 0.5651952624320984,
-      "close": 0.5654189586639404,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
       "volume": 0
     },
     {
       "time": 1792366200,
-      "open": 0.5653870105743408,
-      "high": 0.5654829144477844,
-      "low": 0.5651633143424988,
-      "close": 0.5654829144477844,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
       "volume": 0
     },
     {
       "time": 1792367100,
-      "open": 0.565514862537384,
-      "high": 0.565514862537384,
-      "low": 0.565514862537384,
-      "close": 0.565514862537384,
+      "open": 0.56518,
+      "high": 0.56523,
+      "low": 0.56516,
+      "close": 0.5652,
+      "volume": 0
+    },
+    {
+      "time": 1792368000,
+      "open": 0.56519,
+      "high": 0.56521,
+      "low": 0.56518,
+      "close": 0.5652,
+      "volume": 0
+    },
+    {
+      "time": 1792368900,
+      "open": 0.56519,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792369800,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56518,
+      "volume": 0
+    },
+    {
+      "time": 1792370700,
+      "open": 0.56518,
+      "high": 0.56521,
+      "low": 0.56517,
+      "close": 0.56519,
       "volume": 0
     }
   ]
