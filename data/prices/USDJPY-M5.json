@@ -2,25 +2,16 @@
   "meta": {
     "pair": "USDJPY",
     "timeframe": "M5",
-    "lastUpdated": "2026-10-20T08:49:40.845Z",
+    "lastUpdated": "2026-10-20T09:30:24.535Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 0.34,
+    "quality": 0.35,
     "freshness": 1,
     "usable": false,
     "count": 5000,
     "issues": [
-      "Rejected future-dated candle at 1792486500 (2026-10-20T08:55:00.000Z)",
-      "Rejected future-dated candle at 1792486800 (2026-10-20T09:00:00.000Z)",
-      "Rejected future-dated candle at 1792487100 (2026-10-20T09:05:00.000Z)",
-      "Rejected future-dated candle at 1792487400 (2026-10-20T09:10:00.000Z)",
-      "Rejected future-dated candle at 1792487700 (2026-10-20T09:15:00.000Z)",
-      "Rejected future-dated candle at 1792488000 (2026-10-20T09:20:00.000Z)",
-      "Rejected future-dated candle at 1792488300 (2026-10-20T09:25:00.000Z)",
-      "Rejected future-dated candle at 1792488600 (2026-10-20T09:30:00.000Z)",
-      "Rejected future-dated candle at 1792488900 (2026-10-20T09:35:00.000Z)",
       "Rejected future-dated candle at 1792489200 (2026-10-20T09:40:00.000Z)",
       "Rejected future-dated candle at 1792489500 (2026-10-20T09:45:00.000Z)",
       "Rejected future-dated candle at 1792489800 (2026-10-20T09:50:00.000Z)",
@@ -143,83 +134,19 @@
       "Rejected future-dated candle at 1792524900 (2026-10-20T19:35:00.000Z)",
       "Rejected future-dated candle at 1792525200 (2026-10-20T19:40:00.000Z)",
       "Rejected future-dated candle at 1792525500 (2026-10-20T19:45:00.000Z)",
+      "Rejected future-dated candle at 1792525800 (2026-10-20T19:50:00.000Z)",
+      "Rejected future-dated candle at 1792526100 (2026-10-20T19:55:00.000Z)",
+      "Rejected future-dated candle at 1792526400 (2026-10-20T20:00:00.000Z)",
+      "Rejected future-dated candle at 1792526700 (2026-10-20T20:05:00.000Z)",
+      "Rejected future-dated candle at 1792527000 (2026-10-20T20:10:00.000Z)",
+      "Rejected future-dated candle at 1792527300 (2026-10-20T20:15:00.000Z)",
+      "Rejected future-dated candle at 1792527600 (2026-10-20T20:20:00.000Z)",
+      "Rejected future-dated candle at 1792527900 (2026-10-20T20:25:00.000Z)",
       "Removed spike outlier at t=1792483200 (move 0.11084 > 5× ATR 0.02124)"
     ],
     "strategyVersion": "1.0.0"
   },
   "candles": [
-    {
-      "time": 1790769900,
-      "open": 157.01699829101562,
-      "high": 157.04400634765625,
-      "low": 156.97799682617188,
-      "close": 156.99899291992188,
-      "volume": 0
-    },
-    {
-      "time": 1790770200,
-      "open": 156.99099731445312,
-      "high": 157.0279998779297,
-      "low": 156.98500061035156,
-      "close": 157.0019989013672,
-      "volume": 0
-    },
-    {
-      "time": 1790770500,
-      "open": 156.99200439453125,
-      "high": 157.0749969482422,
-      "low": 156.99200439453125,
-      "close": 157.0489959716797,
-      "volume": 0
-    },
-    {
-      "time": 1790770800,
-      "open": 157.052001953125,
-      "high": 157.08900451660156,
-      "low": 157.02000427246094,
-      "close": 157.03399658203125,
-      "volume": 0
-    },
-    {
-      "time": 1790771100,
-      "open": 157.0290069580078,
-      "high": 157.03500366210938,
-      "low": 156.9010009765625,
-      "close": 156.92599487304688,
-      "volume": 0
-    },
-    {
-      "time": 1790771400,
-      "open": 156.9340057373047,
-      "high": 157.0570068359375,
-      "low": 156.68099975585938,
-      "close": 156.81500244140625,
-      "volume": 0
-    },
-    {
-      "time": 1790771700,
-      "open": 156.822998046875,
-      "high": 156.89700317382812,
-      "low": 156.79400634765625,
-      "close": 156.8070068359375,
-      "volume": 0
-    },
-    {
-      "time": 1790772000,
-      "open": 156.802001953125,
-      "high": 156.82200622558594,
-      "low": 156.656005859375,
-      "close": 156.66700744628906,
-      "volume": 0
-    },
-    {
-      "time": 1790772300,
-      "open": 156.68099975585938,
-      "high": 156.86599731445312,
-      "low": 156.6439971923828,
-      "close": 156.82899475097656,
-      "volume": 0
-    },
     {
       "time": 1790772600,
       "open": 156.83200073242188,
@@ -40146,6 +40073,78 @@
       "high": 158.49713,
       "low": 158.487,
       "close": 158.49032,
+      "volume": 0
+    },
+    {
+      "time": 1792486500,
+      "open": 158.48803,
+      "high": 158.48803,
+      "low": 158.46317,
+      "close": 158.46534,
+      "volume": 0
+    },
+    {
+      "time": 1792486800,
+      "open": 158.47138,
+      "high": 158.52631,
+      "low": 158.46665,
+      "close": 158.52328,
+      "volume": 0
+    },
+    {
+      "time": 1792487100,
+      "open": 158.51823,
+      "high": 158.54161,
+      "low": 158.51823,
+      "close": 158.52988,
+      "volume": 0
+    },
+    {
+      "time": 1792487400,
+      "open": 158.52638,
+      "high": 158.5424,
+      "low": 158.52077,
+      "close": 158.53391,
+      "volume": 0
+    },
+    {
+      "time": 1792487700,
+      "open": 158.53354,
+      "high": 158.55458,
+      "low": 158.53354,
+      "close": 158.55182,
+      "volume": 0
+    },
+    {
+      "time": 1792488000,
+      "open": 158.54758,
+      "high": 158.55195,
+      "low": 158.54543,
+      "close": 158.54878,
+      "volume": 0
+    },
+    {
+      "time": 1792488300,
+      "open": 158.54769,
+      "high": 158.55306,
+      "low": 158.53988,
+      "close": 158.54982,
+      "volume": 0
+    },
+    {
+      "time": 1792488600,
+      "open": 158.54666,
+      "high": 158.55357,
+      "low": 158.53754,
+      "close": 158.55038,
+      "volume": 0
+    },
+    {
+      "time": 1792488900,
+      "open": 158.54821,
+      "high": 158.55611,
+      "low": 158.5468,
+      "close": 158.54849,
       "volume": 0
     }
   ]
