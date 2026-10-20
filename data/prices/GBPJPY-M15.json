@@ -2,7 +2,7 @@
   "meta": {
     "pair": "GBPJPY",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-20T01:41:30.942Z",
+    "lastUpdated": "2026-10-20T02:16:00.624Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.79,
     "freshness": 1,
     "usable": true,
-    "count": 3573,
+    "count": 3576,
     "issues": [
-      "Rejected future-dated candle at 1792461600 (2026-10-20T02:00:00.000Z)",
-      "Rejected future-dated candle at 1792462500 (2026-10-20T02:15:00.000Z)",
-      "Rejected future-dated candle at 1792463400 (2026-10-20T02:30:00.000Z)",
       "Rejected future-dated candle at 1792464300 (2026-10-20T02:45:00.000Z)",
       "Rejected future-dated candle at 1792465200 (2026-10-20T03:00:00.000Z)",
       "Rejected future-dated candle at 1792466100 (2026-10-20T03:15:00.000Z)",
@@ -54,7 +51,9 @@
       "Rejected future-dated candle at 1792496700 (2026-10-20T11:45:00.000Z)",
       "Rejected future-dated candle at 1792497600 (2026-10-20T12:00:00.000Z)",
       "Rejected future-dated candle at 1792498500 (2026-10-20T12:15:00.000Z)",
-      "Rejected future-dated candle at 1792499400 (2026-10-20T12:30:00.000Z)"
+      "Rejected future-dated candle at 1792499400 (2026-10-20T12:30:00.000Z)",
+      "Rejected future-dated candle at 1792500300 (2026-10-20T12:45:00.000Z)",
+      "Rejected future-dated candle at 1792501200 (2026-10-20T13:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -28641,6 +28640,30 @@
       "high": 211.01462,
       "low": 210.90985,
       "close": 211.00204,
+      "volume": 0
+    },
+    {
+      "time": 1792461600,
+      "open": 211.00762,
+      "high": 211.01592,
+      "low": 210.92562,
+      "close": 210.9299,
+      "volume": 0
+    },
+    {
+      "time": 1792462500,
+      "open": 210.9363,
+      "high": 211.00402,
+      "low": 210.89744,
+      "close": 211.00081,
+      "volume": 0
+    },
+    {
+      "time": 1792463400,
+      "open": 210.99407,
+      "high": 211.0047,
+      "low": 210.89101,
+      "close": 210.90409,
       "volume": 0
     }
   ]
