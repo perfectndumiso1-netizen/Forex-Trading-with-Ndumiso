@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-21T04:04:05.780Z",
+    "lastUpdated": "2026-10-21T04:45:01.441Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.79,
     "freshness": 1,
     "usable": true,
-    "count": 3682,
+    "count": 3685,
     "issues": [
-      "Rejected future-dated candle at 1792557000 (2026-10-21T04:30:00.000Z)",
-      "Rejected future-dated candle at 1792557900 (2026-10-21T04:45:00.000Z)",
-      "Rejected future-dated candle at 1792558800 (2026-10-21T05:00:00.000Z)",
       "Rejected future-dated candle at 1792559700 (2026-10-21T05:15:00.000Z)",
       "Rejected future-dated candle at 1792560600 (2026-10-21T05:30:00.000Z)",
       "Rejected future-dated candle at 1792561500 (2026-10-21T05:45:00.000Z)",
@@ -54,7 +51,9 @@
       "Rejected future-dated candle at 1792592100 (2026-10-21T14:15:00.000Z)",
       "Rejected future-dated candle at 1792593000 (2026-10-21T14:30:00.000Z)",
       "Rejected future-dated candle at 1792593900 (2026-10-21T14:45:00.000Z)",
-      "Rejected future-dated candle at 1792594800 (2026-10-21T15:00:00.000Z)"
+      "Rejected future-dated candle at 1792594800 (2026-10-21T15:00:00.000Z)",
+      "Rejected future-dated candle at 1792595700 (2026-10-21T15:15:00.000Z)",
+      "Rejected future-dated candle at 1792596600 (2026-10-21T15:30:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -29513,6 +29512,30 @@
       "high": 1.12345,
       "low": 1.12303,
       "close": 1.12343,
+      "volume": 0
+    },
+    {
+      "time": 1792557000,
+      "open": 1.12341,
+      "high": 1.12369,
+      "low": 1.12341,
+      "close": 1.12366,
+      "volume": 0
+    },
+    {
+      "time": 1792557900,
+      "open": 1.12362,
+      "high": 1.12375,
+      "low": 1.12336,
+      "close": 1.12347,
+      "volume": 0
+    },
+    {
+      "time": 1792558800,
+      "open": 1.12343,
+      "high": 1.12364,
+      "low": 1.12343,
+      "close": 1.12351,
       "volume": 0
     }
   ]
