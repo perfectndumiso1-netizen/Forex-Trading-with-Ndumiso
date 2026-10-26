@@ -2,19 +2,16 @@
   "meta": {
     "pair": "EURGBP",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-26T04:34:43.866Z",
+    "lastUpdated": "2026-10-26T05:16:34.015Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 0.78,
+    "quality": 0.79,
     "freshness": 1,
     "usable": true,
-    "count": 4162,
+    "count": 4165,
     "issues": [
-      "Rejected future-dated candle at 1792990800 (2026-10-26T05:00:00.000Z)",
-      "Rejected future-dated candle at 1792991700 (2026-10-26T05:15:00.000Z)",
-      "Rejected future-dated candle at 1792992600 (2026-10-26T05:30:00.000Z)",
       "Rejected future-dated candle at 1792993500 (2026-10-26T05:45:00.000Z)",
       "Rejected future-dated candle at 1792994400 (2026-10-26T06:00:00.000Z)",
       "Rejected future-dated candle at 1792995300 (2026-10-26T06:15:00.000Z)",
@@ -55,6 +52,8 @@
       "Rejected future-dated candle at 1793026800 (2026-10-26T15:00:00.000Z)",
       "Rejected future-dated candle at 1793027700 (2026-10-26T15:15:00.000Z)",
       "Rejected future-dated candle at 1793028600 (2026-10-26T15:30:00.000Z)",
+      "Rejected future-dated candle at 1793029500 (2026-10-26T15:45:00.000Z)",
+      "Rejected future-dated candle at 1793030400 (2026-10-26T16:00:00.000Z)",
       "Removed spike outlier at t=1792989000 (move 0.00190 > 5× ATR 0.00028)"
     ],
     "strategyVersion": "1.0.0"
@@ -33354,6 +33353,30 @@
       "high": 0.83845,
       "low": 0.83712,
       "close": 0.8376,
+      "volume": 0
+    },
+    {
+      "time": 1792990800,
+      "open": 0.83762,
+      "high": 0.8381,
+      "low": 0.83672,
+      "close": 0.83793,
+      "volume": 0
+    },
+    {
+      "time": 1792991700,
+      "open": 0.83788,
+      "high": 0.83794,
+      "low": 0.83735,
+      "close": 0.83737,
+      "volume": 0
+    },
+    {
+      "time": 1792992600,
+      "open": 0.83739,
+      "high": 0.83882,
+      "low": 0.83724,
+      "close": 0.83797,
       "volume": 0
     }
   ]
