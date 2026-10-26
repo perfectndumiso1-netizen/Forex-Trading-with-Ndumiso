@@ -2,19 +2,16 @@
   "meta": {
     "pair": "EURGBP",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-26T03:53:45.430Z",
+    "lastUpdated": "2026-10-26T04:34:43.866Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 0.79,
+    "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 4160,
+    "count": 4162,
     "issues": [
-      "Rejected future-dated candle at 1792988100 (2026-10-26T04:15:00.000Z)",
-      "Rejected future-dated candle at 1792989000 (2026-10-26T04:30:00.000Z)",
-      "Rejected future-dated candle at 1792989900 (2026-10-26T04:45:00.000Z)",
       "Rejected future-dated candle at 1792990800 (2026-10-26T05:00:00.000Z)",
       "Rejected future-dated candle at 1792991700 (2026-10-26T05:15:00.000Z)",
       "Rejected future-dated candle at 1792992600 (2026-10-26T05:30:00.000Z)",
@@ -54,7 +51,11 @@
       "Rejected future-dated candle at 1793023200 (2026-10-26T14:00:00.000Z)",
       "Rejected future-dated candle at 1793024100 (2026-10-26T14:15:00.000Z)",
       "Rejected future-dated candle at 1793025000 (2026-10-26T14:30:00.000Z)",
-      "Rejected future-dated candle at 1793025900 (2026-10-26T14:45:00.000Z)"
+      "Rejected future-dated candle at 1793025900 (2026-10-26T14:45:00.000Z)",
+      "Rejected future-dated candle at 1793026800 (2026-10-26T15:00:00.000Z)",
+      "Rejected future-dated candle at 1793027700 (2026-10-26T15:15:00.000Z)",
+      "Rejected future-dated candle at 1793028600 (2026-10-26T15:30:00.000Z)",
+      "Removed spike outlier at t=1792989000 (move 0.00190 > 5× ATR 0.00028)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -33337,6 +33338,22 @@
       "high": 0.83751,
       "low": 0.83725,
       "close": 0.83736,
+      "volume": 0
+    },
+    {
+      "time": 1792988100,
+      "open": 0.83734,
+      "high": 0.83755,
+      "low": 0.83723,
+      "close": 0.83746,
+      "volume": 0
+    },
+    {
+      "time": 1792989900,
+      "open": 0.83744,
+      "high": 0.83845,
+      "low": 0.83712,
+      "close": 0.8376,
       "volume": 0
     }
   ]
