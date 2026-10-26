@@ -2,7 +2,7 @@
   "meta": {
     "pair": "EURUSD",
     "timeframe": "M15",
-    "lastUpdated": "2026-10-26T05:50:30.400Z",
+    "lastUpdated": "2026-10-26T06:36:21.690Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
@@ -10,11 +10,8 @@
     "quality": 0.78,
     "freshness": 1,
     "usable": true,
-    "count": 4168,
+    "count": 4171,
     "issues": [
-      "Rejected future-dated candle at 1792995300 (2026-10-26T06:15:00.000Z)",
-      "Rejected future-dated candle at 1792996200 (2026-10-26T06:30:00.000Z)",
-      "Rejected future-dated candle at 1792997100 (2026-10-26T06:45:00.000Z)",
       "Rejected future-dated candle at 1792998000 (2026-10-26T07:00:00.000Z)",
       "Rejected future-dated candle at 1792998900 (2026-10-26T07:15:00.000Z)",
       "Rejected future-dated candle at 1792999800 (2026-10-26T07:30:00.000Z)",
@@ -55,6 +52,9 @@
       "Rejected future-dated candle at 1793031300 (2026-10-26T16:15:00.000Z)",
       "Rejected future-dated candle at 1793032200 (2026-10-26T16:30:00.000Z)",
       "Rejected future-dated candle at 1793033100 (2026-10-26T16:45:00.000Z)",
+      "Rejected future-dated candle at 1793034000 (2026-10-26T17:00:00.000Z)",
+      "Rejected future-dated candle at 1793034900 (2026-10-26T17:15:00.000Z)",
+      "Rejected future-dated candle at 1793035800 (2026-10-26T17:30:00.000Z)",
       "Removed spike outlier at t=1792989000 (move 0.00239 > 5× ATR 0.00034)"
     ],
     "strategyVersion": "1.0.0"
@@ -33402,6 +33402,30 @@
       "high": 1.12194,
       "low": 1.11996,
       "close": 1.12155,
+      "volume": 0
+    },
+    {
+      "time": 1792995300,
+      "open": 1.12151,
+      "high": 1.12276,
+      "low": 1.11971,
+      "close": 1.12088,
+      "volume": 0
+    },
+    {
+      "time": 1792996200,
+      "open": 1.12187,
+      "high": 1.12245,
+      "low": 1.12013,
+      "close": 1.12236,
+      "volume": 0
+    },
+    {
+      "time": 1792997100,
+      "open": 1.12232,
+      "high": 1.12281,
+      "low": 1.12067,
+      "close": 1.12182,
       "volume": 0
     }
   ]
