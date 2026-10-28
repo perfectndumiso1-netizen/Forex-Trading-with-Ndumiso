@@ -2,17 +2,18 @@
   "meta": {
     "pair": "NZDUSD",
     "timeframe": "H4",
-    "lastUpdated": "2026-10-28T16:00:27.864Z",
+    "lastUpdated": "2026-10-28T20:57:06.960Z",
     "provider": "twelvedata",
     "providersAttempted": [
       "twelvedata"
     ],
-    "quality": 1,
+    "quality": 0.99,
     "freshness": 1,
     "usable": true,
-    "count": 1201,
+    "count": 1202,
     "issues": [
-      "Rejected future-dated candle at 1793232000 (2026-10-29T00:00:00.000Z)"
+      "Rejected future-dated candle at 1793246400 (2026-10-29T04:00:00.000Z)",
+      "Rejected future-dated candle at 1793260800 (2026-10-29T08:00:00.000Z)"
     ],
     "strategyVersion": "1.0.0"
   },
@@ -9623,6 +9624,14 @@
       "high": 0.56142,
       "low": 0.55957,
       "close": 0.56095,
+      "volume": 0
+    },
+    {
+      "time": 1793232000,
+      "open": 0.56093,
+      "high": 0.56228,
+      "low": 0.5609,
+      "close": 0.56207,
       "volume": 0
     }
   ]
